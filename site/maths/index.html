@@ -1,0 +1,2097 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../analog/">
+      
+      
+        <link rel="next" href="../algorithms/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Maths - Euler0525@Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#maths" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Euler0525@Wiki" class="md-header__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Euler0525@Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Maths
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Euler0525@Wiki" class="md-nav__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Euler0525@Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ctf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeRTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/kernel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Kernel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cuda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NVIDIA CUDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD Xilinx
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AMD Xilinx
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/zynq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZYNQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/versal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/aie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stm32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analog Devices Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../satellite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/asm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_18_6" id="__nav_18_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/pyqt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyQt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/verilog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verilog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="maths">Maths</h1>
+<h1 id="_1">基础公式</h1>
+<h2 id="_2">希腊字母表</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">音标</th>
+<th style="text-align: center;">希腊字母大写</th>
+<th style="text-align: center;">希腊字母小写</th>
+<th style="text-align: center;">LaTeX 大写</th>
+<th style="text-align: center;">LaTeX 小写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">/ˈælfə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Alpha\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\alpha\)</span></td>
+<td style="text-align: center;"><code>\Alpha</code></td>
+<td style="text-align: center;"><code>\alpha</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈbeɪtə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Beta\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\beta\)</span></td>
+<td style="text-align: center;"><code>\Beta</code></td>
+<td style="text-align: center;"><code>\beta</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈɡæmə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Gamma\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\gamma\)</span></td>
+<td style="text-align: center;"><code>\Gamma</code></td>
+<td style="text-align: center;"><code>\gamma</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈdeltə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Delta\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\delta\)</span></td>
+<td style="text-align: center;"><code>\Delta</code></td>
+<td style="text-align: center;"><code>\delta</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈepsɪlɒn/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Epsilon\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\epsilon\)</span></td>
+<td style="text-align: center;"><code>\Epsilon</code></td>
+<td style="text-align: center;"><code>\epsilon</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈepsɪlɒn/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Epsilon\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\varepsilon\)</span></td>
+<td style="text-align: center;"><code>\Epsilon</code></td>
+<td style="text-align: center;"><code>\varepsilon</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈzeɪtə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Zeta\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\zeta\)</span></td>
+<td style="text-align: center;"><code>\Zeta</code></td>
+<td style="text-align: center;"><code>\zeta</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈiːtə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Eta\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\eta\)</span></td>
+<td style="text-align: center;"><code>\Eta</code></td>
+<td style="text-align: center;"><code>\eta</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈθiːtə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Theta\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta\)</span></td>
+<td style="text-align: center;"><code>\Theta</code></td>
+<td style="text-align: center;"><code>\theta</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈθiːtə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Theta\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\vartheta\)</span></td>
+<td style="text-align: center;"><code>\Theta</code></td>
+<td style="text-align: center;"><code>\vartheta</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/aɪˈəʊtə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Iota\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\iota\)</span></td>
+<td style="text-align: center;"><code>\Iota</code></td>
+<td style="text-align: center;"><code>\iota</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈkæpə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Kappa\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\kappa\)</span></td>
+<td style="text-align: center;"><code>\Kappa</code></td>
+<td style="text-align: center;"><code>\kappa</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈkæpə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Kappa\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\varkappa\)</span></td>
+<td style="text-align: center;"><code>\Kappa</code></td>
+<td style="text-align: center;"><code>\varkappa</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈlæmdə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Lambda\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\lambda\)</span></td>
+<td style="text-align: center;"><code>\Lambda</code></td>
+<td style="text-align: center;"><code>\lambda</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/mjuː/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Mu\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu\)</span></td>
+<td style="text-align: center;"><code>\Mu</code></td>
+<td style="text-align: center;"><code>\mu</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/njuː/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Nu\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\nu\)</span></td>
+<td style="text-align: center;"><code>\Nu</code></td>
+<td style="text-align: center;"><code>\nu</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/zaɪ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Xi\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\xi\)</span></td>
+<td style="text-align: center;"><code>\Xi</code></td>
+<td style="text-align: center;"><code>\xi</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/əʊˈmaɪkrɒn/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Omicron\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\omicron\)</span></td>
+<td style="text-align: center;"><code>\Omicron</code></td>
+<td style="text-align: center;"><code>\omicron</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/paɪ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Pi\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\pi\)</span></td>
+<td style="text-align: center;"><code>\Pi</code></td>
+<td style="text-align: center;"><code>\pi</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/paɪ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Pi\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\varpi\)</span></td>
+<td style="text-align: center;"><code>\Pi</code></td>
+<td style="text-align: center;"><code>\varpi</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/rəʊ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Rho\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\rho\)</span></td>
+<td style="text-align: center;"><code>\Rho</code></td>
+<td style="text-align: center;"><code>\rho</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/rəʊ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Rho\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\varrho\)</span></td>
+<td style="text-align: center;"><code>\Rho</code></td>
+<td style="text-align: center;"><code>\varrho</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈsɪɡmə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Sigma\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma\)</span></td>
+<td style="text-align: center;"><code>\Sigma</code></td>
+<td style="text-align: center;"><code>\sigma</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈsɪɡmə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Sigma\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\varsigma\)</span></td>
+<td style="text-align: center;"><code>\Sigma</code></td>
+<td style="text-align: center;"><code>\varsigma</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/tɔː/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Tau\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\tau\)</span></td>
+<td style="text-align: center;"><code>\Tau</code></td>
+<td style="text-align: center;"><code>\tau</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈjuːpsɪlɒn/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Upsilon\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\upsilon\)</span></td>
+<td style="text-align: center;"><code>\Upsilon</code></td>
+<td style="text-align: center;"><code>\upsilon</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/faɪ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Phi\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\phi\)</span></td>
+<td style="text-align: center;"><code>\Phi</code></td>
+<td style="text-align: center;"><code>\phi</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/faɪ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Phi\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\varphi\)</span></td>
+<td style="text-align: center;"><code>\Phi</code></td>
+<td style="text-align: center;"><code>\varphi</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/kaɪ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Chi\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\chi\)</span></td>
+<td style="text-align: center;"><code>\Chi</code></td>
+<td style="text-align: center;"><code>\chi</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/psaɪ/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Psi\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\psi\)</span></td>
+<td style="text-align: center;"><code>\Psi</code></td>
+<td style="text-align: center;"><code>\psi</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/ˈəʊmɪɡə/</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Omega\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\omega\)</span></td>
+<td style="text-align: center;"><code>\Omega</code></td>
+<td style="text-align: center;"><code>\omega</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">扩展欧几里得算法</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(a\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(b\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(s_0\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(s_1\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(t_0\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(t_1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(-\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(21\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(21\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(4\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(21\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-25\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[
+(-5) * 25 + 6 * 21 = 1
+\]</div>
+<h2 id="_4">和差化积与积化和差</h2>
+<div class="arithmatex">\[
+\begin{aligned}
+\sin\alpha+\sin\beta &amp;= 2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}\\
+\cos\alpha+\cos\beta &amp;= 2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}\\
+\sin\alpha-\sin\beta &amp;= 2\cos\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}\\
+\cos\alpha-\cos\beta &amp;= -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}\\
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+\sin\alpha\cos\beta &amp;= \frac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta)]\\
+\cos\alpha\cos\beta &amp;= \frac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha-\beta)]\\
+\cos\alpha\sin\beta &amp;= \frac{1}{2}[\sin(\alpha+\beta)-\sin(\alpha-\beta)]\\
+\sin\alpha\sin\beta &amp;= -\frac{1}{2}[\cos(\alpha+\beta)-\cos(\alpha-\beta)]\\
+\end{aligned}
+\]</div>
+<h1 id="_5">微积分</h1>
+<h2 id="_6">积分</h2>
+<div class="arithmatex">\[
+\lim_{n\to\infty}\sum_{k = 1}^n{\dfrac{1}{n+k}} = \lim_{n\to\infty}\sum_{k = 1}^n{\dfrac{1}{1+\frac{k}{n}}}=\int_0^1{\dfrac{1}{1+x}}dx =\ln2.
+\]</div>
+<h2 id="_7">常微分方程</h2>
+<ul>
+<li><span class="arithmatex">\(\dfrac{dy}{dx}=f(x)g(y)\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\int{\dfrac{dy}{g(y)}=\int{f(x)dx}+C}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\dfrac{dy}{dx}=f(x,y)\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\text{let}\ y = ux\\
+f(x, y) &amp;= f(x, ux)=\varphi(u)\\
+\varphi(u) &amp;= u+x\dfrac{du}{dx}\\
+\int \dfrac{du}{\varphi(u)-u}&amp;=\int \dfrac{dx}{x} + C =\ln|x| + C\\
+\Phi(u)&amp;=\Phi(\dfrac{y}{x}) = \ln|x| + C\\
+\end{aligned}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(y'+p(x)y=q(x)\)</span></li>
+</ul>
+<div class="arithmatex">\[
+y = \dfrac{\displaystyle\int e^{\int p(x)dx} q(x)dx+C}{e^{\int p(x)dx}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(y'+p(x)y=q(x)y^n\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;y'y^{-n}+p(x)y^{1-n} = q(x)\\
+\text{let}\ &amp;z = y^{1-n},\dfrac{dz}{dx}=(1-n)\dfrac{dy}{dx}y^{-n}\\
+&amp;\dfrac{1}{1-n}\dfrac{dz}{dx}+p(x)z = q(x)
+\end{aligned}
+\]</div>
+<h2 id="_8">多元函数微积分</h2>
+<ul>
+<li>方向导数</li>
+</ul>
+<p>对于多元函数 <span class="arithmatex">\(f(x_1, x_2, \cdots, x_n)\)</span>，在点 <span class="arithmatex">\(\mathbf{x}_0=(x_{01}, x_{02}, \cdots, x_{0n})\)</span> 处，沿单位向量 <span class="arithmatex">\(\mathbf{v} = (v_1, v_2, \cdots, v_n)\)</span> 的方向导数记为</p>
+<div class="arithmatex">\[
+D_{\mathbf{v}} f(\mathbf{x}_0) = \lim_{t \to 0^+} =  \dfrac{f(\mathbf{x}_0 + t\mathbf{v}) - f(\mathbf{x}_0)}{t}
+\]</div>
+<p>如果函数在 <span class="arithmatex">\(\mathbf{x}_0\)</span> 处可微，则</p>
+<div class="arithmatex">\[
+D_{\mathbf{v}} f(\mathbf{x}_0) = \nabla f(\mathbf{x}_0) \cdot \mathbf{v}
+\]</div>
+<hr />
+<h1 id="_9">概率论与数理统计</h1>
+<h2 id="_10">基本概念</h2>
+<h3 id="_11">常用统计量</h3>
+<ul>
+<li>
+<p>样本均值 <span class="arithmatex">\(\overline{X} = \dfrac{1}{n}\displaystyle\sum^{n}_{i=1}\)</span>，观测值 <span class="arithmatex">\(\overline{x} = \dfrac{1}{n}\displaystyle\sum_{i=1}^{n}x_i\)</span>.</p>
+</li>
+<li>
+<p>样本方差 <span class="arithmatex">\(S^2 = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^{n}(X_i - \overline{X})^2 = \dfrac{1}{n-1}(\displaystyle\sum_{i=1}^nX_i^2 - n \overline{X}^2)\)</span></p>
+</li>
+<li>
+<p>样本标准差 <span class="arithmatex">\(S = \sqrt{S^2}\)</span></p>
+</li>
+<li>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶原点矩 <span class="arithmatex">\(A_k = \dfrac{1}{n}\displaystyle\sum_{i=1}^nX_i^k\)</span></p>
+</li>
+<li>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶中心距 <span class="arithmatex">\(B_k = \dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i - \overline{X})^k\)</span></p>
+</li>
+</ul>
+<p><strong>定理</strong>：对总体 <span class="arithmatex">\(X\)</span> 有 <span class="arithmatex">\(E(X) = \mu, D(X) = \sigma^2\)</span>；从总体中取出样本，<span class="arithmatex">\(E(\overline{X}) = \mu, D(\overline{X}) = \dfrac{\sigma^2}{n},E(S^2) = \sigma^2\)</span></p>
+<h3 id="_12">三种分布</h3>
+<h4 id="chi2"><span class="arithmatex">\(\chi^2\)</span> 分布</h4>
+<p>若 <span class="arithmatex">\(X_1,X_2\cdots X_n\)</span> 独立同分布，且满足 <span class="arithmatex">\(X\sim N(0,1)\)</span>，则随机变量 <span class="arithmatex">\(X^2\)</span> 满足 <span class="arithmatex">\(X\sim \chi^2(n)\)</span>，其中 <span class="arithmatex">\(n\)</span> 为自由度。</p>
+<ul>
+<li>
+<p>若 <span class="arithmatex">\(X\sim N(\mu, \sigma)\)</span>，则 <span class="arithmatex">\(\dfrac{1}{\sigma^2}\displaystyle\sum_{i=1}^n(X_i-\mu)\sim \chi^2(n)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(E(x) = n, D(X) = 2n\)</span></p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(X\sim \chi^2(m),Y\sim \chi^x(n)\)</span>，则 <span class="arithmatex">\(X+Y\sim \chi^2(m+n)\)</span></p>
+</li>
+<li>
+<p>对于 <span class="arithmatex">\(0 &lt; \alpha &lt; 1\)</span>，当 <span class="arithmatex">\(P(X^2 \geq \chi^2_{\alpha}(n)) = \alpha\)</span> 称为 <span class="arithmatex">\(\chi_{\alpha}^2(n)\)</span> 的 <span class="arithmatex">\(\alpha\)</span> 的上侧分位数</p>
+</li>
+</ul>
+<h4 id="t"><span class="arithmatex">\(t\)</span> 分布</h4>
+<p>若 <span class="arithmatex">\(X,Y\)</span> 独立分布，<span class="arithmatex">\(X\sim N(0,1), Y\sim \chi^(n)\)</span>，则 <span class="arithmatex">\(T = \dfrac{X}{\sqrt{Y/n}}\)</span> 称为 <span class="arithmatex">\(t(n)\)</span> 分布（密度函数关于 <span class="arithmatex">\(y\)</span> 轴对称）</p>
+<ul>
+<li>对于 <span class="arithmatex">\(0 &lt; \alpha &lt; 1\)</span>，当 <span class="arithmatex">\(P(t \geq t_{\alpha}(n)) = \alpha\)</span> 称为 <span class="arithmatex">\(t_{\alpha}(n)\)</span> 的 <span class="arithmatex">\(\alpha\)</span> 的上侧分位数</li>
+</ul>
+<h4 id="f"><span class="arithmatex">\(F\)</span> 分布</h4>
+<p>若 <span class="arithmatex">\(X\sim \chi^2(m), Y\sim \chi^2(n)\)</span> 相互独立，则 <span class="arithmatex">\(F = \dfrac{X/m}{Y/n}\)</span> 称为 <span class="arithmatex">\(F(m,n)\)</span> 分布</p>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X\sim F(m,n)\)</span>，则 <span class="arithmatex">\(\dfrac{1}{X}\sim F(n,m)\)</span></p>
+</li>
+<li>
+<p>对于 <span class="arithmatex">\(0&lt; \alpha &lt; 1\)</span>，当 <span class="arithmatex">\(P(F \geq F_{\alpha}(m,n)) = \alpha\)</span> 称为 <span class="arithmatex">\(F_{\alpha}(m,n)\)</span> 的上侧分位数</p>
+</li>
+</ul>
+<h3 id="_13">正态总体统计量的分布</h3>
+<h4 id="_14">单变量</h4>
+<p>若 <span class="arithmatex">\(X\sim N(\mu, \sigma^2)\)</span>，有</p>
+<ul>
+<li><span class="arithmatex">\(\overline{X} \sim N(\mu, \dfrac{\sigma^2}{n})\)</span>，<span class="arithmatex">\(\dfrac{\overline{X} - \mu}{\sigma / \sqrt{n}}\sim N(0,1)\)</span></li>
+<li><span class="arithmatex">\(\dfrac{1}{\sigma^2}\displaystyle\sum_{i=1}^n(X_i - \mu)^2\sim \chi^2(n)\)</span></li>
+<li><span class="arithmatex">\(\overline{X}\)</span> 与 <span class="arithmatex">\(S^2\)</span> 相互独立，且 <span class="arithmatex">\(\dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span></li>
+</ul>
+<blockquote>
+<p><span class="arithmatex">\(X^2 = \displaystyle\sum_{i=1}^n (\dfrac{X_i-\overline{X}}{\sigma})^2\)</span>，但是 <span class="arithmatex">\(\displaystyle\sum _{i=1}^n(\dfrac{X_i-\overline{X}}{\sigma}) = 0\)</span> 是一个约束，故自由度从 <span class="arithmatex">\(n\)</span> 减为 <span class="arithmatex">\(n-1\)</span>.</p>
+</blockquote>
+<ul>
+<li><span class="arithmatex">\(\dfrac{\overline{X} - \mu}{S/\sqrt{n}} \sim t(n-1)\)</span></li>
+</ul>
+<blockquote>
+<p><span class="arithmatex">\(z = \dfrac{\overline{X} - \mu}{\sigma / \sqrt{n}}\sim N(0,1)\)</span>，<span class="arithmatex">\(\chi^2 = \dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span> 满足相互独立，则 <span class="arithmatex">\(t = \dfrac{z}{\sqrt{\frac{\chi^2}{n-1}}}\)</span> 是自由度为 <span class="arithmatex">\(n-1\)</span> 的 <span class="arithmatex">\(t\)</span> 分布</p>
+</blockquote>
+<h4 id="_15">双变量</h4>
+<p>若 <span class="arithmatex">\(X\sim N(\mu, \sigma^2),Y\sim N(0,1)\)</span>，有</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\dfrac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n}}}\sim N(0,1)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\dfrac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{S_w\sqrt{\frac{1}{m} + \frac{1}{n}}}\sim t(m+n-2),其中S_w^2 = \sqrt{\dfrac{(m-1)S_1^2+(n-1)S_2^2}{m+n-2}}\)</span></p>
+</li>
+<li><span class="arithmatex">\(\dfrac{S_1^2/S^2_2}{\sigma_1^2/\sigma_2^2}\sim F(m-1,n-1)\)</span></li>
+</ul>
+<blockquote>
+<p><span class="arithmatex">\(\dfrac{(n-1)S_1^2}{\sigma_1^2}\sim \chi^2(m-1)\)</span>, <span class="arithmatex">\(\dfrac{(n-1)S_2^2}{\sigma_2^2}\sim \chi^2(n-1)\)</span> 两者相互独立</p>
+</blockquote>
+<h2 id="_16">参数估计</h2>
+<h3 id="_17">点估计</h3>
+<h4 id="_18">矩估计</h4>
+<p>用样本均值 <span class="arithmatex">\(\overline{X}\)</span> 代替总体均值 <span class="arithmatex">\(\mu\)</span>，用 <strong>样本的二阶中心距</strong> 代替总体方差 <span class="arithmatex">\(\sigma^2\)</span>.</p>
+<h4 id="_19">极大似然估计</h4>
+<p>选择能够使概率取到极值的参数</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;P(X = x) = f(x;\theta)\\
+极大似然函数&amp;L_n(\theta) = \displaystyle\prod_{i = 1}^{n}f(x_i;\theta)\\
+解方程&amp;\dfrac{d}{d\theta}\ln {L_n(\theta)} = 0\\
+\end{aligned}
+\]</div>
+<h4 id="_20">衡量点估计的标准</h4>
+<ul>
+<li>无偏性：<span class="arithmatex">\(E(\hat{\theta}) = \theta\)</span></li>
+<li>有效性：若 <span class="arithmatex">\(D(\hat{\theta_1}) &lt; D(\hat{\theta_2})\)</span>，则 <span class="arithmatex">\(\theta_1\)</span> 比 <span class="arithmatex">\(\theta_2\)</span> 更有效</li>
+<li>一致性：<span class="arithmatex">\(\displaystyle\lim_{n \to \infty}P(\lvert \hat{\theta_n} - \theta\rvert &lt; \varepsilon) = 1\)</span></li>
+</ul>
+<blockquote>
+<p>样本均值是总体均值的无偏且一致的估计量；</p>
+<p>样本方差是总体方差的无偏且一致估计量</p>
+</blockquote>
+<h3 id="_21">区间估计</h3>
+<h4 id="_22">单正态总体下的参数区间估计</h4>
+<p><strong>用枢轴量法求参数参数 <span class="arithmatex">\(\mu\)</span> 的置信水平为 <span class="arithmatex">\(1-\alpha\)</span> 的置信区间</strong></p>
+<ul>
+<li><span class="arithmatex">\(\sigma\)</span> 已知</li>
+</ul>
+<p>构造 <span class="arithmatex">\(\overline{X}\)</span> 和 <span class="arithmatex">\(\mu\)</span> 的函数</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;Z = \dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\\
+对给定\alpha，取 a &lt; b，满足&amp;P(a\leq  \dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}} \leq b) = 1-\alpha\\
+为使置信区间最短，取&amp;a = -z_{\frac{\alpha}{2}}, b = z_{\frac{\alpha}{2}}\\
+则\mu 的置信水平为 1-\alpha 的置信区间为&amp;[\overline{X}-\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}},\overline{X}+\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}}]\\
+\end{aligned}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\sigma\)</span> 未知</li>
+</ul>
+<p>用样本标准差代替总体标准差，构造 <span class="arithmatex">\(\overline{X}\)</span> 和 <span class="arithmatex">\(\mu\)</span> 的函数</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;T = \dfrac{\overline{X}-\mu}{S/\sqrt{n}} \sim t(n-1)\\
+对给定\alpha，取 a &lt; b，满足&amp;P(a\leq  \dfrac{\overline{X}-\mu}{S/\sqrt{n}} \leq b) = 1-\alpha\\
+t 分布也是对称分布，为使区间长度最短，取&amp;a = -t_{\frac{\alpha}{2}}(n-1), b = t_{\frac{\alpha}{2}}(n-1)\\
+则\mu 的置信水平为 1-\alpha 的置信区间为&amp;[\overline{X} - \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1),\overline{X} + \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1)]\\
+\end{aligned}
+\]</div>
+<p><strong>用枢轴量法求参数参数 <span class="arithmatex">\(\sigma^2\)</span> 的置信水平为 <span class="arithmatex">\(1-\alpha\)</span> 的置信区间</strong></p>
+<ul>
+<li><span class="arithmatex">\(\mu\)</span> 已知</li>
+</ul>
+<p>参数 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计为 <span class="arithmatex">\(\hat{\sigma^2} = \dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i - \mu)^2\)</span> 构造 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i - \mu)^2\)</span> 和参数 <span class="arithmatex">\(\sigma^2\)</span> 的函数</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;G = \dfrac{n\hat{\sigma^2}}{\sigma^2} = \dfrac{\displaystyle\sum_{i = 1}^n (X_i - \mu)^2}{\sigma^2}\sim \chi^2(n)\\
+对给定\alpha，取 a &lt; b，满足&amp;P(a\leq  \dfrac{\displaystyle\sum_{i = 1}^n (X_i - \mu)^2}{\sigma^2} \leq b) = 1-\alpha\\
+通常选取&amp;P(G &lt; a) = P(G &gt; b) = \dfrac{\alpha}{2}, 即 a = \chi_{1-\alpha /2}^2(n), b = \chi_{\alpha / 2}^2(n)\\
+由&amp;\chi_{1-\alpha /2}^2(n) \leq \dfrac{\displaystyle\sum_{i = 1}^n (X_i - \mu)^2}{\sigma^2} \leq \chi_{\alpha / 2}^2(n)\\
+求得置信区间为&amp;\bigg [\dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n)}, \dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n)}\bigg]\\
+\end{aligned}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mu\)</span> 未知</li>
+</ul>
+<p>由于 <span class="arithmatex">\(\mu\)</span> 未知，参数 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计为 <span class="arithmatex">\(S^2 = \dfrac{1}{n-1}\displaystyle\sum_{i = 1}^n(X_i - \overline{X})^2\)</span>，构造 <span class="arithmatex">\(S^2\)</span> 和 <span class="arithmatex">\(\sigma^2\)</span> 的函数</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\chi^2 = \dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\\
+类似地，可以得到置信区间为&amp;\bigg [\dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n-1)}, \dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n-1)}\bigg]
+\end{aligned}
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">待估参数</th>
+<th style="text-align: center;">待估参数</th>
+<th style="text-align: center;"><span class="arithmatex">\(G(\hat{\theta}, \theta)\)</span></th>
+<th style="text-align: center;">双侧置信区间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">均值 <span class="arithmatex">\(\mu\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma\)</span> 已知</td>
+<td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{(\overline{X}-\mu)}{\sigma/\sqrt{n}}\sim N(0,1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\([\overline{X}-\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}},\overline{X}+\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}}]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">均值 <span class="arithmatex">\(\mu\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma\)</span> 未知</td>
+<td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{(\overline{X}-\mu)}{S/\sqrt{n}}\sim t(n-1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\([\overline{X} - \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1),\overline{X} + \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1)]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">方差 <span class="arithmatex">\(\sigma\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu\)</span> 已知</td>
+<td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{1}{\sigma^2}\displaystyle\sum_{i=1}^n(X_i-\mu)^2\sim \chi^2(n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\bigg[\dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n)}, \dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n)}\bigg]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">方差 <span class="arithmatex">\(\sigma\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu\)</span> 未知</td>
+<td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\bigg[\dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n-1)}, \dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n-1)}\bigg]\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_23">两个正态总体下的参数区间估计</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">待估参数</th>
+<th style="text-align: center;">待估参数</th>
+<th style="text-align: center;"><span class="arithmatex">\(G(\hat{\theta}, \theta)\)</span></th>
+<th style="text-align: center;">双侧置信区间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">均值差 <span class="arithmatex">\(\mu_1-\mu_2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma_1,\sigma_2\)</span> 已知</td>
+<td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{\overline{X} - \overline{Y}-(\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{m} + \frac{\sigma_2^2}{n}}}\sim N(0,1)\)</span></td>
+<td style="text-align: center;">不背， 现推:sleepy:</td>
+</tr>
+<tr>
+<td style="text-align: center;">均值差 <span class="arithmatex">\(\mu_1 - \mu_2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma_1=\sigma_2=\sigma^2\)</span>，但 <span class="arithmatex">\(\sigma^2\)</span> 未知</td>
+<td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{\overline{X} - \overline{Y}-(\mu_1 - \mu_2)}{S_w\sqrt{\frac{1}{m} + \frac{1}{n}}}\sim t(m+n-2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\cdots\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">方差比 <span class="arithmatex">\(\dfrac{\sigma_1^2}{\sigma_2^2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu_1, \mu_2\)</span> 已知</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{\hat{\sigma^2_1}/\hat{\sigma_2^2}}{\sigma_1^2/\sigma_2^2}\sim F(m.n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\cdots\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">方差比 <span class="arithmatex">\(\dfrac{\sigma_1^2}{\sigma_2^2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu_1, \mu_2\)</span> 未知</td>
+<td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(m-1,n-1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\cdots\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_24">假设检验</h2>
+<ol>
+<li>根据问题提出原假设 <span class="arithmatex">\(H_0\)</span> 和备择假设 <span class="arithmatex">\(H_1\)</span>；</li>
+<li>选择统计量，在原假设成立的条件下确定统计量的分布；</li>
+<li>根据 <span class="arithmatex">\(\alpha\)</span> 确定统计量对应的临界值；</li>
+<li>根据样本观测值计算统计量的观测值与临界值比较，选择接受或拒绝原假设 <span class="arithmatex">\(H_0\)</span>；</li>
+</ol>
+<h3 id="_25">两类错误</h3>
+<ul>
+<li>弃真：当且仅当小概率事件 <span class="arithmatex">\(A\)</span> 发生时才拒绝 <span class="arithmatex">\(H_0\)</span>，<span class="arithmatex">\(P(A|H_0)\leq \alpha\)</span></li>
+<li>取伪：当 <span class="arithmatex">\(\alpha\)</span> 确定后，可以通过增加样本容量来减小取伪概率</li>
+</ul>
+<p><strong>显著性检验</strong> 只对第一类错误的概率加以控制，而不考虑犯第二类错误的概率，称犯第一类错误的概率 <span class="arithmatex">\(\alpha\)</span> 为 <strong>显著性水平</strong></p>
+<blockquote>
+<p>后果严重的作为原假设</p>
+</blockquote>
+<h3 id="_26">正态总体的假设检验</h3>
+<blockquote>
+<p>单边检验：拒绝域与备择假设的不等号方向一致</p>
+</blockquote>
+<h2 id="_27">渐进无偏估计</h2>
+<blockquote>
+<p>贝塞尔校正</p>
+</blockquote>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 是来自总体 <span class="arithmatex">\(X\)</span> 的样本，且 <span class="arithmatex">\(E(X) = \mu\)</span> 已知，<span class="arithmatex">\(D(X)=\sigma^2\)</span> 未知，则 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2\)</span> 是 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计。</p>
+<blockquote>
+<p><span class="arithmatex">\(\forall i=1,2,,\cdots,n\)</span>，有 <span class="arithmatex">\(E[(X_i-\mu)^2]=\sigma^2\)</span>，则</p>
+<div class="arithmatex">\[
+E\left(\dfrac{1}{n}\sum_{i = 1}^n(X_i-\mu)^2\right) = \dfrac{1}{n}E\left(\sum_{i = 1}^n(X_i-\mu)^2\right)=\dfrac{1}{n}n\sigma^2
+\]</div>
+</blockquote>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 是来自总体 <span class="arithmatex">\(X\)</span> 的样本，<span class="arithmatex">\(E(X) = \mu\)</span> 未知，<span class="arithmatex">\(D(X)=\sigma^2\)</span> 未知，则 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 不是 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计。</p>
+<blockquote>
+<div class="arithmatex">\[
+\begin{aligned}
+\dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i-\overline{X})^2 &amp;= \dfrac{1}{n}\sum_{i = 1}^n\left((X_i-\mu) + (\mu - \overline{X})\right)^2\\
+&amp;= \dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i-\mu)^2 + 2(\overline{X}-\mu)(\mu-\overline{X}) + (\mu-\overline{X})^2\\
+&amp;= \dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i-\mu)^2 -(\mu-\overline{X})^2\\
+&amp;\leq \sigma^2
+\end{aligned}
+\]</div>
+<p>当 <span class="arithmatex">\(\overline{X}\not=\mu\)</span> 时，<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 会造成对方差的低估，因此需要缩小分母。</p>
+</blockquote>
+<hr />
+<p>已知</p>
+<div class="arithmatex">\[
+\begin{aligned}
+E(\overline{X}) &amp;= E(\dfrac{1}{n}\sum_{i = 1}^nX_i) = \dfrac{1}{n}\sum_{i = 1}^nE(X_i) = \dfrac{1}{n}n\mu = \mu\\
+D(\overline{X}) &amp;= D(\dfrac{1}{n}\sum_{i = 1}^nX_i) = \dfrac{1}{n^2}D(\sum_{i = 1}^nX_i) = \dfrac{1}{n^2}n\sigma^2 = \dfrac{1}{n}\sigma^2\\
+E(\overline{X}^2) &amp;= E(\overline{X})^2 + D(\overline{X}) = \mu^2 + \dfrac{1}{n}\sigma^2\\
+\end{aligned}
+\]</div>
+<p>于是有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+E\left(\sum_{i = 1}^n(X_i-\overline{X})^2\right)
+&amp;= E(\sum_{i = 1}^nX_i^2-n\overline{X}^2)\\
+&amp;= \sum_{i = 1}^nE(X_i^2) - nE(\overline{X}^2)\\
+&amp;= n(\mu^2 + \sigma^2) - n(\mu^2 + \dfrac{\sigma^2}{n})\\
+&amp;= (n - 1)\sigma^2\\
+\end{aligned}
+\]</div>
+<p>最终得到 <span class="arithmatex">\(\dfrac{1}{n-1}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 是 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计。</p>
+<blockquote>
+<p>由于 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2=\dfrac{n}{n-1}\sigma^2\)</span>，且 <span class="arithmatex">\(\displaystyle\lim_{n\to\infty}\dfrac{n-1}{n}\sigma^2=\sigma^2\)</span>，则称 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 为 <span class="arithmatex">\(\sigma^2\)</span> 的渐进无偏估计。</p>
+</blockquote>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

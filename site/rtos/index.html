@@ -1,0 +1,2250 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ctf/">
+      
+      
+        <link rel="next" href="../linux/kernel/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>FreeRTOS - Euler0525@Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#freertos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Euler0525@Wiki" class="md-header__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Euler0525@Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FreeRTOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Euler0525@Wiki" class="md-nav__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Euler0525@Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ctf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeRTOS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeRTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="任务管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        队列管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="队列管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        写入函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        读出函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="中断管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二值信号量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计数信号量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断服务例程中使用队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        资源管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="资源管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        临界区与挂起
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        互斥量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        守护任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/kernel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Kernel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cuda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NVIDIA CUDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD Xilinx
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AMD Xilinx
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/zynq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZYNQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/versal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xilinx/aie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stm32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analog Devices Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../satellite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/asm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_18_6" id="__nav_18_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/pyqt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyQt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/verilog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verilog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="任务管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        队列管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="队列管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        写入函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        读出函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="中断管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二值信号量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计数信号量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断服务例程中使用队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        资源管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="资源管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        临界区与挂起
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        互斥量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        守护任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="freertos">FreeRTOS</h1>
+<h2 id="_1">任务管理</h2>
+<blockquote>
+<p><strong>在任何时刻，只有一个任务可以处于运行状态！</strong></p>
+<p>FreeRTOS 是一个 <strong>抢占式</strong> 的实时多任务系统，其任务调度器也是 <strong>抢占式</strong> 的。高优先级的任务可以打断低优先级任务的运行而取得 CPU 的使用权，这样就保证了那些紧急任务的运行，我们就可以为那些对实时性要求高的任务设置一个很高的优先级。高优先级的任务执行完成以后重新把 CPU 的使用权归还给低优先级的任务。
+</p>
+</blockquote>
+<p><strong>任务函数</strong> 一般包含一个死循环：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TaskFunction</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">pvParameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">iVariableExample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// 任务实例独属的变量</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">for</span><span class="p">(;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="cm">/* 完成任务功能 */</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">vTaskDelete</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w">  </span><span class="c1">// 跳出死循环，删除任务(传入NULL默认删除当前任务)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_2">创建任务</h3>
+<p><strong><code>xTaskCreate()</code> 函数</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// task.h</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">BaseType_t</span><span class="w"> </span><span class="nf">xTaskCreate</span><span class="p">(</span><span class="w"> </span><span class="n">TaskFunction_t</span><span class="w"> </span><span class="n">pxTaskCode</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pcName</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="n">configSTACK_DEPTH_TYPE</span><span class="w"> </span><span class="n">usStackDepth</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">                        </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pvParameters</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">                        </span><span class="n">UBaseType_t</span><span class="w"> </span><span class="n">uxPriority</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">                        </span><span class="n">TaskHandle_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pxCreatedTask</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">PRIVILEGED_FUNCTION</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cm">/*</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="cm"> * @return pdTRUE  任务创建成功</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm">           errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY 内存堆空间不足，无法创建任务</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="cm"> */</span>
+</code></pre></div>
+<ul>
+<li><code>pvTaskCode</code>：指向任务实现函数的指针（函数名）</li>
+</ul>
+<blockquote>
+<p>任务通常是一个永不退出的 C 语言函数，用死循环实现。</p>
+</blockquote>
+<ul>
+<li><code>pcName</code>：（FreeRTOS 不使用）用于辅助调试</li>
+<li><code>usStackDepth</code>：任务创建时，内核为它分配的栈空间大小，单位为字(word)</li>
+</ul>
+<blockquote>
+<p>在 32 位微型处理器中，一个字由 4 字节组成。比如 32 位宽的栈空间，<code>usStackDepth=100</code>，则分配 <span class="arithmatex">\(400B\)</span> 的栈空间。</p>
+<p>应用程序在 <code>FreeRTOSConfig.h</code> 文件中定义常量 <code>configMINIMAL_STACK_SIZE</code> 决定空闲任务的栈空间大小。</p>
+</blockquote>
+<ul>
+<li><code>pvParameters</code>：传递到任务中的值</li>
+<li><code>uxPriority</code>：决定执行任务的优先级，从最低 <code>0</code> 到最高 <code>configMAX_PRIORITIES-1</code></li>
+</ul>
+<blockquote>
+<p><code>configMAX_PRIORITIES</code> 在 <code>FreeRTOSConfig.h</code> 中定义，值越大，内核消耗的内存空间越多。</p>
+<ul>
+<li>
+<p>如果 <code>uxPriority</code> 大于 <code>configPRIORITIES</code>，则自动封顶为最大合法值。</p>
+</li>
+<li>
+<p>如果多个任务优先级相同，调度器会让这些任务轮流执行，每个任务执行一个时间片，在时间片起始时刻进入运行态，在时间片结束时刻退出运行态；在 <code>FreeRTOSConfig.h</code> 文件中定义的 <code>configTICK_RATE_HZ</code> 表示 tick 的频率，时间片长度为 <code>1/configTICK_RATE_HZ</code>。</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>pxCreatedTask</code>：传出任务的句柄，在 API 调用中对创建出的任务进行引用（比如改变优先级、删除任务）</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskStartScheduler</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">PRIVILEGED_FUNCTION</span><span class="p">;</span><span class="w">  </span><span class="c1">// 启动任务调度器，任务开始执行</span>
+</code></pre></div>
+<hr />
+<p>代码示例见 FreeRTOS 实时内核使用指南 P10~20.</p>
+<h3 id="_3">任务状态</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_task_state_machine.webp" alt="rtos_task_state_machine" width="60%" height="60%" /></p>
+<center> <small> Full task state machine </small> </center>
+
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/*</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cm"> * Blocking API function e.g.</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cm"> * 代替（忙等待）的空循环，让任务在延迟期间进入阻塞态，可以去调度其它任务</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="cm"> * @param xTicksToDelay 延迟tick周期数 = 延迟时间 / portTICK_RATE_MS</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cm"> */</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskDelay</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="n">xTicksToDelay</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">PRIVILEGED_FUNCTION</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">xTaskDelayUntil</span><span class="p">(</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pxPreviousWakeTime</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="n">xTimeIncrement</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<p>代码示例见 FreeRTOS 实时内核使用指南 P24, 28, 29~30.</p>
+<p><strong><code>vApplacationIdleHook</code> 函数</strong></p>
+<blockquote>
+<p><code>FreeRTOSConfig.h</code> 中的常量 <code>configUSE_IDLE_HOOK</code> 定义为 1 时，Hook 函数才会被调用。</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vApplacationIdleHook</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w">  </span><span class="c1">// 函数名固定，无参数，无返回值</span>
+</code></pre></div>
+<p><strong><code>vTaskPrioritySet</code> 函数</strong></p>
+<p>用于在调度器启动后改变任务的优先级。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskPrioritySet</span><span class="p">(</span><span class="n">xTaskHandle</span><span class="w"> </span><span class="n">pxTask</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="n">uxNewPriority</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><code>pxTask</code>：任务句柄，<code>pxTask=NULL</code> 表示自身</li>
+<li><code>uxNewPriority</code>：目标优先级</li>
+</ul>
+<p><strong><code>vTaskPriorityGet</code> 函数</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/*</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm"> * @return 返回被查询任务的优先级,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cm"> */</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskPriorityGet</span><span class="p">(</span><span class="n">xTaskHandle</span><span class="w"> </span><span class="n">pxTask</span><span class="p">);</span>
+</code></pre></div>
+<p><code>vTaskDelete</code> 函数</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/*</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cm"> * 内核为任务分配的内存空间会在删除后自动回收，任务1自己占用的内存或资源需要应用程序显式释放</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cm"> * @param pxTaskDelete 待删除任务句柄</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cm"> */</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskDelete</span><span class="p">(</span><span class="n">xTaskHandle</span><span class="w"> </span><span class="n">pxTaskToDelete</span><span class="p">);</span>
+</code></pre></div>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P36~37, 39~40.</p>
+<h2 id="_4">队列管理</h2>
+<h3 id="_5">创建队列</h3>
+<p>创建队列时，RTOS 从堆空间中分配内存空间，如果堆中空间不足，函数返回 <code>NULL</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/*</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cm"> * @param  uxQueueLength 队列深度</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cm"> * @param  uxItemSize    队列中数据单元的长度</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="cm"> * @return NULL 堆空间不足;非NULL，返回队列句柄</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cm"> */</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">xQueueHandle</span><span class="w"> </span><span class="nf">xQueueCreate</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="n">uxQueueLength</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="n">uxItemSize</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="_6">写入函数</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">/*</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cm"> * @param  xQueue        目标队列句柄，xQueueCreate函数的返回值</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cm"> * @param  pvItemToQueue 发送数据的指针（按uxItemSize复制对应长度）</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cm"> * @param  xTicksToWait  阻塞超时时间，队列满时，任务处于阻塞态等待队列空间有效的最长等待时间</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="cm"> *                       xTicksToWait = time / portTICK_RATE_MS</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="cm"> * @return pdPass        超时前数据成功入队</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="cm"> *         errQUEUE_FULL 队列已满                </span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="cm"> */</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xQueueSendToFront</span><span class="p">(</span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pvItemToQueue</span><span class="p">,</span><span class="w"> </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTicksToWait</span><span class="p">);</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xQueueSendToBack</span><span class="p">(</span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pvItemToQueue</span><span class="p">,</span><span class="w"> </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTicksToWait</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="_7">读出函数</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cm">/*</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="cm"> * 出队</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="cm"> * @return pdPASS         读取成功</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="cm"> *         errQUEUE_EMPTY 队列已空，读取失败  </span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="cm"> */</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xQueueReceive</span><span class="p">(</span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">,</span><span class="w">       </span><span class="c1">// 被读队列的句柄</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pvBuffer</span><span class="p">,</span><span class="w">     </span><span class="c1">// 接收缓存指针（指向的内存空间等于数据单元大小）</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">                            </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTicksToWait</span><span class="w">  </span><span class="c1">// 阻塞超时时间</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">                           </span><span class="p">);</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1">// 与出队不同，不删除被接收的数据单元</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">BaseType_t</span><span class="w"> </span><span class="nf">xQueuePeek</span><span class="p">(</span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pvBuffer</span><span class="p">,</span><span class="w"> </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTicksToWait</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<ul>
+<li><em>如果设定 <code>xTicksToWait=portMAX_DELAY</code>，并且在文件 <code>FreeRTOSConfig.h</code> 中设定 <code>INCLUDE_vTaskSuspend=1</code>，则阻塞等待无时间限制。</em></li>
+</ul>
+</blockquote>
+<h3 id="_8">查询函数</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cm">/*</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="cm"> * @param  xQueue 被查询队列的句柄</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="cm"> * @return 返回队列中保存的数据单元的个数</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="cm"> */</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">uxQueueMessageWaiting</span><span class="p">(</span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<ul>
+<li><code>taskYIELD();</code> 函数用于立刻进行任务切换，不必等到时间片耗尽。</li>
+</ul>
+<p>例如，两个任务的优先级相同，一个任务调用了 <code>taskYIELD();</code> 函数，立刻由运行态进入就绪态，另一个任务进入运行态。</p>
+<hr />
+<p>代码示例见 FreeRTOS 实时内核使用指南 P54~<strong>65</strong></p>
+<h2 id="_9">中断管理</h2>
+<h3 id="_10">二值信号量</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_intr_binary_semaphore.webp" alt="rtos_intr_binary_semaphore" width="50%" height="50%"/></p>
+<center> <small> Using a binary semaphore to synchronize a task with an interrupt </small> </center>
+
+<p><strong>创建二值信号量</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cm">/*</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cm"> * @param xSemaphore 创建的信号量，直接传入值，而不是传址</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cm"> */</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vSemaphoreCreateBinary</span><span class="p">(</span><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="n">xSemaphore</span><span class="p">);</span>
+</code></pre></div>
+<p><strong><code>xSemaphoreTake</code> 函数</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">/*</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cm"> * @param  xSemaphore   获取的信号量</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="cm"> * @param  xTicksToWait 阻塞超时时间（任务进入阻塞态等待信号量有效的最长时间）</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="cm"> *                      = time / portTICK_RATE_MS</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="cm"> * @return pdPASS       成功获得信号量</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="cm"> *         pdFALSE      未获得信号量  </span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="cm"> */</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xSemaphoreTake</span><span class="p">(</span><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="n">xSemaphore</span><span class="p">,</span><span class="w"> </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTickToWait</span><span class="p">);</span>
+</code></pre></div>
+<p><strong><code>xSemaphoreGiveFromISR</code> 函数</strong></p>
+<p>除了互斥信号量外，其它类型的信号量可通过调用 <code>xSemaphoreGiveFromISR</code> 给出</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cm">/*</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cm"> * @param xSemaphore                给出的信号量</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="cm"> * @param pxHigherPriorityTaskWoken 调用本函数会使一个任务退出阻塞态，如果该任务优先级高于先前被中断的任务，pxHigherPriorityTaskWoken=pdTRUE，在中断退出前进行一次上下文切换</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="cm"> * @return pdPASS 调用成功</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="cm"> *         pdFALL 信号量已经有效，无法重复给出</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="cm"> */</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xSemaphoreGiveFromISR</span><span class="p">(</span><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="n">xSemaphore</span><span class="p">,</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="o">*</span><span class="n">pxHigherPriorityTaskWoken</span><span class="p">);</span>
+</code></pre></div>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P76~79.</p>
+<h3 id="_11">计数信号量</h3>
+<p>一个二值信号量最多只可以锁存一个中断事件（0/1），在锁存的事件未被处理之前，如果还有中断发生，后续的中断事件将会丢失。采用计数的方式代替二值信号量，丢中断的情况可以避免。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_intr_count_semaphore.webp" alt="rtos_intr_count_semaphore" width="50%" height="50%" /></p>
+<center> <small> Using a counting semaphore to 'count' events </small> </center>
+
+<ul>
+<li>
+<p><strong>事件计数</strong>：如图，每次事件发生时，中断服务例程都会 <code>Give</code> 一次信号量，计数值加 1.延迟处理任务每处理一个任务都会 <code>Take</code> 一次信号量，计数值减 1,。最终 <strong>信号量的计数值等于已发生事件与已处理事件数目的差值</strong>。</p>
+</li>
+<li>
+<p><strong>资源管理</strong>：用信号量的计数值表示可用资源的数目，可以实现资源管理（详见下节）。</p>
+</li>
+</ul>
+<p><strong>创建计数信号量</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cm">/*</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cm"> * @param uxMaxCount     最大计数值（信号量队列的深度）</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="cm"> * @param uxInitialCount 初始计数值</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="cm"> *                       - 事件计数：0  资源管理：uxMaxCount</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="cm"> * @return NULL  堆空间不足，信号量分配内存失败</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="cm"> *         !NULL 信号量创建成功，返回信号量句柄</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="cm"> */</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="nf">xSemaphoreCreateCounting</span><span class="p">(</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="n">uxMaxCount</span><span class="p">,</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="n">uxInitialCount</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">);</span>
+</code></pre></div>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P85~86</p>
+<h3 id="_12">中断服务例程中使用队列</h3>
+<p>信号量用于事件通信，队列不仅可以事件通信，还可以传递数据。</p>
+<p><code>xQueueSendToFrontFromISR, xQueueSendToBackFromISR, xQueueReceiveFromISR</code> 是中断安全版本，用于中断服务例程中，函数在 ISR 中被调用时，不会等待队列空间可用或处理队列满的情况，因此不需要指定阻塞超时时间 <code>xTicksToWait</code>；相反，它会立即返回一个状态码，指示是否成功发送消息或是否需要进行上下文切换。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cm">/*</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cm"> * @param xQueue        目标队列句柄，xQueueCreate函数的返回值</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cm"> * @param pvItemToQueue 发送数据的指针（按uxItemSize复制对应长度）</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="cm"> * @param pxHigherPriorityTaskWoken 调用本函数会使一个任务退出阻塞态，如果该任务优先级高于先前被中断的任务，pxHigherPriorityTaskWoken=pdTRUE，在中断退出前进行一次上下文切换</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="cm"> * @return pdPass        超时前数据成功入队</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="cm"> *         errQUEUE_FULL 队列已满                </span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="cm"> */</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xQueueSendToFrontFromISR</span><span class="p">(</span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pvItemToQueue</span><span class="p">,</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="o">*</span><span class="n">pxHigherPriorityTaskWoken</span><span class="p">);</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xQueueSendToBackFromISE</span><span class="p">(</span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pvItemToQueue</span><span class="p">,</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="o">*</span><span class="n">pxHigherPriorityTaskWoken</span><span class="p">);</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="cm">/*</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="cm"> * @return pdPASS         读取成功</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="cm"> *         errQUEUE_EMPTY 队列已空，读取失败  </span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="cm"> */</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xQueueReceiveFromISR</span><span class="p">(</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="n">xQueueHandle</span><span class="w"> </span><span class="n">xQueue</span><span class="p">,</span><span class="w">       </span><span class="c1">// 被读队列的句柄</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pvBuffer</span><span class="p">,</span><span class="w">     </span><span class="c1">// 接收缓存指针（指向的内存空间等于数据单元大小）</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTicksToWait</span><span class="w">  </span><span class="c1">// 阻塞超时时间</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="p">);</span>
+</code></pre></div>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P89</p>
+<h2 id="_13">资源管理</h2>
+<h3 id="_14">临界区与挂起</h3>
+<p><strong>基本临界区</strong></p>
+<p>临界区会关掉中断（关掉优先级低于 <code>configMAX_INTERRUPT_PRIORITY</code> 的中断）在 <code>ENTER</code> 与 <code>EXIT</code> 之间执行时不会切换到其它任务</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">taskENTER_CRITICAL</span><span class="p">();</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cm">/* Critical Sections/Regions */</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">taskEXIT_CRITICAL</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>挂起</strong></p>
+<p>如果一个临界区太长，不适合简单地关中断实现，可以考虑使用挂起调度器。</p>
+<p>挂起可以停止上下文切换而不用关中断，如果某个中断在调度器挂起过程中要求上下文切换，则这个请求也会被挂起，直到调度器被重新唤醒。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskSuspendAll</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w">  </span><span class="c1">// 挂起调度器</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="cm">/*</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="cm"> * @return 如果一个挂起的上下文切换请求在xTaskResumeAll()返回前执行，返回pdTRUE，否则返回pdFALSE</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="cm"> */</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xTaskResumeAll</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="_15">互斥量</h3>
+<blockquote>
+<p><em>感觉类似于多线程编程中的互斥锁</em></p>
+<p>互斥量是一种特殊的二值信号量，单词 MUTEX 来源与 "MUTual EXclusion"</p>
+<ul>
+<li>用于互斥：用后必须归还；</li>
+<li>用于同步：完成同步后丢弃；</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_mutex.webp" alt="rtos_mutex" width="90%" height="90%" /></p>
+<center> <small> Mutual exclusion implemented using a mutex </small> </center>
+
+<p><code>xSemaphoreCreateMutex</code> 函数</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="nf">xSemaphoreCreateMutex</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"> </span><span class="c1">// 创建成功则返回互斥量的句柄，否则返回NULL</span>
+</code></pre></div>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P108~111.</p>
+<h3 id="_16">守护任务</h3>
+<blockquote>
+<p><strong>优先级反转</strong></p>
+<p>低优先级任务拥有互斥量的时候，优先级会被临时提高，提高到和高优先级任务相同的优先级。如果另一个高优先级任务也想获取这个信号量，必须要等待互斥量被释放，否则高优先级任务将不能获取这个互斥量，并且那个拥有互斥量的低优先级任务也永远不会被剥夺。</p>
+</blockquote>
+<p>为了避免优先级反转和死锁，规定守护任务是对某个资源具有唯一所有权的任务。</p>
+<p>只有守护任务才可以直接访问其守护的资源，并且其它任务要访问时只能间接通过守护任务提供服务。</p>
+<h2 id="_17">内存管理</h2>
+<blockquote>
+<p>标准的 <code>malloc()</code> 函数和 <code>free()</code> 函数可能会有以下问题：</p>
+<ul>
+<li>在小型嵌入式系统中不可用；</li>
+<li>具体实现较大，占用代码空间；</li>
+<li>不具备线程安全特性；</li>
+<li>每次调用的时间开销可能不同；</li>
+<li>可能会产生内存碎片；</li>
+<li>使链接器配置复杂；</li>
+</ul>
+</blockquote>
+<p>当内核请求内存时，调用 <code>pvPortMalloc()</code> 函数而不是 <code>malloc()</code> 函数；当释放内存时，调用 <code>vPortFree()</code> 函数而不是直接调用 <code>free()</code> 函数。</p>
+<p>代码详见 <code>FreeRTOS\Source\portable\MemMang\heap_1,2,3.c</code>，FreeRTOS 实时内核使用指南 P123~126.</p>
+<h2 id="_18">参考资料</h2>
+<ul>
+<li>FreeRTOS 实时内核使用指南</li>
+<li>
+<p>Mastering the FreeRTOS™ Real Time Kernel</p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/qq_61672347/category_11891132.html">qq_61672347 的博客—FreeRTOS</a></p>
+</li>
+<li><a href="https://blog.csdn.net/zhzht19861011/category_9265965.html?spm=1001.2014.3001.5482">朱工的专栏—FreeRTOS 高级篇</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

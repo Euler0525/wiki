@@ -1,0 +1,61 @@
+site_name: Euler0525@Wiki
+
+nav:
+  - Home: index.md
+  - Driver: driver.md
+  - ZYNQ: zynq.md
+  - STM32: stm32.md
+  - SoC: soc.md
+  - Bug: bug.md
+  - FreeRTOS: rtos.md
+  - Analog Devices Tutorials: analog.md
+  - Satellite: satellite.md
+  - Maths: maths.md
+  - Algorithms: algorithms.md
+  - Apps: apps.md
+  - Configuation: config.md
+  - Programming:
+      - ASM: programming/asm.md
+      - C: programming/c.md
+      - LaTeX: programming/latex.md
+      - MATLAB: programming/matlab.md
+      - Python: programming/python.md
+      - Verilog: programming/verilog.md
+  - AI: ai.md
+  - Links: links.md
+  - About: about.md
+
+theme:
+  name: material
+  icon:
+  admonition:
+    note: octicons/tag-16
+    abstract: octicons/checklist-16
+    info: octicons/info-16
+    tip: octicons/squirrel-16
+    success: octicons/check-16
+    question: octicons/question-16
+    warning: octicons/alert-16
+    failure: octicons/x-circle-16
+    danger: octicons/zap-16
+    bug: octicons/bug-16
+    example: octicons/beaker-16
+    quote: octicons/quote-16
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+# Mathjax
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

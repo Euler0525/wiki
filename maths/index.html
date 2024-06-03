@@ -113,10 +113,26 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
+                    <a href="../algorithms/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Algorithms</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../ai/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">AI</span>
+                    </a>
+                    <meta property="position" content="3">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
                     <a href="../about/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">About</span>
                     </a>
-                    <meta property="position" content="2">
+                    <meta property="position" content="4">
                 </li>
                 
                     
@@ -127,7 +143,7 @@
     <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
         <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
     </a>
-    <meta property="position" content="3">
+    <meta property="position" content="5">
 </li>
                     
             </ul>
@@ -189,6 +205,44 @@
         
             <a class="
 
+    terminal-mkdocs-side-nav-item" href="../algorithms/">Algorithms</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../ai/">AI</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
     terminal-mkdocs-side-nav-item" href="../about/">About</a>
         
     
@@ -202,7 +256,7 @@
 <nav>
     <ul>
         <li><a href="#maths">Maths</a></li>
-        <li><a href="#integration">Integration</a></li>
+        <li><a href="#integration">Integration</a></li><li><a href="#differential-equation">Differential Equation</a></li>
     </ul>
 </nav>
 </aside>
@@ -212,6 +266,41 @@
 <h2 id="integration">Integration</h2>
 <div class="arithmatex">\[
 \lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{n+k}} = \lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{1+\frac{k}{n}}}=\int_0^1{\dfrac{1}{1+x}}dx=\ln2.
+\]</div>
+<h2 id="differential-equation">Differential Equation</h2>
+<ul>
+<li><span class="arithmatex">\(\dfrac{dy}{dx}=f(x)g(y)\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\int{\dfrac{dy}{g(y)}=\int{f(x)dx}+C}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\dfrac{dy}{dx}=f(x,y)\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\text{let}\ y = ux\\
+f(x,y) &amp;= f(x,ux)=\varphi(u)\\
+\varphi(u) &amp;= u+x\dfrac{du}{dx}\\
+\int \dfrac{du}{\varphi(u)-u}&amp;=\int \dfrac{dx}{x} + C=\ln|x| + C\\
+\Phi(u)&amp;=\Phi(\dfrac{y}{x}) = \ln|x| + C\\
+\end{aligned}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(y'+p(x)y=q(x)\)</span></li>
+</ul>
+<div class="arithmatex">\[
+y = \dfrac{\displaystyle\int e^{\int p(x)dx} q(x)dx+C}{e^{\int p(x)dx}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(y'+p(x)y=q(x)y^n\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;y'y^{-n}+p(x)y^{1-n} = q(x)\\
+\text{let}\ &amp;z = y^{1-n},\dfrac{dz}{dx}=(1-n)\dfrac{dy}{dx}y^{-n}\\
+&amp;\dfrac{1}{1-n}\dfrac{dz}{dx}+p(x)z=q(x)
+\end{aligned}
 \]</div>
 </section>
 

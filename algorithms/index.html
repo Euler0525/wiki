@@ -18,7 +18,7 @@
 
     
  
-<title>About - Euler0525@Wiki</title>
+<title>Algorithms - Euler0525@Wiki</title>
 
 
 <link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -113,7 +113,7 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
-                    <a href="../algorithms/" class="menu-item " property="item" typeof="WebPage">
+                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
                         <span property="name">Algorithms</span>
                     </a>
                     <meta property="position" content="2">
@@ -129,7 +129,7 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
-                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
+                    <a href="../about/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">About</span>
                     </a>
                     <meta property="position" content="4">
@@ -204,11 +204,9 @@
     
     
         
-        
-            <a class="
+        <span class="
 
-    terminal-mkdocs-side-nav-item" href="../algorithms/">Algorithms</a>
-        
+    terminal-mkdocs-side-nav-item--active">Algorithms</span>
     
     
     
@@ -242,9 +240,11 @@
     
     
         
-        <span class="
+        
+            <a class="
 
-    terminal-mkdocs-side-nav-item--active">About</span>
+    terminal-mkdocs-side-nav-item" href="../about/">About</a>
+        
     
     
     
@@ -255,14 +255,89 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#about">About</a></li>
-        
+        <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#graph-algorithms">Graph Algorithms</a></li><li><a href="#reference">Reference</a></li>
     </ul>
 </nav>
 </aside>
             <main id="terminal-mkdocs-main-content">
 <section id="mkdocs-terminal-content">
-    <h1 id="about">About</h1>
+    <h1 id="algorithms">Algorithms</h1>
+<h2 id="graph-algorithms">Graph Algorithms</h2>
+<h3 id="single-source-shortest-paths">Single-Source Shortest Paths</h3>
+<h4 id="dijkstras-algorithm">Dijkstra's Algorithm</h4>
+<p>We assume that <span class="arithmatex">\(w(u, v) \geq 0\)</span> for each edge <span class="arithmatex">\((u, v)\in E\)</span></p>
+<pre><code class="language-pseudocode">DIJKSTRA. (G,w,s)
+1 INITIALIZE-SINGLE-SOURCE(G,s)
+2 S=∅
+3 Q=G.V  // Q: min-priority queue
+4 while Q≠∅
+5   u=D EXTRACT-MIN(Q)
+6   S=S∪{u}
+7   for each vertex v∈G.Adj[u]
+8       RELAX(u,v,w)
+</code></pre>
+<pre><code class="language-c++">void dijkstra(vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; &amp;graph, int src) {
+    int n = graph.size();
+    vector&lt;int&gt; dist(n, INT_MAX);
+    // Sorted by distance, the vertices with smaller distance are ranked first.
+    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;,
+                   greater&lt;pair&lt;int, int&gt;&gt;&gt;
+        pq; // Store the vertices to be processed and their distance from the
+            // source point
+
+    pq.push({0, src});
+    dist[src] = 0;
+
+    // O((V+E)logV)
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        pq.pop();
+
+        for (auto it : graph[u]) {
+            int v = it.first;
+            int weight = it.second;
+
+            if (dist[v] &gt; dist[u] + weight) {
+                dist[v] = dist[u] + weight;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    for (int i = 0; i &lt; n; ++i) {
+        cout &lt;&lt; i &lt;&lt; &quot;\t&quot; &lt;&lt; dist[i] &lt;&lt; endl;
+    }
+}
+
+</code></pre>
+<pre><code class="language-c++">// Test Code
+#include &lt;climits&gt; // for INT_MAX
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;utility&gt; // for pair
+#include &lt;vector&gt;
+
+using namespace std;
+
+void dijkstra(vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; &amp;graph, int src);
+
+int main() {
+    // Adjacency table
+    vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; graph = {
+        {{1, 4}, {2, 3}}, {{2, 1}, {3, 2}}, {{3, 4}}, {}};
+    int src = 0;
+    dijkstra(graph, src);
+
+    return 0;
+}
+
+void dijkstra(vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; &amp;graph, int src) {
+    // ...
+}
+</code></pre>
+<h2 id="reference">Reference</h2>
+<p>[1] C. E. Leiserson, T. H. Cormen, R. L. Rivest, and C. Stein, "Introduction to Algorithms, 3rd Edition," MIT Press, 2009.</p>
 </section>
 
             </main>

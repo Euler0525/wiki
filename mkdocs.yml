@@ -2,9 +2,10 @@ site_name: Euler0525@Wiki
 
 nav:
   - Home: index.md
-  - Maths: maths.md
-  - Algorithms: algorithms.md
   - AI: ai.md
+  - Algorithms: algorithms.md
+  - Maths: maths.md
+  - Verilog: verilog.md
   - About: about.md
 
 theme:

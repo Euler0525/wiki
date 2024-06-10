@@ -1,4 +1,4 @@
-## Verilog
+# Verilog
 
 ## [Adder100i](https://hdlbits.01xz.net/wiki/Adder100i)
 
@@ -47,4 +47,3 @@ module adder (
 endmodule //adder
 
 ```
-

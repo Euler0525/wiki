@@ -4,9 +4,12 @@ nav:
   - Home: index.md
   - AI: ai.md
   - Algorithms: algorithms.md
+  - Configuation: config.md
   - Maths: maths.md
-  - Python: python.md
-  - Verilog: verilog.md
+  - Programming:
+    - C: programming/c.md
+    - Python: programming/python.md
+    - Verilog: programming/verilog.md
   - About: about.md
 
 theme:

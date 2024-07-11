@@ -436,9 +436,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimization" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimization
+      最优化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      表格
     </span>
   </a>
   
@@ -549,9 +558,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimization" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimization
+      最优化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      表格
     </span>
   </a>
   
@@ -573,7 +591,29 @@
 
 
 <h1 id="latex"><span class="arithmatex">\(\LaTeX\)</span></h1>
-<h3 id="optimization">Optimization</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\usepackage</span><span class="nb">{</span>url<span class="nb">}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\usepackage</span><span class="nb">{</span>ctex<span class="nb">}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\usepackage</span><span class="nb">{</span>tabu<span class="nb">}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">\usepackage</span><span class="nb">{</span>float<span class="nb">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">\usepackage</span><span class="nb">{</span>amsthm<span class="nb">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">\usepackage</span><span class="nb">{</span>xcolor<span class="nb">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">\usepackage</span><span class="nb">{</span>array<span class="nb">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">\usepackage</span><span class="nb">{</span>fancyhdr<span class="nb">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">\usepackage</span><span class="nb">{</span>listings<span class="nb">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">\usepackage</span><span class="nb">{</span>multirow<span class="nb">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">\usepackage</span><span class="nb">{</span>tabularx<span class="nb">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">\usepackage</span><span class="nb">{</span>longtable<span class="nb">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">\usepackage</span><span class="nb">{</span>subcaption<span class="nb">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">\usepackage</span><span class="nb">{</span>stackengine<span class="nb">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">\usepackage</span><span class="nb">{</span>amsmath, amssymb<span class="nb">}</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">\usepackage</span><span class="nb">{</span>titletoc, hyperref<span class="nb">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">\usepackage</span><span class="na">[compress]</span><span class="nb">{</span>cite<span class="nb">}</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="k">\usepackage</span><span class="na">[dvipdfm]</span><span class="nb">{</span>geometry<span class="nb">}</span>
+</code></pre></div>
+<h3 id="_1">最优化</h3>
 <div class="arithmatex">\[
 \begin{equation}
 \begin{aligned} \label{P}
@@ -585,15 +625,62 @@
 \end{aligned}
 \end{equation}
 \]</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span> <span class="k">\label</span><span class="nb">{</span>P<span class="nb">}</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">&amp;</span><span class="k">\max_</span><span class="nb">{</span><span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>, q<span class="nb">}</span><span class="k">\quad</span> <span class="k">\log_</span>2<span class="nb">{</span>(1+<span class="k">\dfrac</span><span class="nb">{</span>|(<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>IU<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>Q<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>H<span class="nb">}_{</span>AI<span class="nb">}</span>+<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>AU<span class="nb">}</span>)<span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>|<span class="nb">^</span>2<span class="nb">}{</span><span class="k">\sigma_</span><span class="nb">{</span>U<span class="nb">}^</span>2<span class="nb">}</span>)<span class="nb">}</span> - <span class="k">\log_</span>2<span class="nb">{</span>(1+<span class="k">\dfrac</span><span class="nb">{</span>|(<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>IE<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>Q<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>H<span class="nb">}_{</span>AI<span class="nb">}</span>+<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>AE<span class="nb">}</span>)<span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>|<span class="nb">^</span>2<span class="nb">}{</span><span class="k">\sigma_</span><span class="nb">{</span>E<span class="nb">}^</span>2<span class="nb">}</span>)<span class="nb">}</span><span class="k">\\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">&amp;</span><span class="k">\begin</span><span class="nb">{</span>array<span class="nb">}{</span>r@<span class="nb">{</span><span class="k">\quad</span><span class="nb">}</span>r@<span class="nb">{}</span>l@<span class="nb">{</span><span class="k">\quad</span><span class="nb">}</span>l<span class="nb">}</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">\text</span><span class="nb">{</span>s.t.<span class="nb">}</span> <span class="nb">&amp;</span>||<span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>||<span class="nb">^</span>2<span class="k">\leq</span> P<span class="nb">_{</span>AP<span class="nb">}</span><span class="k">\\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nb">&amp;</span>|q<span class="nb">_</span>n|=1, <span class="k">\forall</span> n<span class="k">\\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">\end</span><span class="nb">{</span>array<span class="nb">}</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span> <span class="k">\label</span><span class="nb">{</span>P<span class="nb">}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">&amp;</span><span class="k">\max_</span><span class="nb">{</span><span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>, q<span class="nb">}</span><span class="k">\quad</span> <span class="k">\log_</span>2<span class="nb">{</span>(1+<span class="k">\dfrac</span><span class="nb">{</span>|(<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>IU<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>Q<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>H<span class="nb">}_{</span>AI<span class="nb">}</span>+<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>AU<span class="nb">}</span>)<span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>|<span class="nb">^</span>2<span class="nb">}{</span><span class="k">\sigma_</span><span class="nb">{</span>U<span class="nb">}^</span>2<span class="nb">}</span>)<span class="nb">}</span> - <span class="k">\log_</span>2<span class="nb">{</span>(1+<span class="k">\dfrac</span><span class="nb">{</span>|(<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>IE<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>Q<span class="nb">}</span><span class="k">\mathbf</span><span class="nb">{</span>H<span class="nb">}_{</span>AI<span class="nb">}</span>+<span class="k">\mathbf</span><span class="nb">{</span>h<span class="nb">}_{</span>AE<span class="nb">}</span>)<span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>|<span class="nb">^</span>2<span class="nb">}{</span><span class="k">\sigma_</span><span class="nb">{</span>E<span class="nb">}^</span>2<span class="nb">}</span>)<span class="nb">}</span><span class="k">\\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">&amp;</span><span class="k">\begin</span><span class="nb">{</span>array<span class="nb">}{</span>r@<span class="nb">{</span><span class="k">\quad</span><span class="nb">}</span>r@<span class="nb">{}</span>l@<span class="nb">{</span><span class="k">\quad</span><span class="nb">}</span>l<span class="nb">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">\text</span><span class="nb">{</span>s.t.<span class="nb">}</span> <span class="nb">&amp;</span>||<span class="k">\mathbf</span><span class="nb">{</span>w<span class="nb">}</span>||<span class="nb">^</span>2<span class="k">\leq</span> P<span class="nb">_{</span>AP<span class="nb">}</span><span class="k">\\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="nb">&amp;</span>|q<span class="nb">_</span>n|=1, <span class="k">\forall</span> n<span class="k">\\</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">\end</span><span class="nb">{</span>array<span class="nb">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</code></pre></div>
+<h2 id="_2">表格</h2>
+<ul>
+<li>合并单元格</li>
+<li>长表格自动分页</li>
+<li>单元格内自动换行</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\setlength</span><span class="nb">{</span><span class="k">\tabcolsep</span><span class="nb">}{</span>2pt<span class="nb">}</span>           <span class="c">% 表格列间隔</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">\setlength\LTleft</span><span class="nb">{</span>-1in<span class="nb">}</span>               <span class="c">% 距页面左边界距离</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\setlength\LTright</span><span class="nb">{</span>-1in plus 1 fill<span class="nb">}</span>  <span class="c">% 距页面右边界距离</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">{</span><span class="k">\small</span>                               <span class="c">% 表格内字号</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">\begin</span><span class="nb">{</span>longtable<span class="nb">}</span> <span class="nb">{</span>|c|c|p<span class="nb">{</span>5cm<span class="nb">}</span>|p<span class="nb">{</span>5cm<span class="nb">}</span>|l|<span class="nb">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="k">\caption</span><span class="nb">{</span>Title<span class="nb">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="k">\label</span><span class="nb">{</span>table:sheet<span class="nb">}</span>                                                                                                   <span class="k">\\</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="c">% 单页表头</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>|c|<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>1<span class="nb">}}</span> <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>|c|<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>2<span class="nb">}}</span> <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>|c|<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>3<span class="nb">}}</span> <span class="nb">&amp;</span> <span class="k">\textbf</span><span class="nb">{</span>4<span class="nb">}</span>   <span class="k">\\</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">\endfirsthead</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="c">% 分页后表头</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>|c|<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>1<span class="nb">}}</span> <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>|c|<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>2<span class="nb">}}</span> <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>|c|<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>3<span class="nb">}}</span> <span class="nb">&amp;</span> <span class="k">\textbf</span><span class="nb">{</span>4<span class="nb">}</span>   <span class="k">\\</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="k">\endhead</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="c">% 分页后划线</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="k">\endfoot</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>A<span class="nb">}</span>               <span class="nb">&amp;</span> a                                <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>            <span class="nb">&amp;</span> <span class="k">\\</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        <span class="k">\cline</span><span class="nb">{</span>2-5<span class="nb">}</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>                                         <span class="nb">&amp;</span> b                                <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>            <span class="nb">&amp;</span> <span class="k">\\</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        <span class="k">\cline</span><span class="nb">{</span>2-5<span class="nb">}</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>                                         <span class="nb">&amp;</span> c                                <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>            <span class="nb">&amp;</span> <span class="k">\\</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>B<span class="nb">}</span>               <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>            <span class="nb">&amp;</span> <span class="k">\\</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>        <span class="k">\cline</span><span class="nb">{</span>2-5<span class="nb">}</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>                                         <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>            <span class="nb">&amp;</span> <span class="k">\\</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>        <span class="k">\cline</span><span class="nb">{</span>2-5<span class="nb">}</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>                                         <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>            <span class="nb">&amp;</span> <span class="k">\\</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>        <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>|c|<span class="nb">}{</span>C<span class="nb">}</span>          <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>                                  <span class="nb">&amp;</span>              <span class="k">\\</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>        <span class="k">\hline</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    <span class="k">\end</span><span class="nb">{</span>longtable<span class="nb">}</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="nb">}</span>
 </code></pre></div>
 
 

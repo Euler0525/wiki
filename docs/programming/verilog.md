@@ -1,12 +1,44 @@
 # Verilog
 
-## IP Catalog
+## Timer
 
-### 锁相环(PLL)
+```verilog
+XTime tEnd, tCur;
+u32 tUsed;
+XTime_GetTime(&tCur);
+/******  Start ******/
+// Coding...
+/******   End  ******/
+XTime_GetTime(&tEnd);
+tUsed = ((tEnd - tCur) * 1000000) / (COUNTS_PER_SECOND);
+xil_printf("(Time elapsed is %d us)\r\n", tUsed);
+```
 
-- `locked`信号：观察输入时钟是否锁定，如果输入时钟信号锁定，就会输出一个locked高电平信号。
+## [检测异步信号的起始位](https://ax7020-20231-v101.readthedocs.io/zh-cn/latest/7020_S1_RSTdocument_CN/14_RS232%E5%AE%9E%E9%AA%8C_CN.html)
 
-`locked`信号是在输入信号稳定之后再输出一个`locked`信号，可以把`locked`信号当做一个**复位信号**，刚开始locked信号是低电平，等到时钟信号稳定之后他就会拉高。
+```verilog
+wire rx_negedge;
+reg  rx_d0;  // rx_pin本周期值
+reg  rx_d1;  // rx_pin上一周期值
+assign rx_negedge = rx_d1 && ~rx_d0;  // 用于判断起始位
+
+always@(posedge clk or negedge rst_n) begin
+	if(rst_n == 1'b0) begin
+		rx_d0 <= 1'b0;
+		rx_d1 <= 1'b0;
+	end else begin
+		rx_d0 <= rx_pin;
+        rx_d1 <= rx_d0;  // 延迟一个时钟周期赋值(rx_pin上一周期值)
+	end
+end
+```
+
+- `negedge rx_pin`：`rx_negedge`无法复原为`1'b0`；
+
+**边沿的检测不应该受到时钟边沿变化的影响：**上面代码中`rx_d0`和`rx_d1`的赋值逻辑确保了在时钟周期的任何时刻，`rx_d1`和`rx_d0`都持有稳定的值，因此它们的异或结果`rx_negedge`也是稳定的，不会因为时钟边沿的变化而改变。
+
+- `rx_pin && ~rx_d0`：`rx_pin`变化时刻未知：时钟上升沿变化，两者时钟相同，永远检测不到下降沿；其它时刻变化，暂时没在仿真中发现问题；
+- `rx_pin && ~rx_d1`：得到`rx_d1`前提是有`rx_d0`延迟一个时钟周期，而且`rx_d0`比`rx_pin`更稳定；
 
 ## [Adder100i](https://hdlbits.01xz.net/wiki/Adder100i)
 

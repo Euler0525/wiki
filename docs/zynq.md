@@ -145,7 +145,7 @@ MIO分布在BANK0，BANK1，而EMIO则分布在BANK2、BANK3，参考**[*Figure 
 
 3. **<u>MIO和EMIO都是直接挂在PS上的GPIO</u>**，由PS操作。调用头文件`xgpiops.h`即可；**<u>AXI_GPIO是通过AXI总线挂在PS上的GPIO上</u>**，使用AXI_GPIO时，需要调用头文件`xgpio.h`；
 
-### AXIGPIO
+### AXI GPIO
 
 AXIGPIO由FPGA的PL逻辑核功能实现，相当于GPIO的IP核，通过AXI总线挂在PS上的GPIO上，耗费PL端的逻辑资源。
 

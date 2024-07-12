@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../config/">
+        <link rel="prev" href="..">
       
       
         <link rel="next" href="../maths/">
@@ -208,26 +208,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configuation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -347,9 +327,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#axigpio" class="md-nav__link">
+  <a href="#axi-gpio" class="md-nav__link">
     <span class="md-ellipsis">
-      AXIGPIO
+      AXI GPIO
     </span>
   </a>
   
@@ -479,6 +459,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ai/" class="md-nav__link">
         
   
@@ -499,11 +499,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../algorithms/" class="md-nav__link">
+      <a href="../apps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Algorithms
+    Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuation
   </span>
   
 
@@ -526,10 +546,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -540,8 +560,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Programming
           </label>
@@ -776,9 +796,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#axigpio" class="md-nav__link">
+  <a href="#axi-gpio" class="md-nav__link">
     <span class="md-ellipsis">
-      AXIGPIO
+      AXI GPIO
     </span>
   </a>
   
@@ -1015,7 +1035,7 @@
 <p><strong><u>MIO和EMIO都是直接挂在PS上的GPIO</u></strong>，由PS操作。调用头文件<code>xgpiops.h</code>即可；<strong><u>AXI_GPIO是通过AXI总线挂在PS上的GPIO上</u></strong>，使用AXI_GPIO时，需要调用头文件<code>xgpio.h</code>；</p>
 </li>
 </ol>
-<h3 id="axigpio">AXIGPIO</h3>
+<h3 id="axi-gpio">AXI GPIO</h3>
 <p>AXIGPIO由FPGA的PL逻辑核功能实现，相当于GPIO的IP核，通过AXI总线挂在PS上的GPIO上，耗费PL端的逻辑资源。</p>
 <h2 id="ip-catalog">IP Catalog</h2>
 <h3 id="clock-wizard">Clock Wizard</h3>

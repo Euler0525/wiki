@@ -303,6 +303,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      渐进无偏估计
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -611,6 +620,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      渐进无偏估计
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -721,6 +739,50 @@ y = \dfrac{\displaystyle\int e^{\int p(x)dx} q(x)dx+C}{e^{\int p(x)dx}}
 <div class="arithmatex">\[
 (-5) * 25 + 6 * 21 = 1
 \]</div>
+<h2 id="_1">渐进无偏估计</h2>
+<p>设<span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span>是来自总体<span class="arithmatex">\(X\)</span>的样本，且<span class="arithmatex">\(E(X) = \mu\)</span>已知，<span class="arithmatex">\(D(X)=\sigma^2\)</span>未知，则<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2\)</span>是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
+<blockquote>
+<p><span class="arithmatex">\(\forall i=1,2,,\cdots,n\)</span>，有<span class="arithmatex">\(E[(X_i-\mu)^2]=\sigma^2\)</span>，则
+$$
+E\left(\dfrac{1}{n}\sum_{i=1}^n(X_i-\mu)^2\right) = \dfrac{1}{n}E\left(\sum_{i=1}^n(X_i-\mu)^2\right)=\dfrac{1}{n}n\sigma^2
+$$</p>
+</blockquote>
+<p>设<span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span>是来自总体<span class="arithmatex">\(X\)</span>的样本，<span class="arithmatex">\(E(X) = \mu\)</span>未知，<span class="arithmatex">\(D(X)=\sigma^2\)</span>未知，则<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>不是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
+<blockquote>
+<div class="arithmatex">\[
+\begin{aligned}
+\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2 &amp;= \dfrac{1}{n}\sum_{i=1}^n\left((X_i-\mu) + (\mu - \overline{X})\right)^2\\
+&amp;= \dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2 + 2(\overline{X}-\mu)(\mu-\overline{X}) + (\mu-\overline{X})^2\\
+&amp;= \dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2 -(\mu-\overline{X})^2\\
+&amp;\leq \sigma^2
+\end{aligned}
+\]</div>
+<p>当<span class="arithmatex">\(\overline{X}\not=\mu\)</span>时，<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>会造成对方差的低估，因此需要缩小分母。</p>
+</blockquote>
+<hr />
+<p>已知
+$$
+\begin{aligned}
+E(\overline{X}) &amp;= E(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n}\sum_{i=1}^nE(X_i) = \dfrac{1}{n}n\mu = \mu\
+D(\overline{X}) &amp;= D(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n^2}D(\sum_{i=1}^nX_i) = \dfrac{1}{n^2}n\sigma^2 = \dfrac{1}{n}\sigma^2\
+E(\overline{X}^2) &amp;= E(\overline{X})^2 + D(\overline{X}) = \mu^2 + \dfrac{1}{n}\sigma^2\
+\end{aligned}
+$$
+则
+$$
+\begin{aligned}
+E\left(\sum_{i=1}^n(X_i-\overline{X})^2\right) 
+&amp;= E(\sum_{i=1}^nX_i^2-n\overline{X}^2)\
+&amp;= \sum_{i=1}^nE(X_i^2) - nE(\overline{X}^2)\
+&amp;= n(\mu^2 + \sigma^2) - n(\mu^2 + \dfrac{\sigma^2}{n})\
+&amp;= (n - 1)\sigma^2\
+\end{aligned}
+$$
+最终得到<span class="arithmatex">\(\dfrac{1}{n-1}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
+<blockquote>
+<p>由于<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2=\dfrac{n}{n-1}\sigma^2\)</span>，且<span class="arithmatex">\(\displaystyle\lim_{n\to\infty}\dfrac{n-1}{n}\sigma^2=\sigma^2\)</span>，则称<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>为<span class="arithmatex">\(\sigma^2\)</span>的渐进无偏估计。
+</p>
+</blockquote>
 
 
 

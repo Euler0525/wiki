@@ -919,7 +919,7 @@
 <p>ZYNQ硬核架构图，绿色部分是可配置模块。</p>
 <h3 id="ps-pl-configuration">PS-PL Configuration</h3>
 <p>PS与PL之间接口的配置主要聚焦于AXI接口，这些接口能够扩展PL端的AXI接口外设。因此，当PL需要与PS进行数据交互时，必须遵循AXI总线协议。Xilinx为我们提供了丰富的AXI接口IP核。</p>
-<h3 id="peripheral-io-pins"><a href="#MIO">Peripheral I/O Pins</a></h3>
+<h3 id="peripheral-io-pins"><a id="MIO">Peripheral I/O Pins</a></h3>
 <p>图形化配置界面（ZYNQ的PS端外设是复用的，相同的引脚标号可以配置成不一样的功能，但只能同时配制成一种外设）</p>
 <ul>
 <li>PS端分为两个<code>Bank</code>，分别为原理图中的<code>Bank500,501</code>，分别配置为<code>LVCMOS3.3V</code>和<code>LVCMOS1.8V</code>；</li>
@@ -1029,7 +1029,7 @@
 <p>MIO在ZYNQ上的管脚是固定的，而EMIO是通过PL部分扩展的，所以使用EMIO时候需要在约束文件中分配管脚，并且设计EMIO的程序时，需要生成PL部分的bit文件烧写到FPGA中；</p>
 </li>
 <li>
-<p>MIO共占54bit，<strong>占用IO号为0-53</strong>，配置方法见<a id="MIO">Block Design/Peripheral I/O Pins</a>部分；EMIO占64bit，<strong>占用IO号为54-117</strong>；</p>
+<p>MIO共占54bit，<strong>占用IO号为0-53</strong>，配置方法见<a href="#MIO">Block Design/Peripheral I/O Pins</a>部分；EMIO占64bit，<strong>占用IO号为54-117</strong>；</p>
 </li>
 <li>
 <p><strong><u>MIO和EMIO都是直接挂在PS上的GPIO</u></strong>，由PS操作。调用头文件<code>xgpiops.h</code>即可；<strong><u>AXI_GPIO是通过AXI总线挂在PS上的GPIO上</u></strong>，使用AXI_GPIO时，需要调用头文件<code>xgpio.h</code>；</p>

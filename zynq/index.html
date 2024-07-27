@@ -407,15 +407,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dds" class="md-nav__link">
-    <span class="md-ellipsis">
-      DDS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       参考资料
@@ -897,15 +888,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dds" class="md-nav__link">
-    <span class="md-ellipsis">
-      DDS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       参考资料
@@ -1122,43 +1104,6 @@
 <p><strong>Status窗口</strong></p>
 <p>四个按钮分别为：<strong>循环采样</strong>、<strong>条件触发采样</strong>、<strong>无条件执行<code>ILA</code>采样</strong>、<strong>停止采样按钮</strong>
 <strong>Core status</strong>表示<code>ILA</code>的运行状态</p>
-<h2 id="dds">DDS</h2>
-<ul>
-<li><strong>Configuration Option</strong>：选择默认项，可以通过<code>SIN/COS LUT</code>或相位控制两种方式设定DDS核</li>
-<li><strong>System Clock</strong>：系统采样时钟<span class="arithmatex">\(f_c\)</span>（用作参考），实际时钟频率以输入的真实时钟频率为基准</li>
-<li><strong>Number of Channels</strong>：DDS的路数，依次发送n路不同频率、不同相位的正弦波</li>
-<li><strong>Mode of Channel</strong>：默认</li>
-<li><strong>Parameter Selection</strong>：选择Hardware Parameters硬件参数模式，可以通过使用控制字的方式进行IP核配置。其中<code>Phase Width</code>为相位控制字位宽，<code>Output Width</code>为输出波形位宽</li>
-</ul>
-<hr />
-<ul>
-<li><strong>Phase Increment Programmability</strong>：频率控制项。固定频率（正弦波的频率仅在IP核中设定）；可修改（程序运行中通过外部输入更改）</li>
-<li><strong>Phase Offset Programmability</strong>：初始相位控制项，与频率控制项类似</li>
-<li><strong>Output</strong>：只输出sin/cos，或同时输出即复载波。Has Phase Out表示输出数值的同时输出该点相位</li>
-</ul>
-<hr />
-<ul>
-<li>Latency设置IP核的延时</li>
-<li>ARSETn设置DDS复位，1有效，0复位</li>
-</ul>
-<hr />
-<p>根据公式，实际频率
-$$
-f_0 = \dfrac{f_c}{\frac{2^N}{M}} = \dfrac{f_cM}{2^N}
-$$
-在输入框中填入采样间隔M，在Additional Summary中可查看实际频率</p>
-<hr />
-<p>接口定义在Information页面中查看</p>
-<ul>
-<li><code>CHAN_0_POFF</code>：初相位控制字，由<code>S_AXIS_CONFIG_TDATA[31:16]</code>控制</li>
-<li>
-<p><code>CHAN_0_PINC</code>：频率控制字，由<code>S_AXIS_CONFIG_TDATA[15:0]</code>控制</p>
-</li>
-<li>
-<p><code>CHAN_0_COSINE</code>：复载波的实部，由<code>M_AXIS_DATA_TDATA[15:8]</code>控制</p>
-</li>
-<li><code>CHAN_0_SINE</code>：复载波的虚部，由<code>M_AXIS_DATA_TDATA[7:0]</code>控制</li>
-</ul>
 <h2 id="_2">参考资料</h2>
 <ol>
 <li>Zynq 7000 SoC Technical Reference Manual UG585 (v1.14) June 30, 2023</li>

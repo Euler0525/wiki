@@ -175,3 +175,13 @@ $ sudo ufw allow 80/tcp
 $ sudo ufw allow 443/tcp
 $ sudo ufw status
 ```
+
+## MATLAB
+
+- 默认初始工作路径
+
+```matlab
+% ...\MATLAB\toolbox\local\matlabrc.m
+cd("D:\Syncdisk");
+```
+

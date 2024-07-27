@@ -12,6 +12,7 @@ nav:
     - ASM: programming/asm.md
     - C: programming/c.md
     - LaTeX: programming/latex.md
+    - MATLAB: programming/matlab.md
     - Python: programming/python.md
     - Verilog: programming/verilog.md
   - About: about.md

@@ -15,3 +15,11 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+---
+
+- 正交信号
+
+【英文版】[A Quadrature Signals Tutorial: Complex, But Not Complicated](https://www.dsprelated.com/showarticle/192.php)
+
+【中文版】[正交信号：是复数，但不复杂](https://www.eet-china.com/mp/a127180.html)

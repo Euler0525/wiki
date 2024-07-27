@@ -2,7 +2,7 @@
 
 > ```
 > Project family: Zynq-7000
-> Project part: xc7z
+> Project part: xc7z020clg400-2
 > ```
 
 ## Block Design
@@ -15,7 +15,7 @@ ZYNQ硬核架构图，绿色部分是可配置模块。
 
 PS与PL之间接口的配置主要聚焦于AXI接口，这些接口能够扩展PL端的AXI接口外设。因此，当PL需要与PS进行数据交互时，必须遵循AXI总线协议。Xilinx为我们提供了丰富的AXI接口IP核。
 
-### [Peripheral I/O Pins](#MIO)
+### <a id="MIO">Peripheral I/O Pins</a>
 
 图形化配置界面（ZYNQ的PS端外设是复用的，相同的引脚标号可以配置成不一样的功能，但只能同时配制成一种外设）
 
@@ -141,7 +141,7 @@ MIO分布在BANK0，BANK1，而EMIO则分布在BANK2、BANK3，参考**[*Figure 
 
 1. MIO在ZYNQ上的管脚是固定的，而EMIO是通过PL部分扩展的，所以使用EMIO时候需要在约束文件中分配管脚，并且设计EMIO的程序时，需要生成PL部分的bit文件烧写到FPGA中；
 
-2. MIO共占54bit，**占用IO号为0-53**，配置方法见<a id="MIO">Block Design/Peripheral I/O Pins</a>部分；EMIO占64bit，**占用IO号为54-117**；
+2. MIO共占54bit，**占用IO号为0-53**，配置方法见[Block Design/Peripheral I/O Pins](#MIO)部分；EMIO占64bit，**占用IO号为54-117**；
 
 3. **<u>MIO和EMIO都是直接挂在PS上的GPIO</u>**，由PS操作。调用头文件`xgpiops.h`即可；**<u>AXI_GPIO是通过AXI总线挂在PS上的GPIO上</u>**，使用AXI_GPIO时，需要调用头文件`xgpio.h`；
 
@@ -219,45 +219,6 @@ bit文件烧写后，会进入下图所示的ILA调试界面
 
 四个按钮分别为：**循环采样**、**条件触发采样**、**无条件执行`ILA`采样**、**停止采样按钮**
 **Core status**表示`ILA`的运行状态
-
-## DDS
-
-- **Configuration Option**：选择默认项，可以通过`SIN/COS LUT`或相位控制两种方式设定DDS核
-- **System Clock**：系统采样时钟$f_c$（用作参考），实际时钟频率以输入的真实时钟频率为基准
-- **Number of Channels**：DDS的路数，依次发送n路不同频率、不同相位的正弦波
-- **Mode of Channel**：默认
-- **Parameter Selection**：选择Hardware Parameters硬件参数模式，可以通过使用控制字的方式进行IP核配置。其中`Phase Width`为相位控制字位宽，`Output Width`为输出波形位宽
-
----
-
-- **Phase Increment Programmability**：频率控制项。固定频率（正弦波的频率仅在IP核中设定）；可修改（程序运行中通过外部输入更改）
-- **Phase Offset Programmability**：初始相位控制项，与频率控制项类似
-- **Output**：只输出sin/cos，或同时输出即复载波。Has Phase Out表示输出数值的同时输出该点相位
-
----
-
-- Latency设置IP核的延时
-- ARSETn设置DDS复位，1有效，0复位
-
----
-
-根据公式，实际频率
-$$
-f_0 = \dfrac{f_c}{\frac{2^N}{M}} = \dfrac{f_cM}{2^N}
-$$
-在输入框中填入采样间隔M，在Additional Summary中可查看实际频率
-
----
-
-接口定义在Information页面中查看
-
-- `CHAN_0_POFF`：初相位控制字，由`S_AXIS_CONFIG_TDATA[31:16]`控制
-- `CHAN_0_PINC`：频率控制字，由`S_AXIS_CONFIG_TDATA[15:0]`控制
-
-- `CHAN_0_COSINE`：复载波的实部，由`M_AXIS_DATA_TDATA[15:8]`控制
-- `CHAN_0_SINE`：复载波的虚部，由`M_AXIS_DATA_TDATA[7:0]`控制
-
-
 
 ## 参考资料
 

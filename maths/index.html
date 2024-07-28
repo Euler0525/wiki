@@ -277,18 +277,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#integration" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Integration
+      和差化积与积化和差
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#differential-equation" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Differential Equation
+      积分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常微分方程
     </span>
   </a>
   
@@ -304,7 +313,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       渐进无偏估计
     </span>
@@ -615,18 +624,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#integration" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Integration
+      和差化积与积化和差
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#differential-equation" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Differential Equation
+      积分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常微分方程
     </span>
   </a>
   
@@ -642,7 +660,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       渐进无偏估计
     </span>
@@ -666,11 +684,28 @@
 
 
 <h1 id="maths">Maths</h1>
-<h2 id="integration">Integration</h2>
+<h2 id="_1">和差化积与积化和差</h2>
+<div class="arithmatex">\[
+\begin{aligned}
+\sin\alpha+\sin\beta &amp;= 2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}\\
+\cos\alpha+\cos\beta &amp;= 2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}\\
+\sin\alpha-\sin\beta &amp;= 2\cos\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}\\
+\cos\alpha-\cos\beta &amp;= -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}\\
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+\sin\alpha\cos\beta &amp;= \frac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta)]\\
+\cos\alpha\cos\beta &amp;= \frac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha-\beta)]\\
+\cos\alpha\sin\beta &amp;= \frac{1}{2}[\sin(\alpha+\beta)-\sin(\alpha-\beta)]\\
+\sin\alpha\sin\beta &amp;= -\frac{1}{2}[\cos(\alpha+\beta)-\cos(\alpha-\beta)]\\
+\end{aligned}
+\]</div>
+<h2 id="_2">积分</h2>
 <div class="arithmatex">\[
 \lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{n+k}} = \lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{1+\frac{k}{n}}}=\int_0^1{\dfrac{1}{1+x}}dx=\ln2.
 \]</div>
-<h2 id="differential-equation">Differential Equation</h2>
+<h2 id="_3">常微分方程</h2>
 <ul>
 <li><span class="arithmatex">\(\dfrac{dy}{dx}=f(x)g(y)\)</span></li>
 </ul>
@@ -760,7 +795,7 @@ y = \dfrac{\displaystyle\int e^{\int p(x)dx} q(x)dx+C}{e^{\int p(x)dx}}
 <div class="arithmatex">\[
 (-5) * 25 + 6 * 21 = 1
 \]</div>
-<h2 id="_1">渐进无偏估计</h2>
+<h2 id="_4">渐进无偏估计</h2>
 <p>设<span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span>是来自总体<span class="arithmatex">\(X\)</span>的样本，且<span class="arithmatex">\(E(X) = \mu\)</span>已知，<span class="arithmatex">\(D(X)=\sigma^2\)</span>未知，则<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2\)</span>是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
 <blockquote>
 <p><span class="arithmatex">\(\forall i=1,2,,\cdots,n\)</span>，有<span class="arithmatex">\(E[(X_i-\mu)^2]=\sigma^2\)</span>，则

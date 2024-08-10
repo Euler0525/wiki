@@ -1,12 +1,32 @@
 # Maths
 
-## Integration
+## 和差化积与积化和差
+
+$$
+\begin{aligned}
+\sin\alpha+\sin\beta &= 2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}\\
+\cos\alpha+\cos\beta &= 2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}\\
+\sin\alpha-\sin\beta &= 2\cos\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}\\
+\cos\alpha-\cos\beta &= -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}\\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\sin\alpha\cos\beta &= \frac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta)]\\
+\cos\alpha\cos\beta &= \frac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha-\beta)]\\
+\cos\alpha\sin\beta &= \frac{1}{2}[\sin(\alpha+\beta)-\sin(\alpha-\beta)]\\
+\sin\alpha\sin\beta &= -\frac{1}{2}[\cos(\alpha+\beta)-\cos(\alpha-\beta)]\\
+\end{aligned}
+$$
+
+## 积分
 
 $$
 \lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{n+k}} = \lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{1+\frac{k}{n}}}=\int_0^1{\dfrac{1}{1+x}}dx=\ln2.
 $$
 
-## Differential Equation
+## 常微分方程
 
 - $\dfrac{dy}{dx}=f(x)g(y)$
 

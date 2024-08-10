@@ -4,17 +4,18 @@ nav:
   - Home: index.md
   - ZYNQ: zynq.md
   - Maths: maths.md
+  - AD9361: ad9361.md
   - Algorithms: algorithms.md
   - AI: ai.md
   - Apps: apps.md
   - Configuation: config.md
   - Programming:
-    - ASM: programming/asm.md
-    - C: programming/c.md
-    - LaTeX: programming/latex.md
-    - MATLAB: programming/matlab.md
-    - Python: programming/python.md
-    - Verilog: programming/verilog.md
+      - ASM: programming/asm.md
+      - C: programming/c.md
+      - LaTeX: programming/latex.md
+      - MATLAB: programming/matlab.md
+      - Python: programming/python.md
+      - Verilog: programming/verilog.md
   - About: about.md
 
 theme:

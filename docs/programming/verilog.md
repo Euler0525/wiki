@@ -1,6 +1,6 @@
 # Verilog
 
-## Timer
+- PS端计时器
 
 ```verilog
 XTime tEnd, tCur;
@@ -14,7 +14,9 @@ tUsed = ((tEnd - tCur) * 1000000) / (COUNTS_PER_SECOND);
 xil_printf("(Time elapsed is %d us)\r\n", tUsed);
 ```
 
-## [检测异步信号的起始位](https://ax7020-20231-v101.readthedocs.io/zh-cn/latest/7020_S1_RSTdocument_CN/14_RS232%E5%AE%9E%E9%AA%8C_CN.html)
+---
+
+- [检测异步信号的起始位](https://ax7020-20231-v101.readthedocs.io/zh-cn/latest/7020_S1_RSTdocument_CN/14_RS232%E5%AE%9E%E9%AA%8C_CN.html)
 
 ```verilog
 wire rx_negedge;
@@ -40,7 +42,25 @@ end
 - `rx_pin && ~rx_d0`：`rx_pin`变化时刻未知：时钟上升沿变化，两者时钟相同，永远检测不到下降沿；其它时刻变化，暂时没在仿真中发现问题；
 - `rx_pin && ~rx_d1`：得到`rx_d1`前提是有`rx_d0`延迟一个时钟周期，而且`rx_d0`比`rx_pin`更稳定；
 
-## [Adder100i](https://hdlbits.01xz.net/wiki/Adder100i)
+- 保存至`.txt`文件
+
+```verilog
+// .tb
+integer f;
+initial begin
+    f = $fopen("f.txt", "w");
+end
+
+always@(posedge clk) begin
+    f = $fopen("f.txt", "a+");
+    $fwrite(f, "%d\n", $signed(  ));
+    $fclose(f);
+end
+```
+
+---
+
+- [Adder100i](https://hdlbits.01xz.net/wiki/Adder100i)
 
 ```verilog
 module top_module(
@@ -88,7 +108,41 @@ endmodule //adder
 
 ```
 
-## 四种休眠模式
+---
+
+- m序列
+
+```verilog
+`timescale 1ns / 1ps
+
+
+module test(
+    input   clk   ,
+    input   rst_n ,
+    output  m
+);
+
+    reg  [3:0] ser = 4'b1000;
+    reg ser_4 = 1'b0;
+    always@(posedge clk)
+    begin
+        if(!rst_n) begin
+            ser <= 4'b1000;
+            ser_4 <= 1'b0;
+        end
+        else begin
+            ser_4 <= (ser[3] ^ ser[1]);
+            ser <= {ser_4, ser[3:1]};
+        end
+    end
+    assign m = ser[0];
+
+endmodule
+```
+
+---
+
+- **四种休眠模式**
 
 在数字信号控制器（DSC）或微控制器中，常见的休眠模式包括`IDLE`、`SLEEP`、`DOZE`和`STOP`。这些模式具有不同的功耗级别和功能状态。下面是它们之间的区别：
 
@@ -101,3 +155,5 @@ endmodule //adder
 - STOP模式：STOP模式提供了最低功耗的休眠模式。在STOP模式下，处理器核心和大部分外设都被关闭，时钟也停止运行。只有特定的唤醒源能够使处理器核心从STOP模式中恢复。
 
 IDLE模式是最低功耗的简单休眠模式，只停止处理器核心的指令执行；SLEEP模式进一步降低功耗，关闭大部分外设和时钟，但可以通过唤醒源快速恢复；DOZE模式提供了更低的功耗水平，降低处理器核心和系统时钟的频率，同时保持某些外设的活动性；STOP模式是最低功耗的休眠模式，几乎关闭所有外设和时钟，只有特定的唤醒源才能唤醒处理器核心。
+
+---

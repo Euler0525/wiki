@@ -2,6 +2,8 @@
 
 ## #
 
+- 010Editor
+
 - [7-zip](https://www.7-zip.org/download.html)
 
 ## A
@@ -9,6 +11,8 @@
 - Adobe
 
 ## B
+
+- BurpSuite
 
 - [百度网盘](https://pan.baidu.com/download#win)
 
@@ -54,11 +58,17 @@
 
 ## I
 
+- IDA
+
 - [IDM](https://www.internetdownloadmanager.com/download.html)
 
 - *IObit Unlocker*
 
 - iTubeGo
+
+## J
+
+- JEB
 
 ## L
 
@@ -85,6 +95,8 @@
 - Oracle_Database
 
 ## P
+
+- [PicGo](https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1)
 
 - [PicPick](https://picpick.app/en/download/)
 
@@ -154,6 +166,8 @@
 
 ## X
 
+- x32/64dbg
+
 - [XcXsrv](https://sourceforge.net/projects/vcxsrv/)
 
 - Xilinx Vivado
@@ -161,3 +175,4 @@
 ## Z
 
 - Zotero
+

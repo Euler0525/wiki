@@ -616,12 +616,11 @@
 <p><strong>边沿的检测不应该受到时钟边沿变化的影响：</strong>上面代码中<code>rx_d0</code>和<code>rx_d1</code>的赋值逻辑确保了在时钟周期的任何时刻，<code>rx_d1</code>和<code>rx_d0</code>都持有稳定的值，因此它们的异或结果<code>rx_negedge</code>也是稳定的，不会因为时钟边沿的变化而改变。</p>
 <ul>
 <li><code>rx_pin &amp;&amp; ~rx_d0</code>：<code>rx_pin</code>变化时刻未知：时钟上升沿变化，两者时钟相同，永远检测不到下降沿；其它时刻变化，暂时没在仿真中发现问题；</li>
-<li>
-<p><code>rx_pin &amp;&amp; ~rx_d1</code>：得到<code>rx_d1</code>前提是有<code>rx_d0</code>延迟一个时钟周期，而且<code>rx_d0</code>比<code>rx_pin</code>更稳定；</p>
-</li>
-<li>
-<p>保存至<code>.txt</code>文件</p>
-</li>
+<li><code>rx_pin &amp;&amp; ~rx_d1</code>：得到<code>rx_d1</code>前提是有<code>rx_d0</code>延迟一个时钟周期，而且<code>rx_d0</code>比<code>rx_pin</code>更稳定；</li>
+</ul>
+<hr />
+<ul>
+<li>保存至<code>.txt</code>文件</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// .tb</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">integer</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>

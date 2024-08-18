@@ -836,25 +836,25 @@ $$</p>
 <p>当<span class="arithmatex">\(\overline{X}\not=\mu\)</span>时，<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>会造成对方差的低估，因此需要缩小分母。</p>
 </blockquote>
 <hr />
-<p>已知
-$$
+<p>已知</p>
+<div class="arithmatex">\[
 \begin{aligned}
-E(\overline{X}) &amp;= E(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n}\sum_{i=1}^nE(X_i) = \dfrac{1}{n}n\mu = \mu\
-D(\overline{X}) &amp;= D(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n^2}D(\sum_{i=1}^nX_i) = \dfrac{1}{n^2}n\sigma^2 = \dfrac{1}{n}\sigma^2\
-E(\overline{X}^2) &amp;= E(\overline{X})^2 + D(\overline{X}) = \mu^2 + \dfrac{1}{n}\sigma^2\
+E(\overline{X}) &amp;= E(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n}\sum_{i=1}^nE(X_i) = \dfrac{1}{n}n\mu = \mu\\
+D(\overline{X}) &amp;= D(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n^2}D(\sum_{i=1}^nX_i) = \dfrac{1}{n^2}n\sigma^2 = \dfrac{1}{n}\sigma^2\\
+E(\overline{X}^2) &amp;= E(\overline{X})^2 + D(\overline{X}) = \mu^2 + \dfrac{1}{n}\sigma^2\\
 \end{aligned}
-$$</p>
+\]</div>
 <p>于是有</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{aligned}
 E\left(\sum_{i=1}^n(X_i-\overline{X})^2\right) 
-&amp;= E(\sum_{i=1}^nX_i^2-n\overline{X}^2)\
-&amp;= \sum_{i=1}^nE(X_i^2) - nE(\overline{X}^2)\
-&amp;= n(\mu^2 + \sigma^2) - n(\mu^2 + \dfrac{\sigma^2}{n})\
-&amp;= (n - 1)\sigma^2\
+&amp;= E(\sum_{i=1}^nX_i^2-n\overline{X}^2)\\
+&amp;= \sum_{i=1}^nE(X_i^2) - nE(\overline{X}^2)\\
+&amp;= n(\mu^2 + \sigma^2) - n(\mu^2 + \dfrac{\sigma^2}{n})\\
+&amp;= (n - 1)\sigma^2\\
 \end{aligned}
-$$
-最终得到<span class="arithmatex">\(\dfrac{1}{n-1}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
+\]</div>
+<p>最终得到<span class="arithmatex">\(\dfrac{1}{n-1}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
 <blockquote>
 <p>由于<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2=\dfrac{n}{n-1}\sigma^2\)</span>，且<span class="arithmatex">\(\displaystyle\lim_{n\to\infty}\dfrac{n-1}{n}\sigma^2=\sigma^2\)</span>，则称<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>为<span class="arithmatex">\(\sigma^2\)</span>的渐进无偏估计。</p>
 </blockquote>

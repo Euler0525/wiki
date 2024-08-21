@@ -291,26 +291,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AI
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../apps/" class="md-nav__link">
         
   
@@ -360,10 +340,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -374,8 +354,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Programming
           </label>
@@ -616,12 +596,11 @@
 <p><strong>边沿的检测不应该受到时钟边沿变化的影响：</strong>上面代码中<code>rx_d0</code>和<code>rx_d1</code>的赋值逻辑确保了在时钟周期的任何时刻，<code>rx_d1</code>和<code>rx_d0</code>都持有稳定的值，因此它们的异或结果<code>rx_negedge</code>也是稳定的，不会因为时钟边沿的变化而改变。</p>
 <ul>
 <li><code>rx_pin &amp;&amp; ~rx_d0</code>：<code>rx_pin</code>变化时刻未知：时钟上升沿变化，两者时钟相同，永远检测不到下降沿；其它时刻变化，暂时没在仿真中发现问题；</li>
-<li>
-<p><code>rx_pin &amp;&amp; ~rx_d1</code>：得到<code>rx_d1</code>前提是有<code>rx_d0</code>延迟一个时钟周期，而且<code>rx_d0</code>比<code>rx_pin</code>更稳定；</p>
-</li>
-<li>
-<p>保存至<code>.txt</code>文件</p>
-</li>
+<li><code>rx_pin &amp;&amp; ~rx_d1</code>：得到<code>rx_d1</code>前提是有<code>rx_d0</code>延迟一个时钟周期，而且<code>rx_d0</code>比<code>rx_pin</code>更稳定；</li>
+</ul>
+<hr />
+<ul>
+<li>保存至<code>.txt</code>文件</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// .tb</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">integer</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
@@ -733,6 +712,16 @@
 </ul>
 <p>IDLE模式是最低功耗的简单休眠模式，只停止处理器核心的指令执行；SLEEP模式进一步降低功耗，关闭大部分外设和时钟，但可以通过唤醒源快速恢复；DOZE模式提供了更低的功耗水平，降低处理器核心和系统时钟的频率，同时保持某些外设的活动性；STOP模式是最低功耗的休眠模式，几乎关闭所有外设和时钟，只有特定的唤醒源才能唤醒处理器核心。</p>
 <hr />
+<ul>
+<li>AXI valid-ready握手协议</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// 简单理解为</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">s_axis_tready</span><span class="w">  </span><span class="c1">// output 准备好接收数据</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">s_axis_tvalid</span><span class="w">  </span><span class="c1">// input  写入使能</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">               </span><span class="c1">// ↓</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">m_axis_tvalid</span><span class="w">  </span><span class="c1">// output 准备好发送数据</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">m_axis_tready</span><span class="w">  </span><span class="c1">// input  读出使能</span>
+</code></pre></div>
 
 
 

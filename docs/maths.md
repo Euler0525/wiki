@@ -100,6 +100,7 @@ $$
 ---
 
 已知
+
 $$
 \begin{aligned}
 E(\overline{X}) &= E(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n}\sum_{i=1}^nE(X_i) = \dfrac{1}{n}n\mu = \mu\\
@@ -119,6 +120,7 @@ E\left(\sum_{i=1}^n(X_i-\overline{X})^2\right)
 &= (n - 1)\sigma^2\\
 \end{aligned}
 $$
+
 最终得到$\dfrac{1}{n-1}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2$是$\sigma^2$的无偏估计。
 
 > 由于$\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2=\dfrac{n}{n-1}\sigma^2$，且$\displaystyle\lim_{n\to\infty}\dfrac{n-1}{n}\sigma^2=\sigma^2$，则称$\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2$为$\sigma^2$的渐进无偏估计。

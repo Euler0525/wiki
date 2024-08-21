@@ -24,6 +24,8 @@
 
 - *ContextMenuManager*
 
+- [ctags](https://github.com/universal-ctags/ctags)
+
 ## D
 
 - [DingTalk](https://www.dingtalk.com/en)
@@ -80,7 +82,7 @@
 
 - Maple
 
-- MinGW
+- [MinGW](https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/)
 
 - [Motrix](https://motrix.app/)
 

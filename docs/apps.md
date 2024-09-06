@@ -116,6 +116,8 @@
 
 ## R
 
+- [RaiDrive](https://www.raidrive.com/download)
+
 - Rufus
 
 ## S
@@ -127,6 +129,8 @@
 - Serial Debug Assistant(Microsoft Store)
 
 - [PalmInput](https://www.xinshuru.com/index.html?p=win)
+
+- [闪秒云](http://shanmiaocloud.com/)
 
 ## T
 

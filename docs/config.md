@@ -81,7 +81,7 @@ $ vim ~/.zshrc
 $ source ~/.zshrc
 ```
 
-## Conda
+## [Conda](https://repo.anaconda.com/archive/)
 
 ### Installation
 

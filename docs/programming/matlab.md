@@ -1,5 +1,7 @@
 # MATLAB
 
+> [histogram](https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.histogram_zh_CN.html)
+
 - FFT绘制频谱图
 
 ```matlab

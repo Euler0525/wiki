@@ -7,6 +7,8 @@
 
 【中文版】[正交信号：是复数，但不复杂](https://www.eet-china.com/mp/a127180.html)
 
+- [Gigabyte Transceiver](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkxMjM5NTg1MA==&action=getalbum&album_id=3420122833920278536#wechat_redirect)
+
 - [如何超过大多数人](https://coolshell.cn/articles/19464.html)
 
 ---

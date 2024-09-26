@@ -231,6 +231,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../satellite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Satellite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../maths/" class="md-nav__link">
         
   
@@ -320,10 +340,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -334,8 +354,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Programming
           </label>
@@ -784,6 +804,154 @@
 <a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">    </span><span class="k">end</span>
 <a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
 <a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="k">endmodule</span>
+</code></pre></div>
+<hr />
+<ul>
+<li>PRBS(Pseudo-Random Binary Sequence)</li>
+</ul>
+<p>使用PRBS这种伪随机码进行高速串行通道的测试，主要测试误码率等情况。PRBS 的码流在很大程度上具有“随机数据”的特性，“0”和“1”随机出现，这种码流的频谱特征和白噪声非常接近，所谓“白噪声”就是在一个比较宽的频域里功率密度谱均匀分布，也就是所有的频率都具有相同的能量，因此该码型能够模拟各种不同频率数据组成的情况，使测试更符合真实的情况。</p>
+<blockquote>
+<p>常用的有阶数7, 9, 11, 15, 20, 23, 31</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="no">`timescale</span><span class="w"> </span><span class="mh">1</span><span class="n">ns</span><span class="o">/</span><span class="mh">1</span><span class="n">ps</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">//////////////////////////////////////////////////////////////////////////////////</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">// Company: BIT</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">// Engineer: Liu Yubo(Modified)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">// Author  : Daniele Riccardi</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">//</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">// Create Date: 2024/09/12 23:32:00</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">// Design Name:</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">// Module Name: prbs_gen_or_check</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">// Project Name:</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">// Target Devices:</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1">// Tool Versions: Vivado 2019.1</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="c1">// Description:</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1">//--------------------------------------------------------------------------</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="c1">// DESCRIPTION</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="c1">//--------------------------------------------------------------------------</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="c1">//  This module generates or check a PRBS pattern. The following table shows how</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="c1">//  to set the PARAMETERS for compliance to ITU-T Recommendation O.150 Section 5.</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="c1">//</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="c1">//  When the CHK_MODE is &quot;false&quot;, it uses a  LFSR strucure to generate the</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="c1">//  PRBS pattern.</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="c1">//  When the CHK_MODE is &quot;true&quot;, the incoming data are loaded into prbs registers</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="c1">//  and compared with the locally generated PRBS</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="c1">//</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="c1">// Dependencies:</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="c1">//</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="c1">// Revision:</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="c1">// Revision 0.01 - File Created</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="c1">// Additional Comments:</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="c1">//--------------------------------------------------------------------------</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="c1">// NOTES</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="c1">//--------------------------------------------------------------------------</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="c1">//</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="c1">//</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="c1">//   Set paramaters to the following values for a ITU-T compliant PRBS</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="c1">//------------------------------------------------------------------------------</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="c1">// POLY_LENGHT POLY_TAP INV_PATTERN  || nbr of   bit seq.   max 0      feedback</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="c1">//                                   || stages    length  sequence      stages</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="c1">//------------------------------------------------------------------------------</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="c1">//     7          6       false      ||    7         127      6 ni        6, 7   (*)</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="c1">//     9          5       false      ||    9         511      8 ni        5, 9</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="c1">//    11          9       false      ||   11        2047     10 ni        9,11</span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="c1">//    15         14       true       ||   15       32767     15 i        14,15</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="c1">//    20          3       false      ||   20     1048575     19 ni        3,20</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="c1">//    23         18       true       ||   23     8388607     23 i        18,23</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="c1">//    29         27       true       ||   29   536870911     29 i        27,29</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="c1">//    31         28       true       ||   31  2147483647     31 i        28,31</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="c1">//</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="c1">// i=inverted, ni= non-inverted</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="c1">// (*) non standard</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="c1">//----------------------------------------------------------------------------</span>
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="c1">//</span>
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="c1">// In the generated parallel PRBS, LSB is the first_n generated bit, for example</span>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="c1">//      if the PRBS serial stream is : 000001111011... then</span>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="c1">//      the generated PRBS with a parallelism of 3 bit becomes:</span>
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="c1">//        prbs_dout(2) = 0  1  1  1 ...</span>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a><span class="c1">//        prbs_dout(1) = 0  0  1  1 ...</span>
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="c1">//        prbs_dout(0) = 0  0  1  0 ...</span>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="c1">// In the received parallel PRBS, LSB is oldest bit received</span>
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="c1">//</span>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="c1">// RESET pin is not needed for power-on reset : all registers are properly inizialized</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="c1">// in the source code.</span>
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="c1">//</span>
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="c1">//////////////////////////////////////////////////////////////////////////////////</span>
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a><span class="c1">//------------------------------------------------------------------------------</span>
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a><span class="c1">// PARAMETERS</span>
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a><span class="c1">//------------------------------------------------------------------------------</span>
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a><span class="c1">// CHK_MODE    : true  =&gt; check mode</span>
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a><span class="c1">//               false =&gt; generate mode</span>
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a><span class="c1">// INV_PATTERN : true : invert prbs pattern</span>
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a><span class="c1">//               in &quot;generate mode&quot;, the generated prbs is inverted bit-wise at outputs</span>
+<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a><span class="c1">//               in &quot;check mode&quot;, the input data are inverted before processing</span>
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a><span class="c1">// NBITS       : bus size of prbs_din and prbs_dout</span>
+<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a><span class="c1">// POLY_LENGTH : length of the polynomial (= number of shift register stages)</span>
+<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a><span class="c1">// POLY_TAP    : intermediate stage that is xor-ed with the last stage to generate to next prbs bit</span>
+<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a><span class="c1">//</span>
+<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a><span class="c1">//------------------------------------------------------------------------------</span>
+<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a><span class="c1">// PINS</span>
+<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a><span class="c1">//------------------------------------------------------------------------------</span>
+<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a><span class="c1">//</span>
+<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a><span class="c1">// prbs_en     : input wire  enable/pause pattern generation/check</span>
+<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a><span class="c1">// prbs_din    : input wire  inject error           ( in generate mode )</span>
+<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a><span class="c1">//                           data to be checked     ( in check mode    )</span>
+<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a><span class="c1">// prbs_dout   : output reg  generated prbs pattern ( in generate mode )</span>
+<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a><span class="c1">//                           error found            ( in check mode    )</span>
+<a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a><span class="c1">//</span>
+<a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a>
+<a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a><span class="k">module</span><span class="w"> </span><span class="n">prbs_gen_or_check</span><span class="w"> </span><span class="p">#(</span>
+<a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a><span class="w">  </span><span class="k">parameter</span><span class="w">                 </span><span class="n">CHK_MODE</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="w">  </span><span class="p">,</span>
+<a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a><span class="w">  </span><span class="k">parameter</span><span class="w">                 </span><span class="n">INV_PATTERN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="w">  </span><span class="p">,</span>
+<a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a><span class="w">  </span><span class="k">parameter</span><span class="w">                 </span><span class="n">NBITS</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mh">32</span><span class="w"> </span><span class="p">,</span>
+<a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a><span class="w">  </span><span class="k">parameter</span><span class="w">                 </span><span class="n">POLY_LENGTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">31</span><span class="w"> </span><span class="p">,</span>
+<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a><span class="w">  </span><span class="k">parameter</span><span class="w">                 </span><span class="n">POLY_TAP</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mh">28</span>
+<a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a><span class="p">)(</span>
+<a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a><span class="w">  </span><span class="k">input</span><span class="w">  </span><span class="kt">wire</span><span class="w">               </span><span class="n">clk</span><span class="w">       </span><span class="p">,</span>
+<a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a><span class="w">  </span><span class="k">input</span><span class="w">  </span><span class="kt">wire</span><span class="w">               </span><span class="n">rst_n</span><span class="w">     </span><span class="p">,</span>
+<a id="__codelineno-7-101" name="__codelineno-7-101" href="#__codelineno-7-101"></a><span class="w">  </span><span class="k">input</span><span class="w">  </span><span class="kt">wire</span><span class="w">               </span><span class="n">prbs_en</span><span class="w">   </span><span class="p">,</span>
+<a id="__codelineno-7-102" name="__codelineno-7-102" href="#__codelineno-7-102"></a><span class="w">  </span><span class="k">input</span><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="n">NBITS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">prbs_din</span><span class="w">  </span><span class="p">,</span>
+<a id="__codelineno-7-103" name="__codelineno-7-103" href="#__codelineno-7-103"></a><span class="w">  </span><span class="k">output</span><span class="w"> </span><span class="kt">reg</span><span class="w">  </span><span class="p">[</span><span class="n">NBITS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">prbs_dout</span>
+<a id="__codelineno-7-104" name="__codelineno-7-104" href="#__codelineno-7-104"></a><span class="p">);</span>
+<a id="__codelineno-7-105" name="__codelineno-7-105" href="#__codelineno-7-105"></a><span class="w">  </span><span class="c1">//--------------------------------------------</span>
+<a id="__codelineno-7-106" name="__codelineno-7-106" href="#__codelineno-7-106"></a><span class="w">  </span><span class="c1">// Internal variables</span>
+<a id="__codelineno-7-107" name="__codelineno-7-107" href="#__codelineno-7-107"></a><span class="w">  </span><span class="c1">//--------------------------------------------</span>
+<a id="__codelineno-7-108" name="__codelineno-7-108" href="#__codelineno-7-108"></a>
+<a id="__codelineno-7-109" name="__codelineno-7-109" href="#__codelineno-7-109"></a><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">1</span><span class="o">:</span><span class="n">POLY_LENGTH</span><span class="p">]</span><span class="w"> </span><span class="n">prbs</span><span class="w">       </span><span class="p">[</span><span class="nl">NBITS:</span><span class="mh">0</span><span class="p">]</span><span class="w">               </span><span class="p">;</span>
+<a id="__codelineno-7-110" name="__codelineno-7-110" href="#__codelineno-7-110"></a><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="n">NBITS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w">   </span><span class="n">prbs_din_i</span><span class="w">                         </span><span class="p">;</span>
+<a id="__codelineno-7-111" name="__codelineno-7-111" href="#__codelineno-7-111"></a><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="n">NBITS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w">   </span><span class="n">prbs_xor_a</span><span class="w">                         </span><span class="p">;</span>
+<a id="__codelineno-7-112" name="__codelineno-7-112" href="#__codelineno-7-112"></a><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="n">NBITS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w">   </span><span class="n">prbs_xor_b</span><span class="w">                         </span><span class="p">;</span>
+<a id="__codelineno-7-113" name="__codelineno-7-113" href="#__codelineno-7-113"></a><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="nl">NBITS:</span><span class="mh">1</span><span class="p">]</span><span class="w">       </span><span class="n">prbs_msb</span><span class="w">                           </span><span class="p">;</span>
+<a id="__codelineno-7-114" name="__codelineno-7-114" href="#__codelineno-7-114"></a><span class="w">  </span><span class="kt">reg</span><span class="w">  </span><span class="p">[</span><span class="mh">1</span><span class="o">:</span><span class="n">POLY_LENGTH</span><span class="p">]</span><span class="w"> </span><span class="n">prbs_reg</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{(</span><span class="n">POLY_LENGTH</span><span class="p">){</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">}}</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-7-115" name="__codelineno-7-115" href="#__codelineno-7-115"></a>
+<a id="__codelineno-7-116" name="__codelineno-7-116" href="#__codelineno-7-116"></a><span class="w">  </span><span class="k">assign</span><span class="w"> </span><span class="n">prbs_din_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INV_PATTERN</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">prbs_din</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="n">prbs_din</span><span class="p">);</span>
+<a id="__codelineno-7-117" name="__codelineno-7-117" href="#__codelineno-7-117"></a><span class="w">  </span><span class="k">assign</span><span class="w"> </span><span class="n">prbs</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prbs_reg</span><span class="p">;</span>
+<a id="__codelineno-7-118" name="__codelineno-7-118" href="#__codelineno-7-118"></a>
+<a id="__codelineno-7-119" name="__codelineno-7-119" href="#__codelineno-7-119"></a><span class="w">  </span><span class="k">genvar</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-7-120" name="__codelineno-7-120" href="#__codelineno-7-120"></a><span class="w">  </span><span class="k">generate</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NBITS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">g1</span>
+<a id="__codelineno-7-121" name="__codelineno-7-121" href="#__codelineno-7-121"></a><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">prbs_xor_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prbs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">POLY_TAP</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">prbs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">POLY_LENGTH</span><span class="p">];</span>
+<a id="__codelineno-7-122" name="__codelineno-7-122" href="#__codelineno-7-122"></a><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">prbs_xor_b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prbs_xor_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">prbs_din_i</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-7-123" name="__codelineno-7-123" href="#__codelineno-7-123"></a><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">prbs_msb</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CHK_MODE</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">prbs_xor_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">  </span><span class="o">:</span><span class="w">  </span><span class="n">prbs_din_i</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-7-124" name="__codelineno-7-124" href="#__codelineno-7-124"></a><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">prbs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mh">1</span><span class="p">]</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">prbs_msb</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">prbs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mh">1</span><span class="o">:</span><span class="n">POLY_LENGTH</span><span class="o">-</span><span class="mh">1</span><span class="p">]};</span>
+<a id="__codelineno-7-125" name="__codelineno-7-125" href="#__codelineno-7-125"></a><span class="w">  </span><span class="k">end</span>
+<a id="__codelineno-7-126" name="__codelineno-7-126" href="#__codelineno-7-126"></a><span class="w">  </span><span class="k">endgenerate</span>
+<a id="__codelineno-7-127" name="__codelineno-7-127" href="#__codelineno-7-127"></a>
+<a id="__codelineno-7-128" name="__codelineno-7-128" href="#__codelineno-7-128"></a><span class="w">  </span><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="k">posedge</span><span class="w"> </span><span class="n">clk</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<a id="__codelineno-7-129" name="__codelineno-7-129" href="#__codelineno-7-129"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">rst_n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<a id="__codelineno-7-130" name="__codelineno-7-130" href="#__codelineno-7-130"></a><span class="w">      </span><span class="n">prbs_reg</span><span class="w">  </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">{</span><span class="n">POLY_LENGTH</span><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">}};</span>
+<a id="__codelineno-7-131" name="__codelineno-7-131" href="#__codelineno-7-131"></a><span class="w">      </span><span class="n">prbs_dout</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">{</span><span class="n">NBITS</span><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">}};</span>
+<a id="__codelineno-7-132" name="__codelineno-7-132" href="#__codelineno-7-132"></a><span class="w">    </span><span class="k">end</span>
+<a id="__codelineno-7-133" name="__codelineno-7-133" href="#__codelineno-7-133"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">prbs_en</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<a id="__codelineno-7-134" name="__codelineno-7-134" href="#__codelineno-7-134"></a><span class="w">      </span><span class="n">prbs_dout</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">prbs_xor_b</span><span class="p">;</span>
+<a id="__codelineno-7-135" name="__codelineno-7-135" href="#__codelineno-7-135"></a><span class="w">      </span><span class="n">prbs_reg</span><span class="w">  </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">prbs</span><span class="p">[</span><span class="n">NBITS</span><span class="p">];</span>
+<a id="__codelineno-7-136" name="__codelineno-7-136" href="#__codelineno-7-136"></a><span class="w">    </span><span class="k">end</span>
+<a id="__codelineno-7-137" name="__codelineno-7-137" href="#__codelineno-7-137"></a><span class="w">  </span><span class="k">end</span>
+<a id="__codelineno-7-138" name="__codelineno-7-138" href="#__codelineno-7-138"></a>
+<a id="__codelineno-7-139" name="__codelineno-7-139" href="#__codelineno-7-139"></a><span class="k">endmodule</span>
 </code></pre></div>
 
 

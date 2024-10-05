@@ -237,3 +237,154 @@ module async_reset_sync_release (
 endmodule
 ```
 
+---
+
+- PRBS(Pseudo-Random Binary Sequence)
+
+使用PRBS这种伪随机码进行高速串行通道的测试，主要测试误码率等情况。PRBS 的码流在很大程度上具有“随机数据”的特性，“0”和“1”随机出现，这种码流的频谱特征和白噪声非常接近，所谓“白噪声”就是在一个比较宽的频域里功率密度谱均匀分布，也就是所有的频率都具有相同的能量，因此该码型能够模拟各种不同频率数据组成的情况，使测试更符合真实的情况。
+
+> 常用的有阶数7, 9, 11, 15, 20, 23, 31
+
+```verilog
+`timescale 1ns/1ps
+
+
+//////////////////////////////////////////////////////////////////////////////////
+// Company: BIT
+// Engineer: Liu Yubo(Modified)
+// Author  : Daniele Riccardi
+//
+// Create Date: 2024/09/12 23:32:00
+// Design Name:
+// Module Name: prbs_gen_or_check
+// Project Name:
+// Target Devices:
+// Tool Versions: Vivado 2019.1
+// Description:
+//--------------------------------------------------------------------------
+// DESCRIPTION
+//--------------------------------------------------------------------------
+//  This module generates or check a PRBS pattern. The following table shows how
+//  to set the PARAMETERS for compliance to ITU-T Recommendation O.150 Section 5.
+//
+//  When the CHK_MODE is "false", it uses a  LFSR strucure to generate the
+//  PRBS pattern.
+//  When the CHK_MODE is "true", the incoming data are loaded into prbs registers
+//  and compared with the locally generated PRBS
+//
+// Dependencies:
+//
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+//--------------------------------------------------------------------------
+// NOTES
+//--------------------------------------------------------------------------
+//
+//
+//   Set paramaters to the following values for a ITU-T compliant PRBS
+//------------------------------------------------------------------------------
+// POLY_LENGHT POLY_TAP INV_PATTERN  || nbr of   bit seq.   max 0      feedback
+//                                   || stages    length  sequence      stages
+//------------------------------------------------------------------------------
+//     7          6       false      ||    7         127      6 ni        6, 7   (*)
+//     9          5       false      ||    9         511      8 ni        5, 9
+//    11          9       false      ||   11        2047     10 ni        9,11
+//    15         14       true       ||   15       32767     15 i        14,15
+//    20          3       false      ||   20     1048575     19 ni        3,20
+//    23         18       true       ||   23     8388607     23 i        18,23
+//    29         27       true       ||   29   536870911     29 i        27,29
+//    31         28       true       ||   31  2147483647     31 i        28,31
+//
+// i=inverted, ni= non-inverted
+// (*) non standard
+//----------------------------------------------------------------------------
+//
+// In the generated parallel PRBS, LSB is the first_n generated bit, for example
+//      if the PRBS serial stream is : 000001111011... then
+//      the generated PRBS with a parallelism of 3 bit becomes:
+//        prbs_dout(2) = 0  1  1  1 ...
+//        prbs_dout(1) = 0  0  1  1 ...
+//        prbs_dout(0) = 0  0  1  0 ...
+// In the received parallel PRBS, LSB is oldest bit received
+//
+// RESET pin is not needed for power-on reset : all registers are properly inizialized
+// in the source code.
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+
+//------------------------------------------------------------------------------
+// PARAMETERS
+//------------------------------------------------------------------------------
+// CHK_MODE    : true  => check mode
+//               false => generate mode
+// INV_PATTERN : true : invert prbs pattern
+//               in "generate mode", the generated prbs is inverted bit-wise at outputs
+//               in "check mode", the input data are inverted before processing
+// NBITS       : bus size of prbs_din and prbs_dout
+// POLY_LENGTH : length of the polynomial (= number of shift register stages)
+// POLY_TAP    : intermediate stage that is xor-ed with the last stage to generate to next prbs bit
+//
+//------------------------------------------------------------------------------
+// PINS
+//------------------------------------------------------------------------------
+//
+// prbs_en     : input wire  enable/pause pattern generation/check
+// prbs_din    : input wire  inject error           ( in generate mode )
+//                           data to be checked     ( in check mode    )
+// prbs_dout   : output reg  generated prbs pattern ( in generate mode )
+//                           error found            ( in check mode    )
+//
+
+module prbs_gen_or_check #(
+  parameter                 CHK_MODE    = 0  ,
+  parameter                 INV_PATTERN = 0  ,
+  parameter                 NBITS       = 32 ,
+  parameter                 POLY_LENGTH = 31 ,
+  parameter                 POLY_TAP    = 28
+)(
+  input  wire               clk       ,
+  input  wire               rst_n     ,
+  input  wire               prbs_en   ,
+  input  wire [NBITS - 1:0] prbs_din  ,
+  output reg  [NBITS - 1:0] prbs_dout
+);
+  //--------------------------------------------
+  // Internal variables
+  //--------------------------------------------
+
+  wire [1:POLY_LENGTH] prbs       [NBITS:0]               ;
+  wire [NBITS - 1:0]   prbs_din_i                         ;
+  wire [NBITS - 1:0]   prbs_xor_a                         ;
+  wire [NBITS - 1:0]   prbs_xor_b                         ;
+  wire [NBITS:1]       prbs_msb                           ;
+  reg  [1:POLY_LENGTH] prbs_reg   = {(POLY_LENGTH){1'b1}} ;
+
+  assign prbs_din_i = INV_PATTERN == 0 ? prbs_din : ( ~prbs_din);
+  assign prbs[0] = prbs_reg;
+
+  genvar i;
+  generate for (i = 0; i < NBITS; i = i + 1) begin : g1
+    assign prbs_xor_a[i] = prbs[i][POLY_TAP] ^ prbs[i][POLY_LENGTH];
+    assign prbs_xor_b[i] = prbs_xor_a[i] ^ prbs_din_i[i];
+    assign prbs_msb[i+1] = CHK_MODE == 0 ? prbs_xor_a[i]  :  prbs_din_i[i];
+    assign prbs[i+1]     = {prbs_msb[i+1] , prbs[i][1:POLY_LENGTH-1]};
+  end
+  endgenerate
+
+  always @(posedge clk) begin
+    if(rst_n == 1'b0) begin
+      prbs_reg  <= {POLY_LENGTH{1'b1}};
+      prbs_dout <= {NBITS{1'b1}};
+    end
+    else if(prbs_en == 1'b1) begin
+      prbs_dout <= prbs_xor_b;
+      prbs_reg  <= prbs[NBITS];
+    end
+  end
+
+endmodule
+
+```
+

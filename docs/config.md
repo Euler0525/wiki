@@ -132,11 +132,11 @@ $ sudo git apt install git
 
 ### Git&GitHub
 
-```
+```shell
 # user.name & user.email
-$ git config --global user.name "Euler0525" 
-$ git config --global user.email "euler0525@139.com"
-$ ssh-keygen -t rsa -C "euler0525@139.com"
+git config --global user.name ""           # git config user.name  查看用户名
+git config --global user.email ""  # git config user.email 查看邮箱
+ssh-keygen -t rsa -C ""
 ```
 
 - 在GitHub中添加公钥

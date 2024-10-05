@@ -1,6 +1,9 @@
 # MATLAB
 
-> [histogram](https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.histogram_zh_CN.html)
+> - [awgn](https://www.mathworks.com/help/comm/ref/awgn.html)
+> - [berawgn](https://www.mathworks.com/help/comm/ref/berawgn.html?searchHighlight=berawgn&s_tid=srchtitle_support_results_1_berawgn)
+> - [histogram](https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.histogram_zh_CN.html)
+> - [kron](https://www.mathworks.com/help/matlab/ref/kron.html?lang=en)
 
 - FFT绘制频谱图
 

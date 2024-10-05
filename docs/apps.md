@@ -90,6 +90,12 @@
 
 - Multisim
 
+## N
+
+- [NetAssit](https://cmsoft.cn/resource/102.html)
+
+- [Nodepad++](https://notepad-plus-plus.org/downloads/)
+
 ## O
 
 - [OBS Studio](https://obsproject.com/download)
@@ -144,6 +150,8 @@
 
 ## U
 
+- [UartAssist](https://cmsoft.cn/resource/101.html)
+
 - [uTools](https://u.tools/)
 
 ## V
@@ -161,6 +169,8 @@
 > ZF71R-DMX85-08DQY-8YMNC-PPHV8
 
 ## W
+
+- [WinSCP](https://winscp.net/eng/download.php)
 
 - [Wireshark](https://www.wireshark.org/download.html)
 

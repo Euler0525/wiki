@@ -95,6 +95,8 @@ print(list(new_list))
 # print(list(g))
 ```
 
+---
+
 ## Not Bug
 
 - Normal Use
@@ -133,6 +135,8 @@ if __name__ == "__main__":
 # Hello {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7fdd2d6a10f0>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, '__file__': '/root/tmp/main.py', '__cached__': None, 'config': {'KEY': 'admin'}, 'User': <class '__main__.User'>, 'user': <__main__.User object at 0x7fdd2d6db5b0>}!
 ```
 
+---
+
 ### Serialization And Deserialization
 
 - Normal Use
@@ -164,3 +168,82 @@ p = pickle.dumps(a)
 pickle.loads(p)
 # root
 ```
+
+---
+
+```python
+# Default argument value is mutable
+class Player(object):
+    def __init__(self, name: str, assets=None):
+        if assets is None:
+            assets = []
+        self.name = name
+        self.assets = assets
+
+
+# class Player(object):
+#     def __init__(self, name: str, assets=[]):
+#         self.name = name
+#         self.assets = assets
+```
+
+---
+
+- 列表扩展
+
+```python
+l = []
+for i in range(5):
+    l.append(i + 1)
+    print(l)
+    print(l.__sizeof__())
+    print("********************")
+
+l1 = [1, 2, 3, 4]
+print(l.__sizeof__())
+
+
+[1]
+72
+********************
+[1, 2]
+72
+********************
+[1, 2, 3]
+72
+********************
+[1, 2, 3, 4]
+72
+********************
+[1, 2, 3, 4, 5]
+104
+********************
+104
+```
+
+---
+
+- 子句的执行顺序
+
+```python
+arr = [1, 8, 15]
+g = (x for x in arr if arr.count(x) > 0)
+arr = [2, 8, 22]
+print(list(g))  # [8]
+```
+
+在生成表达式中，`in`在声明时执行，条件子句在运行时执行。
+
+```python
+arr_1 = [1, 2, 3, 4]
+g1 = (x for x in arr_1)
+arr_1 = [1, 2, 3, 4, 5]
+arr_2 = [1, 2, 3, 4]
+g2 = (x for x in arr_2)
+arr_2[:] = [1, 2, 3, 4, 5]
+print(list(g1))  # [1, 2, 3, 4]
+print(list(g2))  # [1, 2, 3, 4, 5]
+```
+
+1. `arr_1`被绑定到新对象`[1, 2, 3, 4, 5]`，但`in`在声明时执行，所以仍然引用旧对象；
+2. `arr_2`用切片将旧对象原地更新为`[1, 2, 3, 4, 5]`，因此`g2`与`arr_2`引用同一个对象；

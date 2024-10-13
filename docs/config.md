@@ -42,7 +42,7 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted unive
 
 ## SSH
 
-```
+```shell
 $ sudo apt update
 $ sudo apt install openssh-server -y
 $ sudo ps -e | grep ssh
@@ -59,7 +59,7 @@ $ reboot
 
 ### oh-my-zsh
 
-```
+```shell
 $ sudo apt-get install zsh
 $ sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 $ chsh -s /bin/zsh  # 修改默认终端为zsh
@@ -70,7 +70,7 @@ $ vim ~/.zshrc # 修改ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ### Plug-ins
 
-```
+```shell
 # zsh-autosuggestions
 $ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # zsh-syntax-highlighting
@@ -85,7 +85,7 @@ $ source ~/.zshrc
 
 ### Installation
 
-```
+```shell
 $ cd ~/Download
 $ wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
 $ bash Anaconda3-2024.02-1-Linux-x86_64.sh
@@ -117,7 +117,7 @@ auto_activate_base: true
 
 ### env
 
-```
+```shell
 $ conda create -n python3 python=3.10  # 创建虚拟环境
 $ source activate python3  # 激活虚拟环境
 $ conda remove -n python3 --all  # 删除虚拟环境
@@ -126,7 +126,7 @@ $ conda env list  # 查看虚拟环境
 
 ## Git
 
-```
+```shell
 $ sudo git apt install git
 ```
 
@@ -153,9 +153,17 @@ ssh-keygen -t rsa -C ""
 Hi ...! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
+## WSL
+
+```powershell
+# 迁移
+wsl --export Ubuntu D:\Ubuntu\Ubuntu.tar
+wsl --import Ubuntu C:\Ubuntu\ C:\Ubuntu\Ubuntu.tar --version 2
+```
+
 ## Docker
 
-```
+```shell
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 sudo usermod -aG docker ${USER}  # 将当前用户加入Docker用户组
 sudo service docker start    # 启动docker服务
@@ -163,7 +171,7 @@ sudo service docker start    # 启动docker服务
 
 ## Nginx
 
-```
+```shell
 $ sudo apt install nginx -y
 # 启动
 $ sudo systemctl start nginx
@@ -184,4 +192,3 @@ $ sudo ufw status
 % ...\MATLAB\toolbox\local\matlabrc.m
 cd("D:\Syncdisk");
 ```
-

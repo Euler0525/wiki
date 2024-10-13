@@ -104,6 +104,8 @@
 
 ## P
 
+- [PalmInput](https://www.xinshuru.com/index.html?p=win)
+
 - [PicGo](https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1)
 
 - [PicPick](https://picpick.app/en/download/)
@@ -129,13 +131,12 @@
 ## S
 
 - SciHub
-
 - ScreenToGif
-
 - Serial Debug Assistant(Microsoft Store)
-
-- [PalmInput](https://www.xinshuru.com/index.html?p=win)
-
+- [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+- [STM32CubeCLT](https://www.st.com/en/development-tools/stm32cubeclt.html)
+- [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)
+- [STMCUFinder](https://www.st.com/en/development-tools/st-mcu-finder-pc.html)
 - [闪秒云](http://shanmiaocloud.com/)
 
 ## T

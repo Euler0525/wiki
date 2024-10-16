@@ -1,5 +1,15 @@
 # Apps
 
+> [x-cmd](https://cn.x-cmd.com/)
+>
+> ```shell
+> eval "$(curl https://get.x-cmd.com)"
+> x upgrade
+> ```
+>
+> - [bit](https://cn.x-cmd.com/1min/bit)
+> - [fd](https://cn.x-cmd.com/pkg/fd)
+
 ## #
 
 - 010Editor
@@ -9,6 +19,8 @@
 ## A
 
 - Adobe
+
+- [AriaNgGUI](https://github.com/Xmader/aria-ng-gui/releases)
 
 ## B
 
@@ -73,6 +85,8 @@
 - JEB
 
 ## L
+
+- [Lazygit](https://github.com/jesseduffield/lazygit)
 
 - [lx-music](https://github.com/lyswhut/lx-music-desktop/releases)
 
@@ -192,4 +206,3 @@
 ## Z
 
 - Zotero
-

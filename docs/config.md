@@ -192,3 +192,32 @@ $ sudo ufw status
 % ...\MATLAB\toolbox\local\matlabrc.m
 cd("D:\Syncdisk");
 ```
+
+## TeXLive
+
+- 开源镜像站：[清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)
+
+```shell
+❯ mkdir ~/Program/TeXLive
+❯ mount .iso ~/Program/TeXLive && cd ~/Program/TeXLive
+❯ ./install-tl
+❯ umount ~/Program/TeXLive && rm -r ~/Program/TeXLive
+❯ vim ~/.zshrc  # ↓
+❯ source ~/.zshrc
+❯ tex -v  # 验证安装成功
+```
+
+```shell
+# Add TeX Live to the PATH, MANPATH, INFOPATH
+export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH
+```
+
+## Start Menu
+
+```
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+```
+

@@ -520,6 +520,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#texlive" class="md-nav__link">
+    <span class="md-ellipsis">
+      TeXLive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start Menu
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -906,6 +924,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#texlive" class="md-nav__link">
+    <span class="md-ellipsis">
+      TeXLive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start Menu
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1072,6 +1108,27 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c">% ...\MATLAB\toolbox\local\matlabrc.m</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">cd</span><span class="p">(</span><span class="s">&quot;D:\Syncdisk&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="texlive">TeXLive</h2>
+<ul>
+<li>开源镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/">清华大学开源软件镜像站</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>❯<span class="w"> </span>mkdir<span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>❯<span class="w"> </span>mount<span class="w"> </span>.iso<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>❯<span class="w"> </span>./install-tl
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>❯<span class="w"> </span>umount<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>❯<span class="w"> </span>vim<span class="w"> </span>~/.zshrc<span class="w">  </span><span class="c1"># ↓</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>❯<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zshrc
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>❯<span class="w"> </span>tex<span class="w"> </span>-v<span class="w">  </span><span class="c1"># 验证安装成功</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Add TeX Live to the PATH, MANPATH, INFOPATH</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/texlive/2024/bin/x86_64-linux:<span class="nv">$PATH</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MANPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/man:<span class="nv">$MANPATH</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INFOPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/info:<span class="nv">$INFOPATH</span>
+</code></pre></div>
+<h2 id="start-menu">Start Menu</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
 </code></pre></div>
 
 

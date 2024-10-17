@@ -12,7 +12,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../analog/">
+        <link rel="next" href="../soc/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -430,6 +430,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../soc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SoC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../analog/" class="md-nav__link">
         
   
@@ -557,10 +577,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -571,8 +591,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Programming
           </label>
@@ -973,6 +993,9 @@
 <p><em>（同理，可根据原理图第4页配置）</em></p>
 <p><strong>[Run Block Automation]</strong>后将<code>M_AXI_GP0_ACLK</code>与<code>FCLK_CLK0</code>相连。</p>
 <h2 id="gpio">GPIO</h2>
+<blockquote>
+<p><strong>UG585-ZYNQ_7000_SoC</strong></p>
+</blockquote>
 <p>Xilinx ZYNQ提供了<strong>MIO</strong>、<strong>EMIO</strong>、<strong>AXI_GPIO</strong>三种类型的GPIO接口。</p>
 <ul>
 <li>MIO是属于PS端的固定IO口，使用时不需要消耗PL端的资源；</li>
@@ -980,7 +1003,10 @@
 <li>AXI_GPIO是Xilinx封装好的IP核，是PS端通过AXI GP总线控制PL端的IO口技术，使用时需要消耗PL端资源。</li>
 </ul>
 <h3 id="mio">MIO</h3>
-<p>ZYNQ7000系列芯片有54个MIO，它们分配在 GPIO 的 Bank0 和Bank1，隶属于PS部分，这些 IO 与 PS 直接相连使用时不需要添加引脚约束，对PL部分不可见。所以对 MIO 的操作可以看作是纯 PS 的操作。用SDK软件操作底层都是对于内存地址空间的操作。</p>
+<blockquote>
+<p><strong>UG585-ZYNQ_7000_SoC</strong>：Figure 14-1 <strong>GPIO Block Diagram</strong>(P410)</p>
+</blockquote>
+<p>ZYNQ7000系列芯片有54个MIO，它们分配在 GPIO 的 Bank0 和Bank1，隶属于PS部分，这些 IO 与 PS 直接相连使用时不需要添加引脚约束，<strong>对PL部分不可见</strong>。所以对 MIO 的操作可以看作是纯 PS 的操作。用SDK软件操作底层都是对于内存地址空间的操作。</p>
 <hr />
 <p>MIO或EMIO使用时需要调用API函数：</p>
 <ol>
@@ -1065,7 +1091,7 @@
 <blockquote>
 <p><strong>[Customize Block]→[MIO Configuation]</strong>选择<strong>EMIO</strong></p>
 </blockquote>
-<p>扩展MIO，依然属于ZYNQ的PS部分，只是连接到了PL上，再从PL的引脚连到芯片外面实现数据输入输出。 PS操作MIO和EMIO的方法类似。</p>
+<p>扩展MIO，依然属于ZYNQ的PS部分，只是连接到了PL上，再从PL的引脚连到芯片外面实现数据输入输出。 <strong>无论是EMIO还是MIO都属于PS上的IO，直接由PS操作，PS操作MIO和EMIO的方法类似</strong>。</p>
 <p>MIO分布在BANK0，BANK1，而EMIO则分布在BANK2、BANK3，参考<strong>[<em>Figure 14‐1</em>: GPIO Block Diagram]</strong></p>
 <ol>
 <li>

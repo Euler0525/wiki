@@ -3,6 +3,7 @@ site_name: Euler0525@Wiki
 nav:
   - Home: index.md
   - ZYNQ: zynq.md
+  - SoC: soc.md
   - Analog Devices Tutorials: analog.md
   - Satellite: satellite.md
   - Maths: maths.md

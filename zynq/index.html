@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../driver/">
       
       
         <link rel="next" href="../soc/">
@@ -196,6 +196,26 @@
   
   <span class="md-ellipsis">
     Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../driver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Driver
   </span>
   
 
@@ -411,19 +431,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ilaintegrated-logic-analyzer" class="md-nav__link">
+  <a href="#dds-compiler" class="md-nav__link">
     <span class="md-ellipsis">
-      ILA(Integrated Logic Analyzer)
+      DDS Compiler
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ILA(Integrated Logic Analyzer)">
+    <nav class="md-nav" aria-label="DDS Compiler">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      调试界面
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
     </span>
   </a>
   
@@ -431,6 +460,24 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Fourier Transform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ilaintegrated-logic-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILA(Integrated Logic Analyzer)
+    </span>
+  </a>
   
 </li>
         
@@ -440,7 +487,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       参考资料
     </span>
@@ -630,10 +677,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -644,8 +691,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Programming
           </label>
@@ -1005,19 +1052,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ilaintegrated-logic-analyzer" class="md-nav__link">
+  <a href="#dds-compiler" class="md-nav__link">
     <span class="md-ellipsis">
-      ILA(Integrated Logic Analyzer)
+      DDS Compiler
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ILA(Integrated Logic Analyzer)">
+    <nav class="md-nav" aria-label="DDS Compiler">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      调试界面
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
     </span>
   </a>
   
@@ -1025,6 +1081,24 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Fourier Transform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ilaintegrated-logic-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILA(Integrated Logic Analyzer)
+    </span>
+  </a>
   
 </li>
         
@@ -1034,7 +1108,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       参考资料
     </span>
@@ -1295,6 +1369,154 @@
 <p><code>FWFT</code>读模式：<code>rd_en</code>信号有效时，有效数据<code>D0</code>已经在数据线上准备好有效了，不会再延后一个周期（与<code>Standard FIFO</code>的区别）</p>
 </li>
 </ul>
+<h3 id="dds-compiler">DDS Compiler</h3>
+<h4 id="configuration">Configuration</h4>
+<p><strong>Configuration Options</strong></p>
+<ul>
+<li><strong>Phase Generator and SIN/COS LUT</strong>：一个相位生成器和用于生成正余弦波形的查找表</li>
+<li><strong>Phase Generator Only</strong>：只包含相位生成器（自定义波形生成）</li>
+<li><strong>SIN/COS LUT Only</strong>：仅包含正余弦查找表（用于固定频率）</li>
+</ul>
+<p><strong>System Requirements</strong></p>
+<ul>
+<li><strong>System Clock(MHz)</strong>：系统时钟频率<span class="arithmatex">\(f_{clk}\)</span></li>
+<li><strong>Number of Channels</strong>：通道数。单个IP核实现多个独立的频率和相位输出</li>
+<li><strong>Mode of Operation</strong><ul>
+<li><strong>Standard</strong>：见<a href="#principle">设计原理</a></li>
+<li><strong>Rasterized</strong>：生成固定的频率点（输出频率不是连续可变的，而是在一些固定的频率值跳变），间隔由相位累加器的模数<span class="arithmatex">\(M\)</span>决定</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div class="arithmatex">\[
+\Delta f = \dfrac{f_{clk}}{M}
+\]</div>
+</blockquote>
+<ul>
+<li><strong>Parameter Selection</strong>：</li>
+</ul>
+<p><strong>System Parameters</strong>：</p>
+<p>将IP核集成到更广泛系统中所需的参数，如IP核的时钟配置、接口类型、以及可能涉及到的系统级优化和功能使能</p>
+<ul>
+<li><strong>Spurious Free Dynamic Range(SFDR)</strong>： 无杂散动态范围。信号最大幅度与最大杂散或噪声幅度之间的差异。SFDR越高信号的纯净度越高</li>
+<li><strong>Frequency Resolution</strong>：频率分辨率，决定了输出频率的精度</li>
+<li><strong>Noise Shaping</strong>：在频率域内重新分配量化噪声，将其分配到不敏感的频率区域。</li>
+</ul>
+<p><strong>Hardware Parameters</strong>：</p>
+<p>涉及IP核内部硬件实现的细节直接影响IP核的性能和资源消耗</p>
+<ul>
+<li><strong>Phase Width</strong>：相位累加器的位宽，越宽频率分辨率越高</li>
+<li><strong>Output Width</strong>：输出波形位宽，决定了波形最大幅度和幅度分辨率</li>
+</ul>
+<h4 id="implementation">Implementation</h4>
+<p><strong>Phase Increment Programmability</strong></p>
+<ul>
+<li><strong>Fixed</strong>：相位增量固定，频率不可更改</li>
+<li><strong>Programmable</strong>：相位增量可以在运行时修改，允许动态修改频率</li>
+<li><strong>Streaming</strong>：相位增量可以实时更新（连续变化频率）</li>
+</ul>
+<p><strong>Phase Offset Programmability</strong></p>
+<ul>
+<li><strong>None</strong>：没有初始相位偏移</li>
+<li><strong>Fixed</strong>：相位偏移固定，不可更改</li>
+<li><strong>Programmable</strong>：可以在在运行时修改</li>
+</ul>
+<p><strong>Output</strong></p>
+<ul>
+<li><strong>Output Selection</strong>：正弦、余弦或两者同时输出（<code>sin</code>在高位，<code>cos</code>在低位）</li>
+<li><strong>Polarity</strong>：将相位增加<span class="arithmatex">\(\pi\)</span></li>
+</ul>
+<p><strong>Implementation Options</strong></p>
+<ul>
+<li><strong>Has Phase Out</strong>：输出相位信息</li>
+<li><strong>Memory Type</strong>：查找表存储方式</li>
+<li><strong>Optimization Goal</strong>：优化速度或面积；<strong>DSP48 Use</strong>：DSP48资源使用程度</li>
+</ul>
+<h3 id="fast-fourier-transform">Fast Fourier Transform</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube/ic/fft_configuration.webp" alt="fft_configuration" width="90%" height="90%" /></p>
+<p><strong>Configuration</strong></p>
+<ul>
+<li><strong>Number of Channels</strong>：多通道，实现多帧数据同时进行FFT运算</li>
+<li><strong>Transform Length</strong>：FFT长度</li>
+<li>
+<p><strong>Architecture Configuration</strong></p>
+<ul>
+<li><strong>Target Clock Frequency(MHz)</strong></li>
+<li><strong>Target Data Throughput(MSPS)</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Architecture Choice</strong></p>
+<ul>
+<li><strong>Automatically Select</strong>：自动选择</li>
+<li><strong>Piplined, Streaming I/O</strong>：并行流水线结构（处理时间最短，资源消耗最大）</li>
+<li><strong>Radix-4, Burst I/O</strong>：基4</li>
+<li><strong>Radix-2, Burst I/O</strong>：基2</li>
+<li><strong>Radix-2 Lite, Burst I/O</strong>：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube/ic/fft_implementation.webp" alt="fft_implementation" width="90%" height="90%" /></p>
+<p><strong>Implementation</strong></p>
+<ul>
+<li>
+<p><strong>Data Format</strong>：<strong>Fixed Point</strong>（定位全精度）；<strong>Floating Point</strong>（定位缩减位宽）</p>
+</li>
+<li>
+<p><strong>Scaling Options</strong>：</p>
+<ul>
+<li><strong>Block Floating Point</strong>：FFT内部采用浮点，并根据每一级的数据自动缩放（输入输出位宽一致）</li>
+<li><strong>Scaled</strong>：<code>m_axis_data_tuser</code>中有<span class="arithmatex">\(5bit\)</span>表示每一级的缩放情况</li>
+<li>
+<p><strong>Unscaled</strong>：不用担心溢出</p>
+</li>
+<li>
+<p><strong>Rounding Modes</strong>：<strong>Convergent Rounding</strong>；<strong>Truncation</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Precision Options</strong></p>
+<ul>
+<li><strong>Input Data Width</strong>：</li>
+<li><strong>Phase Factor Width</strong>：</li>
+</ul>
+</li>
+<li>
+<p><strong>Control Signals</strong></p>
+<ul>
+<li><strong>ACLKEN</strong></li>
+<li><strong>ARESETn(active low)</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Output Ordering Options</strong></p>
+<ul>
+<li><strong>Output Ordering</strong>：<strong>Bit/Digit Reversed Order</strong>；<strong>Natural Order</strong></li>
+<li><strong>Cyclic Prefix Insertion</strong></li>
+</ul>
+</li>
+<li>
+<p>Optional Output Fields：XK_INDEX；OVFLO</p>
+</li>
+<li>Throttle Scheme：Non Real Time；Real Time</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube/ic/fft_detailed.webp" alt="fft_detailed" width="90%" height="90%" /></p>
+<p><strong>Detailed Implementation</strong></p>
+<ul>
+<li><strong>Memory Options</strong><ul>
+<li>Data：Block RAM；Distributed RAM</li>
+<li>Phase Factors：Block RAM；Distributed RAM</li>
+<li>Number of stages using Block RAM for Data and Phase Factors</li>
+<li>Reorder Buffer：Block RAM；Distributed RAM；Optimize Block RAM Count Using Hybrid Memories</li>
+</ul>
+</li>
+<li>Optimize Options<ul>
+<li>Complex Multipliers</li>
+<li>Butterfly Arithmetic</li>
+</ul>
+</li>
+</ul>
 <h3 id="ilaintegrated-logic-analyzer">ILA(Integrated Logic Analyzer)</h3>
 <blockquote>
 <p>常用的<strong>在线调试</strong>方法：</p>
@@ -1324,7 +1546,7 @@
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="p">.</span><span class="n">probe1</span><span class="p">(</span><span class="n">probe1</span><span class="p">)</span><span class="w"> </span><span class="c1">// input wire [3:0]  probe1</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">);</span>
 </code></pre></div>
-<h4 id="_3">调试界面</h4>
+<p><strong>调试界面</strong></p>
 <p>bit文件烧写后，会进入下图所示的ILA调试界面</p>
 <p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/prog/ila_debug.webp" /></p>
 <p><strong>Waveform窗口</strong></p>
@@ -1332,7 +1554,7 @@
 <p><strong>Status窗口</strong></p>
 <p>四个按钮分别为：<strong>循环采样</strong>、<strong>条件触发采样</strong>、<strong>无条件执行<code>ILA</code>采样</strong>、<strong>停止采样按钮</strong>
 <strong>Core status</strong>表示<code>ILA</code>的运行状态</p>
-<h2 id="_4">参考资料</h2>
+<h2 id="_3">参考资料</h2>
 <ol>
 <li>Zynq 7000 SoC Technical Reference Manual UG585 (v1.14) June 30, 2023</li>
 <li>

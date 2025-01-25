@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../ai/">
+        <link rel="prev" href="../soc/">
       
       
-        <link rel="next" href="../about/">
+        <link rel="next" href="../rtos/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Links - Euler0525@Wiki</title>
+        <title>Bug - Euler0525@Wiki</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#links" class="md-skip">
+        <a href="#bug" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Links
+              Bug
             
           </span>
         </div>
@@ -288,10 +288,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../bug/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -300,6 +309,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -636,19 +646,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -657,7 +658,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -715,21 +715,12 @@
                   
 
 
-<h1 id="links">Links</h1>
-<ul>
-<li><a href="https://www.3blue1brown.com/">3Blue1Brown</a>：知识可视化</li>
-<li><a href="https://sourcemaking.com/">Design Patterns &amp; Refactoring</a>：设计模式</li>
-<li><a href="https://www.dsprelated.com/">DSPRelated</a>：数字信号处理参考资料</li>
-<li><a href="https://guidebookgallery.org/index">Guidebook</a>: Graphic User Interface Gallery</li>
-<li><a href="https://www.iaincollings.com/">Iain Explains</a>：通信基础理论（视频讲解）</li>
-<li><a href="http://toastytech.com/">Nathan's Toasty Technology page</a>：各版本操作系统图形界面珍藏</li>
-<li><a href="https://axler.net/">Sheldon Axler’s Home Page</a>：数学教材</li>
-<li><a href="http://helloworldcollection.de/">The Hello World Collection</a>：各种编程语言的<code>Hello World!\n</code></li>
-<li><a href="https://wirelesspi.com/">Wireless Pi</a>：无线通信技术</li>
-<li>正交信号</li>
-</ul>
-<p>【英文版】<a href="https://www.dsprelated.com/showarticle/192.php">A Quadrature Signals Tutorial: Complex, But Not Complicated</a></p>
-<p>【中文版】<a href="https://www.eet-china.com/mp/a127180.html">正交信号：是复数，但不复杂</a></p>
+<h1 id="bug">Bug</h1>
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[</span><span class="nv">Synth</span><span class="w"> </span><span class="mi">8</span><span class="o">-</span><span class="mi">6895</span><span class="k">]</span><span class="w"> </span><span class="nv">The</span><span class="w"> </span>reference<span class="w"> </span>checkpoint<span class="w"> </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>.srcs<span class="o">/</span>utils_1<span class="o">/</span>imports<span class="o">/</span>synth_1<span class="o">/</span>system_wrapper.dcp<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>suitable<span class="w"> </span>for<span class="w"> </span>use<span class="w"> </span>with<span class="w"> </span>incremental<span class="w"> </span>synthesis<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design.<span class="w"> </span>Please<span class="w"> </span>regenerate<span class="w"> </span>the<span class="w"> </span>checkpoint<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design<span class="w"> </span>with<span class="w"> </span><span class="o">-</span>incremental_synth<span class="w"> </span>switch<span class="w"> </span><span class="ow">in</span><span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>Vivado<span class="w"> </span>session<span class="w"> </span>that<span class="w"> </span>synth_design<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>run.<span class="w"> </span>Synthesis<span class="w"> </span>will<span class="w"> </span>continue<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>flow
+</code></pre></div>
+<p>Tools→Settings→Synthesis→Incremental synthesis→Disable</p>
 
 
 

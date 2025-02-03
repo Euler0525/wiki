@@ -325,6 +325,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#iic" class="md-nav__link">
+    <span class="md-ellipsis">
+      IIC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tim" class="md-nav__link">
     <span class="md-ellipsis">
       TIM
@@ -373,15 +382,6 @@
   <a href="#can" class="md-nav__link">
     <span class="md-ellipsis">
       CAN
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#i2c" class="md-nav__link">
-    <span class="md-ellipsis">
-      I^2C
     </span>
   </a>
   
@@ -908,6 +908,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#iic" class="md-nav__link">
+    <span class="md-ellipsis">
+      IIC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tim" class="md-nav__link">
     <span class="md-ellipsis">
       TIM
@@ -956,15 +965,6 @@
   <a href="#can" class="md-nav__link">
     <span class="md-ellipsis">
       CAN
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#i2c" class="md-nav__link">
-    <span class="md-ellipsis">
-      I^2C
     </span>
   </a>
   
@@ -1103,13 +1103,53 @@
 <a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="n">__weak</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">);</span>
 </code></pre></div>
+<h3 id="iic">IIC</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/**</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cm"> * HAL_I2C_Master_Transmit(&amp;hi2c1, AHT20_ADDR, send_buffer, 3);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cm"> */</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">HAL_StatusTypeDef</span><span class="w"> </span><span class="nf">HAL_I2C_Master_Transmit</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DevAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Size</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Timeout</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="cm">/**</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="cm"> * HAL_I2C_Master_Receive(&amp;hi2c1, AHT20_ADDR, read_buffer, 6);</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="cm"> */</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">HAL_StatusTypeDef</span><span class="w">  </span><span class="nf">HAL_I2C_Master_Receive</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DevAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Size</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Timeout</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="cm">/**</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="cm"> * HAL_I2C_Master_Transmit_IT(&amp;hi2c1, AHT20_ADDR, send_buffer, 3);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="cm"> */</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">HAL_StatusTypeDef</span><span class="w"> </span><span class="nf">HAL_I2C_Master_Transmit_IT</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DevAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Size</span><span class="p">);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="cm">/**</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="cm"> * HAL_I2C_Master_Receive_IT(&amp;hi2c1, AHT20_ADDR, read_buffer, 6);</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="cm"> */</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="n">HAL_StatusTypeDef</span><span class="w"> </span><span class="nf">HAL_I2C_Master_Receive_IT</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DevAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Size</span><span class="p">);</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="cm">/**</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="cm"> * HAL_I2C_Master_Transmit_DMA(&amp;hi2c1, AHT20_ADDR, send_buffer, 3);</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="cm"> */</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">HAL_StatusTypeDef</span><span class="w"> </span><span class="nf">HAL_I2C_Master_Transmit_DMA</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DevAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Size</span><span class="p">);</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="cm">/**</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="cm"> * HAL_I2C_Master_Receive_DMA(&amp;hi2c1, AHT20_ADDR, read_buffer, 6);</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="cm"> */</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="n">HAL_StatusTypeDef</span><span class="w"> </span><span class="nf">HAL_I2C_Master_Receive_DMA</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DevAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Size</span><span class="p">);</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="cm">/**</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="cm"> * void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c);</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="cm"> */</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="n">__weak</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">HAL_I2C_MasterTxCpltCallback</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">);</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="cm">/**</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="cm"> * void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c);</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="cm"> */</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="n">__weak</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">HAL_I2C_MasterRxCpltCallback</span><span class="p">(</span><span class="n">I2C_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hi2c</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="tim">TIM</h3>
 <h3 id="pwm">PWM</h3>
 <h3 id="adc">ADC</h3>
 <h3 id="dac">DAC</h3>
 <h3 id="dma">DMA</h3>
 <h3 id="can">CAN</h3>
-<h3 id="i2c">I^2C</h3>
 <h3 id="spi">SPI</h3>
 <h3 id="flash">FLASH</h3>
 <h3 id="rtc">RTC</h3>

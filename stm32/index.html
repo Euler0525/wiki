@@ -297,6 +297,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pinconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin&amp;Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pin&Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvic" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hal" class="md-nav__link">
     <span class="md-ellipsis">
       HAL库函数
@@ -307,7 +340,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gpio" class="md-nav__link">
+  <a href="#gpio_1" class="md-nav__link">
     <span class="md-ellipsis">
       GPIO
     </span>
@@ -900,6 +933,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pinconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin&amp;Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pin&Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvic" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hal" class="md-nav__link">
     <span class="md-ellipsis">
       HAL库函数
@@ -910,7 +976,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gpio" class="md-nav__link">
+  <a href="#gpio_1" class="md-nav__link">
     <span class="md-ellipsis">
       GPIO
     </span>
@@ -1056,8 +1122,108 @@
 
 
 <h1 id="stm32">STM32</h1>
-<h2 id="hal"><a href="https://blog.csdn.net/KK_546464/article/details/111307451">HAL库函数</a></h2>
+<h2 id="pinconfiguration">Pin&amp;Configuration</h2>
 <h3 id="gpio">GPIO</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pin</th>
+<th style="text-align: center;">Signal</th>
+<th style="text-align: center;">Label</th>
+<th style="text-align: center;">Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">PA6</td>
+<td style="text-align: center;">GPIO_Output</td>
+<td style="text-align: center;">Blue</td>
+<td style="text-align: center;">High</td>
+</tr>
+<tr>
+<td style="text-align: center;">PA7</td>
+<td style="text-align: center;">GPIO_Output</td>
+<td style="text-align: center;">Green</td>
+<td style="text-align: center;">High</td>
+</tr>
+<tr>
+<td style="text-align: center;">PB0</td>
+<td style="text-align: center;">GPIO_Output</td>
+<td style="text-align: center;">Red</td>
+<td style="text-align: center;">High</td>
+</tr>
+<tr>
+<td style="text-align: center;">PB12</td>
+<td style="text-align: center;">GPIO_Input</td>
+<td style="text-align: center;">Key1</td>
+<td style="text-align: center;">External Interrupt Mode with Falling edge trigger detection</td>
+</tr>
+<tr>
+<td style="text-align: center;">PB13</td>
+<td style="text-align: center;">GPIO_Input</td>
+<td style="text-align: center;">Key2</td>
+<td style="text-align: center;">Pull-up</td>
+</tr>
+<tr>
+<td style="text-align: center;">PB15</td>
+<td style="text-align: center;">GPIO_Input</td>
+<td style="text-align: center;">Key3</td>
+<td style="text-align: center;">Pull-up</td>
+</tr>
+<tr>
+<td style="text-align: center;">PB5</td>
+<td style="text-align: center;">GPIO_Output</td>
+<td style="text-align: center;">Relay</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="nvic">NVIC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">NVIC</th>
+<th style="text-align: center;">Enable</th>
+<th style="text-align: center;">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Time base: System tick timer</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">14</td>
+</tr>
+<tr>
+<td style="text-align: center;">EXTI line[15:10] Interrupts</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="hal"><a href="https://blog.csdn.net/KK_546464/article/details/111307451">HAL库函数</a></h2>
+<h3 id="gpio_1">GPIO</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">GPIO_PIN_RESET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0U</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">GPIO_PIN_SET</span>

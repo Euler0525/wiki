@@ -300,6 +300,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Bug
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -309,6 +320,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vivado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vivado
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -722,6 +761,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vivado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vivado
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -736,11 +792,20 @@
 
 
 <h1 id="bug">Bug</h1>
+<h2 id="vivado">Vivado</h2>
 <hr />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[</span><span class="nv">Synth</span><span class="w"> </span><span class="mi">8</span><span class="o">-</span><span class="mi">6895</span><span class="k">]</span><span class="w"> </span><span class="nv">The</span><span class="w"> </span>reference<span class="w"> </span>checkpoint<span class="w"> </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>.srcs<span class="o">/</span>utils_1<span class="o">/</span>imports<span class="o">/</span>synth_1<span class="o">/</span>system_wrapper.dcp<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>suitable<span class="w"> </span>for<span class="w"> </span>use<span class="w"> </span>with<span class="w"> </span>incremental<span class="w"> </span>synthesis<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design.<span class="w"> </span>Please<span class="w"> </span>regenerate<span class="w"> </span>the<span class="w"> </span>checkpoint<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design<span class="w"> </span>with<span class="w"> </span><span class="o">-</span>incremental_synth<span class="w"> </span>switch<span class="w"> </span><span class="ow">in</span><span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>Vivado<span class="w"> </span>session<span class="w"> </span>that<span class="w"> </span>synth_design<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>run.<span class="w"> </span>Synthesis<span class="w"> </span>will<span class="w"> </span>continue<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>flow
 </code></pre></div>
-<p>Tools→Settings→Synthesis→Incremental synthesis→Disable</p>
+<p>Tools→Settings→Synthesis→Incremental synthesis→Disable（轻易不要使用）</p>
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[</span><span class="nv">filemgmt</span><span class="w"> </span><span class="mi">56</span><span class="o">-</span><span class="mi">176</span><span class="k">]</span><span class="w"> </span><span class="nv">Module</span><span class="w"> </span>references<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>supported<span class="w"> </span><span class="ow">in</span><span class="w"> </span>manual<span class="w"> </span>compile<span class="w"> </span>order<span class="w"> </span>mode<span class="w"> </span>and<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>ignored.
+</code></pre></div>
+<p>这个问题在综合MMCM时出现，右键[Hierachy Update]→[Automatic Update and Compile Order]</p>
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[</span><span class="nv">filemgmt</span><span class="w"> </span><span class="mi">20</span><span class="o">-</span><span class="mi">1731</span><span class="k">]</span><span class="w"> </span><span class="nv">Too</span><span class="w"> </span>many<span class="w"> </span>checkpoints<span class="w"> </span>files<span class="w"> </span>associated<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>sub-design<span class="w"> </span><span class="err">&#39;&#39;</span>
+</code></pre></div>
+<p>右键IP核，[Reset Output Product]，[Generate Output Product]</p>
 
 
 

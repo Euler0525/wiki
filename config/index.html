@@ -585,15 +585,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sourcelist" class="md-nav__link">
-    <span class="md-ellipsis">
-      source.list
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
     <span class="md-ellipsis">
       SSH
@@ -1084,15 +1075,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sourcelist" class="md-nav__link">
-    <span class="md-ellipsis">
-      source.list
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
     <span class="md-ellipsis">
       SSH
@@ -1305,118 +1287,81 @@
 </li>
 </ul>
 <h2 id="linux">Linux</h2>
-<h3 id="sourcelist">source.list</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Ubuntu20.04
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$ sudo vim /etc/apt/sources.list
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a># tuna.tsinghua
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse 
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse 
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse 
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse 
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse 
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse 
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse 
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a># aliyun
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse 
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>deb-src http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse 
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse deb-src http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse 
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse 
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>deb-src http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse 
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>deb http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse 
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>deb-src http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse 
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>deb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse 
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>deb-src http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a># ustc
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>deb https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse 
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse 
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse 
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse 
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse 
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse 
-<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse 
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse 
-<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse 
-<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
-</code></pre></div>
 <h3 id="ssh">SSH</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server<span class="w"> </span>-y
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>$<span class="w"> </span>sudo<span class="w"> </span>ps<span class="w"> </span>-e<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssh
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>$<span class="w"> </span>sudo<span class="w"> </span>service<span class="w"> </span>ssh<span class="w"> </span>start
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>ssh
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>$<span class="w"> </span>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/ssh/sshd_config<span class="w">  </span><span class="c1"># PermitRootLogin yes</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>$<span class="w"> </span>sudo<span class="w"> </span>service<span class="w"> </span>sshd<span class="w"> </span>start
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># 开机自启</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>$<span class="w"> </span>reboot
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server<span class="w"> </span>-y
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo<span class="w"> </span>ps<span class="w"> </span>-e<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssh
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>sudo<span class="w"> </span>service<span class="w"> </span>ssh<span class="w"> </span>start
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>ssh
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/ssh/sshd_config<span class="w">  </span><span class="c1"># PermitRootLogin yes</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>sudo<span class="w"> </span>service<span class="w"> </span>sshd<span class="w"> </span>start
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># 开机自启</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>reboot
 </code></pre></div>
 <h3 id="zshpowerlevel10k">zsh&amp;Powerlevel10k</h3>
 <h4 id="oh-my-zsh">oh-my-zsh</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>zsh
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span>chsh<span class="w"> </span>-s<span class="w"> </span>/bin/zsh<span class="w">  </span><span class="c1"># 修改默认终端为zsh</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://gitee.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k<span class="w">  </span><span class="c1"># 安装Powerlevel10k</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>$<span class="w"> </span>vim<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># 修改ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>zsh
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>chsh<span class="w"> </span>-s<span class="w"> </span>/bin/zsh<span class="w">  </span><span class="c1"># 修改默认终端为zsh</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://gitee.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k<span class="w">  </span><span class="c1"># 安装Powerlevel10k</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>vim<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># 修改ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</span>
 </code></pre></div>
 <h4 id="plug-ins">Plug-ins</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># zsh-autosuggestions</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># zsh-syntax-highlighting</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>$<span class="w"> </span>vim<span class="w"> </span>~/.zshrc
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># plugins=(git zsh-autosuggestions zsh-syntax-highlighting)</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># zsh-autosuggestions</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># zsh-syntax-highlighting</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>vim<span class="w"> </span>~/.zshrc
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># plugins=(git zsh-autosuggestions zsh-syntax-highlighting)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
 </code></pre></div>
 <h3 id="conda"><a href="https://repo.anaconda.com/archive/">Conda</a></h3>
 <h4 id="installation">Installation</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Download
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>wget<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span>bash<span class="w"> </span>Anaconda3-2024.02-1-Linux-x86_64.sh
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>$<span class="w"> </span>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>defaults<span class="w"> </span>conda<span class="w">  </span><span class="c1"># 更新（第一次安装不需要）</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w">  </span><span class="c1"># 若为.zshrc需要添加 export PATH=/home/username/anaconda3/bin:$PATH</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 取消自动激活</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># Source</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>$<span class="w"> </span>vim.condarc
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>channels:
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span>-<span class="w"> </span>defaults
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>show_channel_urls:<span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>channel_alias:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>default_channels:
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>custom_channels:
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">  </span>conda-forge:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">  </span>msys2:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">  </span>bioconda:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">  </span>menpo:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">  </span>pytorch:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">  </span>simpleitk:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>auto_activate_base:<span class="w"> </span><span class="nb">true</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>~/Download
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>wget<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>bash<span class="w"> </span>Anaconda3-2024.02-1-Linux-x86_64.sh
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>defaults<span class="w"> </span>conda<span class="w">  </span><span class="c1"># 更新（第一次安装不需要）</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w">  </span><span class="c1"># 若为.zshrc需要添加 export PATH=/home/username/anaconda3/bin:$PATH</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 取消自动激活</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># Source</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>vim.condarc
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>channels:
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span>-<span class="w"> </span>defaults
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>show_channel_urls:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>channel_alias:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>default_channels:
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>custom_channels:
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">  </span>conda-forge:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">  </span>msys2:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">  </span>bioconda:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">  </span>menpo:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">  </span>pytorch:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">  </span>simpleitk:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>auto_activate_base:<span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
 <h4 id="env">env</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w">  </span><span class="c1"># 创建虚拟环境</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python3<span class="w">  </span><span class="c1"># 激活虚拟环境</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>$<span class="w"> </span>conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span>--all<span class="w">  </span><span class="c1"># 删除虚拟环境</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list<span class="w">  </span><span class="c1"># 查看虚拟环境</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w">  </span><span class="c1"># 创建虚拟环境</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python3<span class="w">  </span><span class="c1"># 激活虚拟环境</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span>--all<span class="w">  </span><span class="c1"># 删除虚拟环境</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>conda<span class="w"> </span>env<span class="w"> </span>list<span class="w">  </span><span class="c1"># 查看虚拟环境</span>
 </code></pre></div>
 <h3 id="git">Git</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>git<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>git<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
 </code></pre></div>
 <h4 id="gitgithub">Git&amp;GitHub</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># user.name &amp; user.email</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">           </span><span class="c1"># git config user.name  查看用户名</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1"># git config user.email 查看邮箱</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># user.name &amp; user.email</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">           </span><span class="c1"># git config user.name  查看用户名</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1"># git config user.email 查看邮箱</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;&quot;</span>
 </code></pre></div>
 <ul>
 <li>在GitHub中添加公钥</li>
@@ -1425,46 +1370,46 @@
 <p>进入GitHub-setting-SSH and GPG keys-New SSH key；</p>
 <p>将刚刚复制的内容粘贴到key中，（Title任意）；</p>
 <p>执行<code>ssh -T git@github.com</code>，输入<code>yes</code>，显示如下成功；</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Hi ...! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Hi ...! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </code></pre></div>
 <h3 id="wsl">WSL</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># 迁移</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span> <span class="n">D</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-import</span> <span class="n">Ubuntu</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span> <span class="p">-</span><span class="n">-version</span> <span class="n">2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># 迁移</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span> <span class="n">D</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-import</span> <span class="n">Ubuntu</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span> <span class="p">-</span><span class="n">-version</span> <span class="n">2</span>
 </code></pre></div>
 <h3 id="docker">Docker</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>docker<span class="w"> </span>--mirror<span class="w"> </span>Aliyun
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w">  </span><span class="c1"># 将当前用户加入Docker用户组</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>sudo<span class="w"> </span>service<span class="w"> </span>docker<span class="w"> </span>start<span class="w">    </span><span class="c1"># 启动docker服务</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>docker<span class="w"> </span>--mirror<span class="w"> </span>Aliyun
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w">  </span><span class="c1"># 将当前用户加入Docker用户组</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>sudo<span class="w"> </span>service<span class="w"> </span>docker<span class="w"> </span>start<span class="w">    </span><span class="c1"># 启动docker服务</span>
 </code></pre></div>
 <h3 id="nginx">Nginx</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>-y
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># 启动</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1"># 开放端口</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>$<span class="w"> </span>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="c1"># 打开防火墙</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>$<span class="w"> </span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">80</span>/tcp
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>$<span class="w"> </span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">443</span>/tcp
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>$<span class="w"> </span>sudo<span class="w"> </span>ufw<span class="w"> </span>status
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>-y
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># 启动</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># 开放端口</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="c1"># 打开防火墙</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">80</span>/tcp
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">443</span>/tcp
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>status
 </code></pre></div>
 <h3 id="texlive">TeXLive</h3>
 <ul>
 <li>开源镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/">清华大学开源软件镜像站</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>❯<span class="w"> </span>mkdir<span class="w"> </span>~/Program/TeXLive
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>❯<span class="w"> </span>mount<span class="w"> </span>.iso<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Program/TeXLive
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>❯<span class="w"> </span>./install-tl
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>❯<span class="w"> </span>umount<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>~/Program/TeXLive
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>❯<span class="w"> </span>vim<span class="w"> </span>~/.zshrc<span class="w">  </span><span class="c1"># ↓</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>❯<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zshrc
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>❯<span class="w"> </span>tex<span class="w"> </span>-v<span class="w">  </span><span class="c1"># 验证安装成功</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>❯<span class="w"> </span>mkdir<span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>❯<span class="w"> </span>mount<span class="w"> </span>.iso<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>❯<span class="w"> </span>./install-tl
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>❯<span class="w"> </span>umount<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>❯<span class="w"> </span>vim<span class="w"> </span>~/.zshrc<span class="w">  </span><span class="c1"># ↓</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>❯<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zshrc
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>❯<span class="w"> </span>tex<span class="w"> </span>-v<span class="w">  </span><span class="c1"># 验证安装成功</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Add TeX Live to the PATH, MANPATH, INFOPATH</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/texlive/2024/bin/x86_64-linux:<span class="nv">$PATH</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MANPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/man:<span class="nv">$MANPATH</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INFOPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/info:<span class="nv">$INFOPATH</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Add TeX Live to the PATH, MANPATH, INFOPATH</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/texlive/2024/bin/x86_64-linux:<span class="nv">$PATH</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MANPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/man:<span class="nv">$MANPATH</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INFOPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/info:<span class="nv">$INFOPATH</span>
 </code></pre></div>
 
 

@@ -414,6 +414,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      定位
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定位">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecefenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ECEF到ENU的旋转矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -900,6 +924,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      定位
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定位">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecefenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ECEF到ENU的旋转矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -968,6 +1016,45 @@
 </ul>
 </li>
 </ul>
+<h2 id="_4">定位</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/ct/ecef_enu.png" width="60%" height="60%" /></p>
+<h3 id="ecefenu">ECEF到ENU的旋转矩阵</h3>
+<p>ECEF（地心地固坐标系）到ENU（东北天站心坐标系）的转换需基于<strong>站心点的经纬度</strong>（记为纬度$ B <span class="arithmatex">\(、经度\)</span> L $，单位为弧度），通过旋转变换实现。转换过程中需先将ECEF坐标平移至站心点，再通过旋转矩阵将地心坐标系转换为局部ENU坐标系。</p>
+<p>ECEF到ENU的旋转矩阵由<strong>两次基本旋转</strong>组合而成，旋转顺序为：</p>
+<ol>
+<li><strong>绕Z轴旋转</strong><span class="arithmatex">\(-(\dfrac{\pi}{2} + L)\)</span>（修正经度方向）；</li>
+<li><strong>绕X轴旋转<span class="arithmatex">\(-(\dfrac{\pi}{2} - B)\)</span></strong>（修正纬度方向）；</li>
+</ol>
+<p>根据正交矩阵性质及三角函数变换，推导得到最终旋转矩阵<span class="arithmatex">\(R\)</span>如下：
+$$
+R = \begin{bmatrix}<br />
+-\sin L &amp; \cos L &amp; 0 \ 
+-\sin B \cos L &amp; -\sin B \sin L &amp; \cos B \
+\cos B \cos L &amp; \cos B \sin L &amp; \sin B \
+\end{bmatrix} 
+$$
+其中：</p>
+<ul>
+<li>$ L <span class="arithmatex">\(为站心点经度（弧度），\)</span> B $为站心点纬度（弧度）；</li>
+<li>
+<p>矩阵列向量分别对应ENU坐标系的<strong>东、北、天</strong>方向在ECEF坐标系中的单位向量；</p>
+</li>
+<li>
+<p><strong>东向（E）</strong>：由经度$ L <span class="arithmatex">\(决定，对应矩阵第一行：\)</span>[- \sin L, \cos L, 0]$；</p>
+</li>
+<li><strong>北向（N）</strong>：由纬度$ B <span class="arithmatex">\(和经度\)</span> L <span class="arithmatex">\(共同决定，对应矩阵第二行：\)</span>[- \sin B \cos L, -\sin B \sin L, \cos B]$；</li>
+<li><strong>天向（U）</strong>：由纬度$ B <span class="arithmatex">\(决定，对应矩阵第三行：\)</span>[\cos B \cos L, \cos B \sin L, \sin B]$；</li>
+</ul>
+<p>设站心点ECEF坐标为<span class="arithmatex">\((X_p, Y_p, Z_p)\)</span>，目标点ECEF坐标为<span class="arithmatex">\((X, Y, Z)\)</span>，则ENU坐标<span class="arithmatex">\((e, n, u)\)</span>的计算步骤为：</p>
+<ol>
+<li>计算ECEF坐标增量：<span class="arithmatex">\(\Delta X = X - X_p,\ \Delta Y = Y - Y_p,\ \Delta Z = Z - Z_p\)</span>；</li>
+<li>应用旋转矩阵：</li>
+</ol>
+<div class="arithmatex">\[
+\begin{bmatrix} e \\ n \\ u \\ \end{bmatrix} 
+= 
+R \cdot \begin{bmatrix} \Delta X \\ \Delta Y \\ \Delta Z \\ \end{bmatrix}
+\]</div>
 
 
 

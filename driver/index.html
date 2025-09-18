@@ -257,6 +257,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#embedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vitis" class="md-nav__link">
     <span class="md-ellipsis">
       Vitis
@@ -874,6 +883,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#embedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vitis" class="md-nav__link">
     <span class="md-ellipsis">
       Vitis
@@ -898,12 +916,18 @@
 
 
 <h1 id="driver">Driver</h1>
+<h2 id="embedded">Embedded</h2>
+<ul>
+<li>在嵌入式系统和小型网络中自动获取和配置网络连接</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>udhcpc<span class="w"> </span>-i<span class="w"> </span>eth0
+</code></pre></div>
 <h2 id="vitis">Vitis</h2>
 <ul>
 <li>读写DDR</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>xsct%<span class="w"> </span>mrd<span class="w"> </span>-bin<span class="w"> </span>-file<span class="w"> </span><span class="o">[</span>filename.bin<span class="o">]</span><span class="w"> </span><span class="o">[</span>startaddr<span class="o">]</span><span class="w"> </span><span class="o">[</span>length<span class="o">]</span><span class="w">  </span><span class="c1"># 读</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>xsct%<span class="w"> </span>dow<span class="w"> </span>-data<span class="w"> </span><span class="o">[</span>file_name.<span class="o">]</span><span class="w"> </span><span class="o">[</span>address<span class="o">]</span><span class="w">                    </span><span class="c1"># 写</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>xsct%<span class="w"> </span>mrd<span class="w"> </span>-bin<span class="w"> </span>-file<span class="w"> </span><span class="o">[</span>filename.bin<span class="o">]</span><span class="w"> </span><span class="o">[</span>startaddr<span class="o">]</span><span class="w"> </span><span class="o">[</span>length<span class="o">]</span><span class="w">  </span><span class="c1"># 读</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>xsct%<span class="w"> </span>dow<span class="w"> </span>-data<span class="w"> </span><span class="o">[</span>file_name.<span class="o">]</span><span class="w"> </span><span class="o">[</span>address<span class="o">]</span><span class="w">                    </span><span class="c1"># 写</span>
 </code></pre></div>
 
 

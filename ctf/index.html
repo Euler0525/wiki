@@ -352,6 +352,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wireshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireshark常用过滤器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -927,6 +942,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wireshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireshark常用过滤器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -961,6 +991,195 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span> <span class="o">@</span><span class="nx">eva</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;attack&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span>
 </code></pre></div>
+<h3 id="wireshark">Wireshark常用过滤器</h3>
+<blockquote>
+<p>显示过滤器：抓包完成后筛选显示符合条件的数据包。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IP 过滤</strong></td>
+<td><code>ip.addr == 192.168.1.1</code></td>
+<td>任意端为该 IP</td>
+</tr>
+<tr>
+<td></td>
+<td><code>ip.src == 192.168.1.1</code></td>
+<td>来源 IP</td>
+</tr>
+<tr>
+<td></td>
+<td><code>ip.dst == 192.168.1.1</code></td>
+<td>目的 IP</td>
+</tr>
+<tr>
+<td><strong>端口过滤</strong></td>
+<td><code>tcp.port == 80</code></td>
+<td>任意端口为 80</td>
+</tr>
+<tr>
+<td></td>
+<td><code>tcp.srcport == 443</code></td>
+<td>来源端口为 443</td>
+</tr>
+<tr>
+<td></td>
+<td><code>tcp.dstport == 443</code></td>
+<td>目的端口为 443</td>
+</tr>
+<tr>
+<td></td>
+<td><code>udp.port == 53</code></td>
+<td>DNS 端口</td>
+</tr>
+<tr>
+<td><strong>协议过滤</strong></td>
+<td><code>http</code></td>
+<td>HTTP 协议</td>
+</tr>
+<tr>
+<td></td>
+<td><code>dns</code></td>
+<td>DNS 协议</td>
+</tr>
+<tr>
+<td></td>
+<td><code>tcp</code> / <code>udp</code> / <code>icmp</code></td>
+<td>常用协议过滤</td>
+</tr>
+<tr>
+<td></td>
+<td><code>tls</code> / <code>ssl</code></td>
+<td>加密流量</td>
+</tr>
+<tr>
+<td><strong>内容匹配</strong></td>
+<td><code>tcp contains "login"</code></td>
+<td>TCP 数据包包含字符串</td>
+</tr>
+<tr>
+<td></td>
+<td><code>http.request.uri contains "index"</code></td>
+<td>URI 包含 index</td>
+</tr>
+<tr>
+<td><strong>长度过滤</strong></td>
+<td><code>frame.len &gt; 500</code></td>
+<td>包长大于 500 字节</td>
+</tr>
+<tr>
+<td><strong>TCP 状态过滤</strong></td>
+<td><code>tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0</code></td>
+<td>TCP SYN（握手第一步）</td>
+</tr>
+<tr>
+<td><strong>组合逻辑</strong></td>
+<td><code>ip.src == 192.168.1.1 and tcp.dstport == 443</code></td>
+<td>来源 + 目的端口</td>
+</tr>
+<tr>
+<td></td>
+<td><code>http or dns</code></td>
+<td>HTTP 或 DNS</td>
+</tr>
+<tr>
+<td></td>
+<td><code>not tcp</code></td>
+<td>排除 TCP 流量</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>捕获过滤器：抓包前设定，减少捕获的数据量。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IP 过滤</strong></td>
+<td><code>host 192.168.1.1</code></td>
+<td>任意端为该 IP</td>
+</tr>
+<tr>
+<td></td>
+<td><code>src host 192.168.1.1</code></td>
+<td>来源 IP</td>
+</tr>
+<tr>
+<td></td>
+<td><code>dst host 192.168.1.1</code></td>
+<td>目的 IP</td>
+</tr>
+<tr>
+<td><strong>网段过滤</strong></td>
+<td><code>net 192.168.1.0/24</code></td>
+<td>过滤整个网段</td>
+</tr>
+<tr>
+<td></td>
+<td><code>src net 10.0.0.0/8</code></td>
+<td>来源为内网 10.x.x.x</td>
+</tr>
+<tr>
+<td><strong>端口过滤</strong></td>
+<td><code>port 80</code></td>
+<td>任意端口 80</td>
+</tr>
+<tr>
+<td></td>
+<td><code>tcp port 443</code></td>
+<td>TCP 443 端口</td>
+</tr>
+<tr>
+<td></td>
+<td><code>udp port 53</code></td>
+<td>UDP 53 端口</td>
+</tr>
+<tr>
+<td><strong>协议过滤</strong></td>
+<td><code>tcp</code></td>
+<td>捕获 TCP</td>
+</tr>
+<tr>
+<td></td>
+<td><code>udp</code></td>
+<td>捕获 UDP</td>
+</tr>
+<tr>
+<td></td>
+<td><code>icmp</code></td>
+<td>捕获 ICMP</td>
+</tr>
+<tr>
+<td><strong>排除流量</strong></td>
+<td><code>not port 22</code></td>
+<td>排除 SSH 流量</td>
+</tr>
+<tr>
+<td><strong>组合逻辑</strong></td>
+<td><code>host 192.168.1.10 and port 80</code></td>
+<td>IP + 端口</td>
+</tr>
+<tr>
+<td></td>
+<td><code>tcp and not port 443</code></td>
+<td>TCP 且排除 443</td>
+</tr>
+</tbody>
+</table>
 <h2 id="misc">Misc</h2>
 <ul>
 <li>binwalk：隐写在图片中的图片、音频、压缩包</li>

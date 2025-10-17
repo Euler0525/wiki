@@ -419,7 +419,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      频段
+      功率
     </span>
   </a>
   
@@ -428,7 +428,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      航天器运行轨道
+      频段
     </span>
   </a>
   
@@ -436,6 +436,15 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      航天器运行轨道
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       定位
     </span>
@@ -949,7 +958,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      频段
+      功率
     </span>
   </a>
   
@@ -958,7 +967,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      航天器运行轨道
+      频段
     </span>
   </a>
   
@@ -966,6 +975,15 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      航天器运行轨道
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       定位
     </span>
@@ -1004,9 +1022,11 @@
 
 
 <h1 id="_1">卫星通信</h1>
-<h2 id="_2">频段</h2>
+<h2 id="_2">功率</h2>
+<p>1W＝30dBm，每增加10dBm，功率乘以10倍。</p>
+<h2 id="_3">频段</h2>
 <p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/ct/freq_band.webp" /></p>
-<h2 id="_3">航天器运行轨道</h2>
+<h2 id="_4">航天器运行轨道</h2>
 <ol>
 <li>低地（球）轨道近地（球）轨道（LEO：Low Earth Orbit）</li>
 <li>轨道高度：约400-2000公里；</li>
@@ -1056,7 +1076,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_4">定位</h2>
+<h2 id="_5">定位</h2>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/ct/ecef_enu.png" width="60%" height="60%" /></p>
 <h3 id="ecefenu">ECEF到ENU的旋转矩阵</h3>
 <p>ECEF（地心地固坐标系）到ENU（东北天站心坐标系）的转换需基于<strong>站心点的经纬度</strong>（记为纬度$ B <span class="arithmatex">\(、经度\)</span> L $，单位为弧度），通过旋转变换实现。转换过程中需先将ECEF坐标平移至站心点，再通过旋转矩阵将地心坐标系转换为局部ENU坐标系。</p>

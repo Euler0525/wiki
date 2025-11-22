@@ -1295,10 +1295,10 @@
 <h2 id="_1">任务管理</h2>
 <blockquote>
 <p><strong>在任何时刻，只有一个任务可以处于运行状态！</strong></p>
-<p>FreeRTOS 是一个<strong>抢占式</strong>的实时多任务系统，其任务调度器也是<strong>抢占式</strong>的。高优先级的任务可以打断低优先级任务的运行而取得 CPU 的使用权，这样就保证了那些紧急任务的运行，我们就可以为那些对实时性要求高的任务设置一个很高的优先级。高优先级的任务执行完成以后重新把 CPU 的使用权归还给低优先级的任务。
+<p>FreeRTOS 是一个 <strong>抢占式</strong> 的实时多任务系统，其任务调度器也是 <strong>抢占式</strong> 的。高优先级的任务可以打断低优先级任务的运行而取得 CPU 的使用权，这样就保证了那些紧急任务的运行，我们就可以为那些对实时性要求高的任务设置一个很高的优先级。高优先级的任务执行完成以后重新把 CPU 的使用权归还给低优先级的任务。
 </p>
 </blockquote>
-<p><strong>任务函数</strong>一般包含一个死循环：</p>
+<p><strong>任务函数</strong> 一般包含一个死循环：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TaskFunction</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">pvParameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">iVariableExample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// 任务实例独属的变量</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">for</span><span class="p">(;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1309,7 +1309,7 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="_2">创建任务</h3>
-<p><strong><code>xTaskCreate()</code>函数</strong></p>
+<p><strong><code>xTaskCreate()</code> 函数</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// task.h</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">BaseType_t</span><span class="w"> </span><span class="nf">xTaskCreate</span><span class="p">(</span><span class="w"> </span><span class="n">TaskFunction_t</span><span class="w"> </span><span class="n">pxTaskCode</span><span class="p">,</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pcName</span><span class="p">,</span>
@@ -1326,42 +1326,42 @@
 <li><code>pvTaskCode</code>：指向任务实现函数的指针（函数名）</li>
 </ul>
 <blockquote>
-<p>任务通常是一个永不退出的C语言函数，用死循环实现。</p>
+<p>任务通常是一个永不退出的 C 语言函数，用死循环实现。</p>
 </blockquote>
 <ul>
-<li><code>pcName</code>：（FreeRTOS不使用）用于辅助调试</li>
+<li><code>pcName</code>：（FreeRTOS 不使用）用于辅助调试</li>
 <li><code>usStackDepth</code>：任务创建时，内核为它分配的栈空间大小，单位为字(word)</li>
 </ul>
 <blockquote>
-<p>在32位微型处理器中，一个字由4字节组成。比如32位宽的栈空间，<code>usStackDepth=100</code>，则分配<span class="arithmatex">\(400B\)</span>的栈空间。</p>
-<p>应用程序在<code>FreeRTOSConfig.h</code>文件中定义常量<code>configMINIMAL_STACK_SIZE</code>决定空闲任务的栈空间大小。</p>
+<p>在 32 位微型处理器中，一个字由 4 字节组成。比如 32 位宽的栈空间，<code>usStackDepth=100</code>，则分配 <span class="arithmatex">\(400B\)</span> 的栈空间。</p>
+<p>应用程序在 <code>FreeRTOSConfig.h</code> 文件中定义常量 <code>configMINIMAL_STACK_SIZE</code> 决定空闲任务的栈空间大小。</p>
 </blockquote>
 <ul>
 <li><code>pvParameters</code>：传递到任务中的值</li>
-<li><code>uxPriority</code>：决定执行任务的优先级，从最低<code>0</code>到最高<code>configMAX_PRIORITIES-1</code></li>
+<li><code>uxPriority</code>：决定执行任务的优先级，从最低 <code>0</code> 到最高 <code>configMAX_PRIORITIES-1</code></li>
 </ul>
 <blockquote>
-<p><code>configMAX_PRIORITIES</code>在<code>FreeRTOSConfig.h</code>中定义，值越大，内核消耗的内存空间越多。</p>
+<p><code>configMAX_PRIORITIES</code> 在 <code>FreeRTOSConfig.h</code> 中定义，值越大，内核消耗的内存空间越多。</p>
 <ul>
 <li>
-<p>如果<code>uxPriority</code>大于<code>configPRIORITIES</code>，则自动封顶为最大合法值。</p>
+<p>如果 <code>uxPriority</code> 大于 <code>configPRIORITIES</code>，则自动封顶为最大合法值。</p>
 </li>
 <li>
-<p>如果多个任务优先级相同，调度器会让这些任务轮流执行，每个任务执行一个时间片，在时间片起始时刻进入运行态，在时间片结束时刻退出运行态；在<code>FreeRTOSConfig.h</code>文件中定义的<code>configTICK_RATE_HZ</code>表示tick的频率，时间片长度为<code>1/configTICK_RATE_HZ</code>。</p>
+<p>如果多个任务优先级相同，调度器会让这些任务轮流执行，每个任务执行一个时间片，在时间片起始时刻进入运行态，在时间片结束时刻退出运行态；在 <code>FreeRTOSConfig.h</code> 文件中定义的 <code>configTICK_RATE_HZ</code> 表示 tick 的频率，时间片长度为 <code>1/configTICK_RATE_HZ</code>。</p>
 </li>
 </ul>
 </blockquote>
 <ul>
-<li><code>pxCreatedTask</code>：传出任务的句柄，在API调用中对创建出的任务进行引用（比如改变优先级、删除任务）</li>
+<li><code>pxCreatedTask</code>：传出任务的句柄，在 API 调用中对创建出的任务进行引用（比如改变优先级、删除任务）</li>
 </ul>
 <hr />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskStartScheduler</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">PRIVILEGED_FUNCTION</span><span class="p">;</span><span class="w">  </span><span class="c1">// 启动任务调度器，任务开始执行</span>
 </code></pre></div>
 <hr />
-<p>代码示例见FreeRTOS实时内核使用指南P10~20.</p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P10~20.</p>
 <h3 id="_3">任务状态</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_task_state_machine.webp" alt="rtos_task_state_machine" width="60%" height="60%" /></p>
-<center><small>Full task state machine</small></center>
+<center> <small> Full task state machine </small> </center>
 
 <hr />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/*</span>
@@ -1375,38 +1375,38 @@
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="n">xTimeIncrement</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>代码示例见FreeRTOS实时内核使用指南P24, 28, 29~30.</p>
-<p><strong><code>vApplacationIdleHook</code>函数</strong></p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P24, 28, 29~30.</p>
+<p><strong><code>vApplacationIdleHook</code> 函数</strong></p>
 <blockquote>
-<p><code>FreeRTOSConfig.h</code>中的常量<code>configUSE_IDLE_HOOK</code>定义为1时，Hook函数才会被调用。</p>
+<p><code>FreeRTOSConfig.h</code> 中的常量 <code>configUSE_IDLE_HOOK</code> 定义为 1 时，Hook 函数才会被调用。</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vApplacationIdleHook</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w">  </span><span class="c1">// 函数名固定，无参数，无返回值</span>
 </code></pre></div>
-<p><strong><code>vTaskPrioritySet</code>函数</strong></p>
+<p><strong><code>vTaskPrioritySet</code> 函数</strong></p>
 <p>用于在调度器启动后改变任务的优先级。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskPrioritySet</span><span class="p">(</span><span class="n">xTaskHandle</span><span class="w"> </span><span class="n">pxTask</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="n">uxNewPriority</span><span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><code>pxTask</code>：任务句柄，<code>pxTask=NULL</code>表示自身</li>
+<li><code>pxTask</code>：任务句柄，<code>pxTask=NULL</code> 表示自身</li>
 <li><code>uxNewPriority</code>：目标优先级</li>
 </ul>
-<p><strong><code>vTaskPriorityGet</code>函数</strong></p>
+<p><strong><code>vTaskPriorityGet</code> 函数</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/*</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm"> * @return 返回被查询任务的优先级,</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cm"> */</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskPriorityGet</span><span class="p">(</span><span class="n">xTaskHandle</span><span class="w"> </span><span class="n">pxTask</span><span class="p">);</span>
 </code></pre></div>
-<p><code>vTaskDelete</code>函数</p>
+<p><code>vTaskDelete</code> 函数</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/*</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cm"> * 内核为任务分配的内存空间会在删除后自动回收，任务1自己占用的内存或资源需要应用程序显式释放</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cm"> * @param pxTaskDelete 待删除任务句柄</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cm"> */</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskDelete</span><span class="p">(</span><span class="n">xTaskHandle</span><span class="w"> </span><span class="n">pxTaskToDelete</span><span class="p">);</span>
 </code></pre></div>
-<p>代码示例见FreeRTOS实时内核使用指南P36~37, 39~40.</p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P36~37, 39~40.</p>
 <h2 id="_4">队列管理</h2>
 <h3 id="_5">创建队列</h3>
-<p>创建队列时，RTOS从堆空间中分配内存空间，如果堆中空间不足，函数返回<code>NULL</code></p>
+<p>创建队列时，RTOS 从堆空间中分配内存空间，如果堆中空间不足，函数返回 <code>NULL</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/*</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cm"> * @param  uxQueueLength 队列深度</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cm"> * @param  uxItemSize    队列中数据单元的长度</span>
@@ -1441,7 +1441,7 @@
 </code></pre></div>
 <blockquote>
 <ul>
-<li><em>如果设定<code>xTicksToWait=portMAX_DELAY</code>，并且在文件<code>FreeRTOSConfig.h</code>中设定<code>INCLUDE_vTaskSuspend=1</code>，则阻塞等待无时间限制。</em></li>
+<li><em>如果设定 <code>xTicksToWait=portMAX_DELAY</code>，并且在文件 <code>FreeRTOSConfig.h</code> 中设定 <code>INCLUDE_vTaskSuspend=1</code>，则阻塞等待无时间限制。</em></li>
 </ul>
 </blockquote>
 <h3 id="_8">查询函数</h3>
@@ -1453,15 +1453,15 @@
 </code></pre></div>
 <hr />
 <ul>
-<li><code>taskYIELD();</code>函数用于立刻进行任务切换，不必等到时间片耗尽。</li>
+<li><code>taskYIELD();</code> 函数用于立刻进行任务切换，不必等到时间片耗尽。</li>
 </ul>
-<p>例如，两个任务的优先级相同，一个任务调用了<code>taskYIELD();</code>函数，立刻由运行态进入就绪态，另一个任务进入运行态。</p>
+<p>例如，两个任务的优先级相同，一个任务调用了 <code>taskYIELD();</code> 函数，立刻由运行态进入就绪态，另一个任务进入运行态。</p>
 <hr />
-<p>代码示例见FreeRTOS实时内核使用指南P54~<strong>65</strong></p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P54~<strong>65</strong></p>
 <h2 id="_9">中断管理</h2>
 <h3 id="_10">二值信号量</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_intr_binary_semaphore.webp" alt="rtos_intr_binary_semaphore" width="50%" height="50%"/></p>
-<center><small>Using a binary semaphore to synchronize a task with an interrupt</small></center>
+<center> <small> Using a binary semaphore to synchronize a task with an interrupt </small> </center>
 
 <p><strong>创建二值信号量</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cm">/*</span>
@@ -1469,7 +1469,7 @@
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cm"> */</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vSemaphoreCreateBinary</span><span class="p">(</span><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="n">xSemaphore</span><span class="p">);</span>
 </code></pre></div>
-<p><strong><code>xSemaphoreTake</code>函数</strong></p>
+<p><strong><code>xSemaphoreTake</code> 函数</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">/*</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cm"> * @param  xSemaphore   获取的信号量</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="cm"> * @param  xTicksToWait 阻塞超时时间（任务进入阻塞态等待信号量有效的最长时间）</span>
@@ -1479,8 +1479,8 @@
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="cm"> */</span>
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xSemaphoreTake</span><span class="p">(</span><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="n">xSemaphore</span><span class="p">,</span><span class="w"> </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTickToWait</span><span class="p">);</span>
 </code></pre></div>
-<p><strong><code>xSemaphoreGiveFromISR</code>函数</strong></p>
-<p>除了互斥信号量外，其它类型的信号量可通过调用<code>xSemaphoreGiveFromISR</code>给出</p>
+<p><strong><code>xSemaphoreGiveFromISR</code> 函数</strong></p>
+<p>除了互斥信号量外，其它类型的信号量可通过调用 <code>xSemaphoreGiveFromISR</code> 给出</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cm">/*</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cm"> * @param xSemaphore                给出的信号量</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="cm"> * @param pxHigherPriorityTaskWoken 调用本函数会使一个任务退出阻塞态，如果该任务优先级高于先前被中断的任务，pxHigherPriorityTaskWoken=pdTRUE，在中断退出前进行一次上下文切换</span>
@@ -1489,15 +1489,15 @@
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="cm"> */</span>
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="nf">xSemaphoreGiveFromISR</span><span class="p">(</span><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="n">xSemaphore</span><span class="p">,</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="o">*</span><span class="n">pxHigherPriorityTaskWoken</span><span class="p">);</span>
 </code></pre></div>
-<p>代码示例见FreeRTOS实时内核使用指南P76~79.</p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P76~79.</p>
 <h3 id="_11">计数信号量</h3>
 <p>一个二值信号量最多只可以锁存一个中断事件（0/1），在锁存的事件未被处理之前，如果还有中断发生，后续的中断事件将会丢失。采用计数的方式代替二值信号量，丢中断的情况可以避免。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_intr_count_semaphore.webp" alt="rtos_intr_count_semaphore" width="50%" height="50%" /></p>
-<center><small>Using a counting semaphore to 'count' events</small></center>
+<center> <small> Using a counting semaphore to 'count' events </small> </center>
 
 <ul>
 <li>
-<p><strong>事件计数</strong>：如图，每次事件发生时，中断服务例程都会<code>Give</code>一次信号量，计数值加1.延迟处理任务每处理一个任务都会<code>Take</code>一次信号量，计数值减1,。最终<strong>信号量的计数值等于已发生事件与已处理事件数目的差值</strong>。</p>
+<p><strong>事件计数</strong>：如图，每次事件发生时，中断服务例程都会 <code>Give</code> 一次信号量，计数值加 1.延迟处理任务每处理一个任务都会 <code>Take</code> 一次信号量，计数值减 1,。最终 <strong>信号量的计数值等于已发生事件与已处理事件数目的差值</strong>。</p>
 </li>
 <li>
 <p><strong>资源管理</strong>：用信号量的计数值表示可用资源的数目，可以实现资源管理（详见下节）。</p>
@@ -1516,10 +1516,10 @@
 <a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">portBASE_TYPE</span><span class="w"> </span><span class="n">uxInitialCount</span>
 <a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">);</span>
 </code></pre></div>
-<p>代码示例见FreeRTOS实时内核使用指南P85~86</p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P85~86</p>
 <h3 id="_12">中断服务例程中使用队列</h3>
 <p>信号量用于事件通信，队列不仅可以事件通信，还可以传递数据。</p>
-<p><code>xQueueSendToFrontFromISR, xQueueSendToBackFromISR, xQueueReceiveFromISR</code>是中断安全版本，用于中断服务例程中，函数在ISR中被调用时，不会等待队列空间可用或处理队列满的情况，因此不需要指定阻塞超时时间<code>xTicksToWait</code>；相反，它会立即返回一个状态码，指示是否成功发送消息或是否需要进行上下文切换。</p>
+<p><code>xQueueSendToFrontFromISR, xQueueSendToBackFromISR, xQueueReceiveFromISR</code> 是中断安全版本，用于中断服务例程中，函数在 ISR 中被调用时，不会等待队列空间可用或处理队列满的情况，因此不需要指定阻塞超时时间 <code>xTicksToWait</code>；相反，它会立即返回一个状态码，指示是否成功发送消息或是否需要进行上下文切换。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cm">/*</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cm"> * @param xQueue        目标队列句柄，xQueueCreate函数的返回值</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cm"> * @param pvItemToQueue 发送数据的指针（按uxItemSize复制对应长度）</span>
@@ -1540,11 +1540,11 @@
 <a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="n">portTickType</span><span class="w"> </span><span class="n">xTicksToWait</span><span class="w">  </span><span class="c1">// 阻塞超时时间</span>
 <a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="p">);</span>
 </code></pre></div>
-<p>代码示例见FreeRTOS实时内核使用指南P89</p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P89</p>
 <h2 id="_13">资源管理</h2>
 <h3 id="_14">临界区与挂起</h3>
 <p><strong>基本临界区</strong></p>
-<p>临界区会关掉中断（关掉优先级低于<code>configMAX_INTERRUPT_PRIORITY</code>的中断）在<code>ENTER</code>与<code>EXIT</code>之间执行时不会切换到其它任务</p>
+<p>临界区会关掉中断（关掉优先级低于 <code>configMAX_INTERRUPT_PRIORITY</code> 的中断）在 <code>ENTER</code> 与 <code>EXIT</code> 之间执行时不会切换到其它任务</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">taskENTER_CRITICAL</span><span class="p">();</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cm">/* Critical Sections/Regions */</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
@@ -1563,19 +1563,19 @@
 <h3 id="_15">互斥量</h3>
 <blockquote>
 <p><em>感觉类似于多线程编程中的互斥锁</em></p>
-<p>互斥量是一种特殊的二值信号量，单词MUTEX来源与"MUTual EXclusion"</p>
+<p>互斥量是一种特殊的二值信号量，单词 MUTEX 来源与 "MUTual EXclusion"</p>
 <ul>
 <li>用于互斥：用后必须归还；</li>
 <li>用于同步：完成同步后丢弃；</li>
 </ul>
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/rtos_mutex.webp" alt="rtos_mutex" width="90%" height="90%" /></p>
-<center><small>Mutual exclusion implemented using a mutex</small></center>
+<center> <small> Mutual exclusion implemented using a mutex </small> </center>
 
-<p><code>xSemaphoreCreateMutex</code>函数</p>
+<p><code>xSemaphoreCreateMutex</code> 函数</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">xSemaphoreHandle</span><span class="w"> </span><span class="nf">xSemaphoreCreateMutex</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"> </span><span class="c1">// 创建成功则返回互斥量的句柄，否则返回NULL</span>
 </code></pre></div>
-<p>代码示例见FreeRTOS实时内核使用指南P108~111.</p>
+<p>代码示例见 FreeRTOS 实时内核使用指南 P108~111.</p>
 <h3 id="_16">守护任务</h3>
 <blockquote>
 <p><strong>优先级反转</strong></p>
@@ -1585,7 +1585,7 @@
 <p>只有守护任务才可以直接访问其守护的资源，并且其它任务要访问时只能间接通过守护任务提供服务。</p>
 <h2 id="_17">内存管理</h2>
 <blockquote>
-<p>标准的<code>malloc()</code>函数和<code>free()</code>函数可能会有以下问题：</p>
+<p>标准的 <code>malloc()</code> 函数和 <code>free()</code> 函数可能会有以下问题：</p>
 <ul>
 <li>在小型嵌入式系统中不可用；</li>
 <li>具体实现较大，占用代码空间；</li>
@@ -1595,18 +1595,18 @@
 <li>使链接器配置复杂；</li>
 </ul>
 </blockquote>
-<p>当内核请求内存时，调用<code>pvPortMalloc()</code>函数而不是<code>malloc()</code>函数；当释放内存时，调用<code>vPortFree()</code>函数而不是直接调用<code>free()</code>函数。</p>
-<p>代码详见<code>FreeRTOS\Source\portable\MemMang\heap_1,2,3.c</code>，FreeRTOS实时内核使用指南P123~126.</p>
+<p>当内核请求内存时，调用 <code>pvPortMalloc()</code> 函数而不是 <code>malloc()</code> 函数；当释放内存时，调用 <code>vPortFree()</code> 函数而不是直接调用 <code>free()</code> 函数。</p>
+<p>代码详见 <code>FreeRTOS\Source\portable\MemMang\heap_1,2,3.c</code>，FreeRTOS 实时内核使用指南 P123~126.</p>
 <h2 id="_18">参考资料</h2>
 <ul>
-<li>FreeRTOS实时内核使用指南</li>
+<li>FreeRTOS 实时内核使用指南</li>
 <li>
 <p>Mastering the FreeRTOS™ Real Time Kernel</p>
 </li>
 <li>
-<p><a href="https://blog.csdn.net/qq_61672347/category_11891132.html">qq_61672347的博客—FreeRTOS</a></p>
+<p><a href="https://blog.csdn.net/qq_61672347/category_11891132.html">qq_61672347 的博客—FreeRTOS</a></p>
 </li>
-<li><a href="https://blog.csdn.net/zhzht19861011/category_9265965.html?spm=1001.2014.3001.5482">朱工的专栏—FreeRTOS高级篇</a></li>
+<li><a href="https://blog.csdn.net/zhzht19861011/category_9265965.html?spm=1001.2014.3001.5482">朱工的专栏—FreeRTOS 高级篇</a></li>
 </ul>
 
 

@@ -1189,7 +1189,7 @@
 <h1 id="_5">微积分</h1>
 <h2 id="_6">积分</h2>
 <div class="arithmatex">\[
-\lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{n+k}} = \lim_{n\to\infty}\sum_{k=1}^n{\dfrac{1}{1+\frac{k}{n}}}=\int_0^1{\dfrac{1}{1+x}}dx=\ln2.
+\lim_{n\to\infty}\sum_{k = 1}^n{\dfrac{1}{n+k}} = \lim_{n\to\infty}\sum_{k = 1}^n{\dfrac{1}{1+\frac{k}{n}}}=\int_0^1{\dfrac{1}{1+x}}dx =\ln2.
 \]</div>
 <h2 id="_7">常微分方程</h2>
 <ul>
@@ -1204,9 +1204,9 @@
 <div class="arithmatex">\[
 \begin{aligned}
 &amp;\text{let}\ y = ux\\
-f(x,y) &amp;= f(x,ux)=\varphi(u)\\
+f(x, y) &amp;= f(x, ux)=\varphi(u)\\
 \varphi(u) &amp;= u+x\dfrac{du}{dx}\\
-\int \dfrac{du}{\varphi(u)-u}&amp;=\int \dfrac{dx}{x} + C=\ln|x| + C\\
+\int \dfrac{du}{\varphi(u)-u}&amp;=\int \dfrac{dx}{x} + C =\ln|x| + C\\
 \Phi(u)&amp;=\Phi(\dfrac{y}{x}) = \ln|x| + C\\
 \end{aligned}
 \]</div>
@@ -1223,18 +1223,18 @@ y = \dfrac{\displaystyle\int e^{\int p(x)dx} q(x)dx+C}{e^{\int p(x)dx}}
 \begin{aligned}
 &amp;y'y^{-n}+p(x)y^{1-n} = q(x)\\
 \text{let}\ &amp;z = y^{1-n},\dfrac{dz}{dx}=(1-n)\dfrac{dy}{dx}y^{-n}\\
-&amp;\dfrac{1}{1-n}\dfrac{dz}{dx}+p(x)z=q(x)
+&amp;\dfrac{1}{1-n}\dfrac{dz}{dx}+p(x)z = q(x)
 \end{aligned}
 \]</div>
 <h2 id="_8">多元函数微积分</h2>
 <ul>
 <li>方向导数</li>
 </ul>
-<p>对于多元函数<span class="arithmatex">\(f(x_1, x_2, \cdots, x_n)\)</span>，在点<span class="arithmatex">\(\mathbf{x}_0=(x_{01}, x_{02}, \cdots, x_{0n})\)</span>处，沿单位向量<span class="arithmatex">\(\mathbf{v} = (v_1, v_2, \cdots, v_n)\)</span>的方向导数记为</p>
+<p>对于多元函数 <span class="arithmatex">\(f(x_1, x_2, \cdots, x_n)\)</span>，在点 <span class="arithmatex">\(\mathbf{x}_0=(x_{01}, x_{02}, \cdots, x_{0n})\)</span> 处，沿单位向量 <span class="arithmatex">\(\mathbf{v} = (v_1, v_2, \cdots, v_n)\)</span> 的方向导数记为</p>
 <div class="arithmatex">\[
 D_{\mathbf{v}} f(\mathbf{x}_0) = \lim_{t \to 0^+} =  \dfrac{f(\mathbf{x}_0 + t\mathbf{v}) - f(\mathbf{x}_0)}{t}
 \]</div>
-<p>如果函数在<span class="arithmatex">\(\mathbf{x}_0\)</span>处可微，则</p>
+<p>如果函数在 <span class="arithmatex">\(\mathbf{x}_0\)</span> 处可微，则</p>
 <div class="arithmatex">\[
 D_{\mathbf{v}} f(\mathbf{x}_0) = \nabla f(\mathbf{x}_0) \cdot \mathbf{v}
 \]</div>
@@ -1244,73 +1244,73 @@ D_{\mathbf{v}} f(\mathbf{x}_0) = \nabla f(\mathbf{x}_0) \cdot \mathbf{v}
 <h3 id="_11">常用统计量</h3>
 <ul>
 <li>
-<p>样本均值<span class="arithmatex">\(\overline{X} = \dfrac{1}{n}\displaystyle\sum^{n}_{i=1}\)</span>，观测值<span class="arithmatex">\(\overline{x} = \dfrac{1}{n}\displaystyle\sum_{i=1}^{n}x_i\)</span>.</p>
+<p>样本均值 <span class="arithmatex">\(\overline{X} = \dfrac{1}{n}\displaystyle\sum^{n}_{i=1}\)</span>，观测值 <span class="arithmatex">\(\overline{x} = \dfrac{1}{n}\displaystyle\sum_{i=1}^{n}x_i\)</span>.</p>
 </li>
 <li>
-<p>样本方差<span class="arithmatex">\(S^2 = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^{n}(X_i - \overline{X})^2 = \dfrac{1}{n-1}(\displaystyle\sum_{i=1}^nX_i^2 - n \overline{X}^2)\)</span></p>
+<p>样本方差 <span class="arithmatex">\(S^2 = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^{n}(X_i - \overline{X})^2 = \dfrac{1}{n-1}(\displaystyle\sum_{i=1}^nX_i^2 - n \overline{X}^2)\)</span></p>
 </li>
 <li>
-<p>样本标准差<span class="arithmatex">\(S = \sqrt{S^2}\)</span></p>
+<p>样本标准差 <span class="arithmatex">\(S = \sqrt{S^2}\)</span></p>
 </li>
 <li>
-<p>样本<span class="arithmatex">\(k\)</span>阶原点矩<span class="arithmatex">\(A_k = \dfrac{1}{n}\displaystyle\sum_{i=1}^nX_i^k\)</span></p>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶原点矩 <span class="arithmatex">\(A_k = \dfrac{1}{n}\displaystyle\sum_{i=1}^nX_i^k\)</span></p>
 </li>
 <li>
-<p>样本<span class="arithmatex">\(k\)</span>阶中心距<span class="arithmatex">\(B_k = \dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i - \overline{X})^k\)</span></p>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶中心距 <span class="arithmatex">\(B_k = \dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i - \overline{X})^k\)</span></p>
 </li>
 </ul>
-<p><strong>定理</strong>：对总体<span class="arithmatex">\(X\)</span>有<span class="arithmatex">\(E(X) = \mu, D(X) = \sigma^2\)</span>；从总体中取出样本，<span class="arithmatex">\(E(\overline{X}) = \mu, D(\overline{X}) = \dfrac{\sigma^2}{n},E(S^2) = \sigma^2\)</span></p>
+<p><strong>定理</strong>：对总体 <span class="arithmatex">\(X\)</span> 有 <span class="arithmatex">\(E(X) = \mu, D(X) = \sigma^2\)</span>；从总体中取出样本，<span class="arithmatex">\(E(\overline{X}) = \mu, D(\overline{X}) = \dfrac{\sigma^2}{n},E(S^2) = \sigma^2\)</span></p>
 <h3 id="_12">三种分布</h3>
-<h4 id="chi2"><span class="arithmatex">\(\chi^2\)</span>分布</h4>
-<p>若<span class="arithmatex">\(X_1,X_2\cdots X_n\)</span>独立同分布，且满足<span class="arithmatex">\(X\sim N(0,1)\)</span>，则随机变量<span class="arithmatex">\(X^2\)</span>满足<span class="arithmatex">\(X\sim \chi^2(n)\)</span>，其中<span class="arithmatex">\(n\)</span>为自由度。</p>
+<h4 id="chi2"><span class="arithmatex">\(\chi^2\)</span> 分布</h4>
+<p>若 <span class="arithmatex">\(X_1,X_2\cdots X_n\)</span> 独立同分布，且满足 <span class="arithmatex">\(X\sim N(0,1)\)</span>，则随机变量 <span class="arithmatex">\(X^2\)</span> 满足 <span class="arithmatex">\(X\sim \chi^2(n)\)</span>，其中 <span class="arithmatex">\(n\)</span> 为自由度。</p>
 <ul>
 <li>
-<p>若<span class="arithmatex">\(X\sim N(\mu, \sigma)\)</span>，则<span class="arithmatex">\(\dfrac{1}{\sigma^2}\displaystyle\sum_{i=1}^n(X_i-\mu)\sim \chi^2(n)\)</span></p>
+<p>若 <span class="arithmatex">\(X\sim N(\mu, \sigma)\)</span>，则 <span class="arithmatex">\(\dfrac{1}{\sigma^2}\displaystyle\sum_{i=1}^n(X_i-\mu)\sim \chi^2(n)\)</span></p>
 </li>
 <li>
 <p><span class="arithmatex">\(E(x) = n, D(X) = 2n\)</span></p>
 </li>
 <li>
-<p>若<span class="arithmatex">\(X\sim \chi^2(m),Y\sim \chi^x(n)\)</span>，则<span class="arithmatex">\(X+Y\sim \chi^2(m+n)\)</span></p>
+<p>若 <span class="arithmatex">\(X\sim \chi^2(m),Y\sim \chi^x(n)\)</span>，则 <span class="arithmatex">\(X+Y\sim \chi^2(m+n)\)</span></p>
 </li>
 <li>
-<p>对于<span class="arithmatex">\(0 &lt; \alpha &lt; 1\)</span>，当<span class="arithmatex">\(P(X^2 \geq \chi^2_{\alpha}(n)) = \alpha\)</span>称为<span class="arithmatex">\(\chi_{\alpha}^2(n)\)</span>的<span class="arithmatex">\(\alpha\)</span>的上侧分位数</p>
+<p>对于 <span class="arithmatex">\(0 &lt; \alpha &lt; 1\)</span>，当 <span class="arithmatex">\(P(X^2 \geq \chi^2_{\alpha}(n)) = \alpha\)</span> 称为 <span class="arithmatex">\(\chi_{\alpha}^2(n)\)</span> 的 <span class="arithmatex">\(\alpha\)</span> 的上侧分位数</p>
 </li>
 </ul>
-<h4 id="t"><span class="arithmatex">\(t\)</span>分布</h4>
-<p>若<span class="arithmatex">\(X,Y\)</span>独立分布，<span class="arithmatex">\(X\sim N(0,1), Y\sim \chi^(n)\)</span>，则<span class="arithmatex">\(T = \dfrac{X}{\sqrt{Y/n}}\)</span>称为<span class="arithmatex">\(t(n)\)</span>分布（密度函数关于<span class="arithmatex">\(y\)</span>轴对称）</p>
+<h4 id="t"><span class="arithmatex">\(t\)</span> 分布</h4>
+<p>若 <span class="arithmatex">\(X,Y\)</span> 独立分布，<span class="arithmatex">\(X\sim N(0,1), Y\sim \chi^(n)\)</span>，则 <span class="arithmatex">\(T = \dfrac{X}{\sqrt{Y/n}}\)</span> 称为 <span class="arithmatex">\(t(n)\)</span> 分布（密度函数关于 <span class="arithmatex">\(y\)</span> 轴对称）</p>
 <ul>
-<li>对于<span class="arithmatex">\(0 &lt; \alpha &lt; 1\)</span>，当<span class="arithmatex">\(P(t \geq t_{\alpha}(n)) = \alpha\)</span>称为<span class="arithmatex">\(t_{\alpha}(n)\)</span>的<span class="arithmatex">\(\alpha\)</span>的上侧分位数</li>
+<li>对于 <span class="arithmatex">\(0 &lt; \alpha &lt; 1\)</span>，当 <span class="arithmatex">\(P(t \geq t_{\alpha}(n)) = \alpha\)</span> 称为 <span class="arithmatex">\(t_{\alpha}(n)\)</span> 的 <span class="arithmatex">\(\alpha\)</span> 的上侧分位数</li>
 </ul>
-<h4 id="f"><span class="arithmatex">\(F\)</span>分布</h4>
-<p>若<span class="arithmatex">\(X\sim \chi^2(m), Y\sim \chi^2(n)\)</span>相互独立，则<span class="arithmatex">\(F = \dfrac{X/m}{Y/n}\)</span>称为<span class="arithmatex">\(F(m,n)\)</span>分布</p>
+<h4 id="f"><span class="arithmatex">\(F\)</span> 分布</h4>
+<p>若 <span class="arithmatex">\(X\sim \chi^2(m), Y\sim \chi^2(n)\)</span> 相互独立，则 <span class="arithmatex">\(F = \dfrac{X/m}{Y/n}\)</span> 称为 <span class="arithmatex">\(F(m,n)\)</span> 分布</p>
 <ul>
 <li>
-<p>设<span class="arithmatex">\(X\sim F(m,n)\)</span>，则<span class="arithmatex">\(\dfrac{1}{X}\sim F(n,m)\)</span></p>
+<p>设 <span class="arithmatex">\(X\sim F(m,n)\)</span>，则 <span class="arithmatex">\(\dfrac{1}{X}\sim F(n,m)\)</span></p>
 </li>
 <li>
-<p>对于<span class="arithmatex">\(0&lt; \alpha &lt; 1\)</span>，当<span class="arithmatex">\(P(F \geq F_{\alpha}(m,n)) = \alpha\)</span>称为<span class="arithmatex">\(F_{\alpha}(m,n)\)</span>的上侧分位数</p>
+<p>对于 <span class="arithmatex">\(0&lt; \alpha &lt; 1\)</span>，当 <span class="arithmatex">\(P(F \geq F_{\alpha}(m,n)) = \alpha\)</span> 称为 <span class="arithmatex">\(F_{\alpha}(m,n)\)</span> 的上侧分位数</p>
 </li>
 </ul>
 <h3 id="_13">正态总体统计量的分布</h3>
 <h4 id="_14">单变量</h4>
-<p>若<span class="arithmatex">\(X\sim N(\mu, \sigma^2)\)</span>，有</p>
+<p>若 <span class="arithmatex">\(X\sim N(\mu, \sigma^2)\)</span>，有</p>
 <ul>
 <li><span class="arithmatex">\(\overline{X} \sim N(\mu, \dfrac{\sigma^2}{n})\)</span>，<span class="arithmatex">\(\dfrac{\overline{X} - \mu}{\sigma / \sqrt{n}}\sim N(0,1)\)</span></li>
 <li><span class="arithmatex">\(\dfrac{1}{\sigma^2}\displaystyle\sum_{i=1}^n(X_i - \mu)^2\sim \chi^2(n)\)</span></li>
-<li><span class="arithmatex">\(\overline{X}\)</span>与<span class="arithmatex">\(S^2\)</span>相互独立，且<span class="arithmatex">\(\dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span></li>
+<li><span class="arithmatex">\(\overline{X}\)</span> 与 <span class="arithmatex">\(S^2\)</span> 相互独立，且 <span class="arithmatex">\(\dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span></li>
 </ul>
 <blockquote>
-<p><span class="arithmatex">\(X^2 = \displaystyle\sum_{i=1}^n (\dfrac{X_i-\overline{X}}{\sigma})^2\)</span>，但是<span class="arithmatex">\(\displaystyle\sum _{i=1}^n(\dfrac{X_i-\overline{X}}{\sigma}) = 0\)</span>是一个约束，故自由度从<span class="arithmatex">\(n\)</span>减为<span class="arithmatex">\(n-1\)</span>.</p>
+<p><span class="arithmatex">\(X^2 = \displaystyle\sum_{i=1}^n (\dfrac{X_i-\overline{X}}{\sigma})^2\)</span>，但是 <span class="arithmatex">\(\displaystyle\sum _{i=1}^n(\dfrac{X_i-\overline{X}}{\sigma}) = 0\)</span> 是一个约束，故自由度从 <span class="arithmatex">\(n\)</span> 减为 <span class="arithmatex">\(n-1\)</span>.</p>
 </blockquote>
 <ul>
 <li><span class="arithmatex">\(\dfrac{\overline{X} - \mu}{S/\sqrt{n}} \sim t(n-1)\)</span></li>
 </ul>
 <blockquote>
-<p><span class="arithmatex">\(z = \dfrac{\overline{X} - \mu}{\sigma / \sqrt{n}}\sim N(0,1)\)</span>，<span class="arithmatex">\(\chi^2 = \dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span>满足相互独立，则<span class="arithmatex">\(t = \dfrac{z}{\sqrt{\frac{\chi^2}{n-1}}}\)</span>是自由度为<span class="arithmatex">\(n-1\)</span>的<span class="arithmatex">\(t\)</span>分布</p>
+<p><span class="arithmatex">\(z = \dfrac{\overline{X} - \mu}{\sigma / \sqrt{n}}\sim N(0,1)\)</span>，<span class="arithmatex">\(\chi^2 = \dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span> 满足相互独立，则 <span class="arithmatex">\(t = \dfrac{z}{\sqrt{\frac{\chi^2}{n-1}}}\)</span> 是自由度为 <span class="arithmatex">\(n-1\)</span> 的 <span class="arithmatex">\(t\)</span> 分布</p>
 </blockquote>
 <h4 id="_15">双变量</h4>
-<p>若<span class="arithmatex">\(X\sim N(\mu, \sigma^2),Y\sim N(0,1)\)</span>，有</p>
+<p>若 <span class="arithmatex">\(X\sim N(\mu, \sigma^2),Y\sim N(0,1)\)</span>，有</p>
 <ul>
 <li>
 <p><span class="arithmatex">\(\dfrac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n}}}\sim N(0,1)\)</span></p>
@@ -1321,25 +1321,25 @@ D_{\mathbf{v}} f(\mathbf{x}_0) = \nabla f(\mathbf{x}_0) \cdot \mathbf{v}
 <li><span class="arithmatex">\(\dfrac{S_1^2/S^2_2}{\sigma_1^2/\sigma_2^2}\sim F(m-1,n-1)\)</span></li>
 </ul>
 <blockquote>
-<p><span class="arithmatex">\(\dfrac{(n-1)S_1^2}{\sigma_1^2}\sim \chi^2(m-1)\)</span>,<span class="arithmatex">\(\dfrac{(n-1)S_2^2}{\sigma_2^2}\sim \chi^2(n-1)\)</span>两者相互独立</p>
+<p><span class="arithmatex">\(\dfrac{(n-1)S_1^2}{\sigma_1^2}\sim \chi^2(m-1)\)</span>, <span class="arithmatex">\(\dfrac{(n-1)S_2^2}{\sigma_2^2}\sim \chi^2(n-1)\)</span> 两者相互独立</p>
 </blockquote>
 <h2 id="_16">参数估计</h2>
 <h3 id="_17">点估计</h3>
 <h4 id="_18">矩估计</h4>
-<p>用样本均值<span class="arithmatex">\(\overline{X}\)</span>代替总体均值<span class="arithmatex">\(\mu\)</span>，用<strong>样本的二阶中心距</strong>代替总体方差<span class="arithmatex">\(\sigma^2\)</span>.</p>
+<p>用样本均值 <span class="arithmatex">\(\overline{X}\)</span> 代替总体均值 <span class="arithmatex">\(\mu\)</span>，用 <strong>样本的二阶中心距</strong> 代替总体方差 <span class="arithmatex">\(\sigma^2\)</span>.</p>
 <h4 id="_19">极大似然估计</h4>
 <p>选择能够使概率取到极值的参数</p>
 <div class="arithmatex">\[
 \begin{aligned}
-&amp;P(X =x) = f(x;\theta)\\
-极大似然函数&amp;L_n(\theta) = \displaystyle\prod_{i=1}^{n}f(x_i;\theta)\\
+&amp;P(X = x) = f(x;\theta)\\
+极大似然函数&amp;L_n(\theta) = \displaystyle\prod_{i = 1}^{n}f(x_i;\theta)\\
 解方程&amp;\dfrac{d}{d\theta}\ln {L_n(\theta)} = 0\\
 \end{aligned}
 \]</div>
 <h4 id="_20">衡量点估计的标准</h4>
 <ul>
 <li>无偏性：<span class="arithmatex">\(E(\hat{\theta}) = \theta\)</span></li>
-<li>有效性：若<span class="arithmatex">\(D(\hat{\theta_1}) &lt; D(\hat{\theta_2})\)</span>，则<span class="arithmatex">\(\theta_1\)</span>比<span class="arithmatex">\(\theta_2\)</span>更有效</li>
+<li>有效性：若 <span class="arithmatex">\(D(\hat{\theta_1}) &lt; D(\hat{\theta_2})\)</span>，则 <span class="arithmatex">\(\theta_1\)</span> 比 <span class="arithmatex">\(\theta_2\)</span> 更有效</li>
 <li>一致性：<span class="arithmatex">\(\displaystyle\lim_{n \to \infty}P(\lvert \hat{\theta_n} - \theta\rvert &lt; \varepsilon) = 1\)</span></li>
 </ul>
 <blockquote>
@@ -1348,53 +1348,53 @@ D_{\mathbf{v}} f(\mathbf{x}_0) = \nabla f(\mathbf{x}_0) \cdot \mathbf{v}
 </blockquote>
 <h3 id="_21">区间估计</h3>
 <h4 id="_22">单正态总体下的参数区间估计</h4>
-<p><strong>用枢轴量法求参数参数<span class="arithmatex">\(\mu\)</span>的置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间</strong></p>
+<p><strong>用枢轴量法求参数参数 <span class="arithmatex">\(\mu\)</span> 的置信水平为 <span class="arithmatex">\(1-\alpha\)</span> 的置信区间</strong></p>
 <ul>
-<li><span class="arithmatex">\(\sigma\)</span>已知</li>
+<li><span class="arithmatex">\(\sigma\)</span> 已知</li>
 </ul>
-<p>构造<span class="arithmatex">\(\overline{X}\)</span>和<span class="arithmatex">\(\mu\)</span>的函数</p>
+<p>构造 <span class="arithmatex">\(\overline{X}\)</span> 和 <span class="arithmatex">\(\mu\)</span> 的函数</p>
 <div class="arithmatex">\[
 \begin{aligned}
 &amp;Z = \dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\\
-对给定\alpha，取a&lt;b，满足&amp;P(a\leq  \dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}} \leq b) = 1-\alpha\\
-为使置信区间最短，取&amp;a = -z_{\frac{\alpha}{2}},b = z_{\frac{\alpha}{2}}\\
-则\mu的置信水平为1-\alpha 的置信区间为&amp;[\overline{X}-\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}},\overline{X}+\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}}]\\
+对给定\alpha，取 a &lt; b，满足&amp;P(a\leq  \dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}} \leq b) = 1-\alpha\\
+为使置信区间最短，取&amp;a = -z_{\frac{\alpha}{2}}, b = z_{\frac{\alpha}{2}}\\
+则\mu 的置信水平为 1-\alpha 的置信区间为&amp;[\overline{X}-\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}},\overline{X}+\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}}]\\
 \end{aligned}
 \]</div>
 <ul>
-<li><span class="arithmatex">\(\sigma\)</span>未知</li>
+<li><span class="arithmatex">\(\sigma\)</span> 未知</li>
 </ul>
-<p>用样本标准差代替总体标准差，构造<span class="arithmatex">\(\overline{X}\)</span>和<span class="arithmatex">\(\mu\)</span>的函数</p>
-<p>$$
-\begin{aligned}
-&amp;T = \dfrac{\overline{X}-\mu}{S/\sqrt{n}} \sim t(n-1)\
-对给定\alpha，取a&lt;b，满足&amp;P(a\leq  \dfrac{\overline{X}-\mu}{S/\sqrt{n}} \leq b) = 1-\alpha\
-t分布也是对称分布，为使区间长度最短，取&amp;a = -t_{\frac{\alpha}{2}}(n-1), b = t_{\frac{\alpha}{2}}(n-1)\
-则\mu的置信水平为1-\alpha的置信区间为&amp;[\overline{X} - \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1),\overline{X} + \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1)]\
-\end{aligned}
-$$
-<strong>用枢轴量法求参数参数<span class="arithmatex">\(\sigma^2\)</span>的置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间</strong></p>
-<ul>
-<li><span class="arithmatex">\(\mu\)</span>已知</li>
-</ul>
-<p>参数<span class="arithmatex">\(\sigma^2\)</span>的无偏估计为<span class="arithmatex">\(\hat{\sigma^2} = \dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i - \mu)^2\)</span>构造<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i - \mu)^2\)</span>和参数<span class="arithmatex">\(\sigma^2\)</span>的函数</p>
+<p>用样本标准差代替总体标准差，构造 <span class="arithmatex">\(\overline{X}\)</span> 和 <span class="arithmatex">\(\mu\)</span> 的函数</p>
 <div class="arithmatex">\[
 \begin{aligned}
-&amp;G = \dfrac{n\hat{\sigma^2}}{\sigma^2} = \dfrac{\displaystyle\sum_{i=1}^n (X_i - \mu)^2}{\sigma^2}\sim \chi^2(n)\\
-对给定\alpha，取a&lt;b，满足&amp;P(a\leq  \dfrac{\displaystyle\sum_{i=1}^n (X_i - \mu)^2}{\sigma^2} \leq b) = 1-\alpha\\
-通常选取&amp;P(G &lt; a) = P(G &gt; b) = \dfrac{\alpha}{2},即a = \chi_{1-\alpha /2}^2(n),b = \chi_{\alpha / 2}^2(n)\\
-由&amp;\chi_{1-\alpha /2}^2(n) \leq \dfrac{\displaystyle\sum_{i=1}^n (X_i - \mu)^2}{\sigma^2} \leq \chi_{\alpha / 2}^2(n)\\
-求得置信区间为&amp;\bigg[\dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n)}, \dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n)}\bigg]\\
+&amp;T = \dfrac{\overline{X}-\mu}{S/\sqrt{n}} \sim t(n-1)\\
+对给定\alpha，取 a &lt; b，满足&amp;P(a\leq  \dfrac{\overline{X}-\mu}{S/\sqrt{n}} \leq b) = 1-\alpha\\
+t 分布也是对称分布，为使区间长度最短，取&amp;a = -t_{\frac{\alpha}{2}}(n-1), b = t_{\frac{\alpha}{2}}(n-1)\\
+则\mu 的置信水平为 1-\alpha 的置信区间为&amp;[\overline{X} - \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1),\overline{X} + \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1)]\\
+\end{aligned}
+\]</div>
+<p><strong>用枢轴量法求参数参数 <span class="arithmatex">\(\sigma^2\)</span> 的置信水平为 <span class="arithmatex">\(1-\alpha\)</span> 的置信区间</strong></p>
+<ul>
+<li><span class="arithmatex">\(\mu\)</span> 已知</li>
+</ul>
+<p>参数 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计为 <span class="arithmatex">\(\hat{\sigma^2} = \dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i - \mu)^2\)</span> 构造 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i - \mu)^2\)</span> 和参数 <span class="arithmatex">\(\sigma^2\)</span> 的函数</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;G = \dfrac{n\hat{\sigma^2}}{\sigma^2} = \dfrac{\displaystyle\sum_{i = 1}^n (X_i - \mu)^2}{\sigma^2}\sim \chi^2(n)\\
+对给定\alpha，取 a &lt; b，满足&amp;P(a\leq  \dfrac{\displaystyle\sum_{i = 1}^n (X_i - \mu)^2}{\sigma^2} \leq b) = 1-\alpha\\
+通常选取&amp;P(G &lt; a) = P(G &gt; b) = \dfrac{\alpha}{2}, 即 a = \chi_{1-\alpha /2}^2(n), b = \chi_{\alpha / 2}^2(n)\\
+由&amp;\chi_{1-\alpha /2}^2(n) \leq \dfrac{\displaystyle\sum_{i = 1}^n (X_i - \mu)^2}{\sigma^2} \leq \chi_{\alpha / 2}^2(n)\\
+求得置信区间为&amp;\bigg [\dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n)}, \dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n)}\bigg]\\
 \end{aligned}
 \]</div>
 <ul>
-<li><span class="arithmatex">\(\mu\)</span>未知</li>
+<li><span class="arithmatex">\(\mu\)</span> 未知</li>
 </ul>
-<p>由于<span class="arithmatex">\(\mu\)</span>未知，参数<span class="arithmatex">\(\sigma^2\)</span>的无偏估计为<span class="arithmatex">\(S^2 = \dfrac{1}{n-1}\displaystyle\sum_{i = 1}^n(X_i - \overline{X})^2\)</span>，构造<span class="arithmatex">\(S^2\)</span>和<span class="arithmatex">\(\sigma^2\)</span>的函数 </p>
+<p>由于 <span class="arithmatex">\(\mu\)</span> 未知，参数 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计为 <span class="arithmatex">\(S^2 = \dfrac{1}{n-1}\displaystyle\sum_{i = 1}^n(X_i - \overline{X})^2\)</span>，构造 <span class="arithmatex">\(S^2\)</span> 和 <span class="arithmatex">\(\sigma^2\)</span> 的函数</p>
 <div class="arithmatex">\[
 \begin{aligned}
 &amp;\chi^2 = \dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\\
-类似地，可以得到置信区间为&amp;\bigg[\dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n-1)}, \dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n-1)}\bigg]
+类似地，可以得到置信区间为&amp;\bigg [\dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n-1)}, \dfrac{\displaystyle\sum_{i = 1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n-1)}\bigg]
 \end{aligned}
 \]</div>
 <table>
@@ -1408,26 +1408,26 @@ $$
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">均值<span class="arithmatex">\(\mu\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\sigma\)</span>已知</td>
+<td style="text-align: center;">均值 <span class="arithmatex">\(\mu\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma\)</span> 已知</td>
 <td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{(\overline{X}-\mu)}{\sigma/\sqrt{n}}\sim N(0,1)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\([\overline{X}-\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}},\overline{X}+\dfrac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}}]\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">均值<span class="arithmatex">\(\mu\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\sigma\)</span>未知</td>
+<td style="text-align: center;">均值 <span class="arithmatex">\(\mu\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma\)</span> 未知</td>
 <td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{(\overline{X}-\mu)}{S/\sqrt{n}}\sim t(n-1)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\([\overline{X} - \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1),\overline{X} + \dfrac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1)]\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">方差<span class="arithmatex">\(\sigma\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\mu\)</span>已知</td>
+<td style="text-align: center;">方差 <span class="arithmatex">\(\sigma\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu\)</span> 已知</td>
 <td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{1}{\sigma^2}\displaystyle\sum_{i=1}^n(X_i-\mu)^2\sim \chi^2(n)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(\bigg[\dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n)}, \dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n)}\bigg]\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">方差<span class="arithmatex">\(\sigma\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\mu\)</span>未知</td>
+<td style="text-align: center;">方差 <span class="arithmatex">\(\sigma\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu\)</span> 未知</td>
 <td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(\bigg[\dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi_{\alpha / 2}^2(n-1)}, \dfrac{\displaystyle\sum_{i=1}^n (X_i-\mu)^2}{\chi^2_{1-\alpha/ 2}(n-1)}\bigg]\)</span></td>
 </tr>
@@ -1445,26 +1445,26 @@ $$
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">均值差<span class="arithmatex">\(\mu_1-\mu_2\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\sigma_1,\sigma_2\)</span>已知</td>
+<td style="text-align: center;">均值差 <span class="arithmatex">\(\mu_1-\mu_2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma_1,\sigma_2\)</span> 已知</td>
 <td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{\overline{X} - \overline{Y}-(\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{m} + \frac{\sigma_2^2}{n}}}\sim N(0,1)\)</span></td>
 <td style="text-align: center;">不背， 现推:sleepy:</td>
 </tr>
 <tr>
-<td style="text-align: center;">均值差<span class="arithmatex">\(\mu_1 - \mu_2\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\sigma_1=\sigma_2=\sigma^2\)</span>，但<span class="arithmatex">\(\sigma^2\)</span>未知</td>
+<td style="text-align: center;">均值差 <span class="arithmatex">\(\mu_1 - \mu_2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma_1=\sigma_2=\sigma^2\)</span>，但 <span class="arithmatex">\(\sigma^2\)</span> 未知</td>
 <td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{\overline{X} - \overline{Y}-(\mu_1 - \mu_2)}{S_w\sqrt{\frac{1}{m} + \frac{1}{n}}}\sim t(m+n-2)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">方差比<span class="arithmatex">\(\dfrac{\sigma_1^2}{\sigma_2^2}\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\mu_1, \mu_2\)</span>已知</td>
+<td style="text-align: center;">方差比 <span class="arithmatex">\(\dfrac{\sigma_1^2}{\sigma_2^2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu_1, \mu_2\)</span> 已知</td>
 <td style="text-align: center;"><span class="arithmatex">\(\dfrac{\hat{\sigma^2_1}/\hat{\sigma_2^2}}{\sigma_1^2/\sigma_2^2}\sim F(m.n)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">方差比<span class="arithmatex">\(\dfrac{\sigma_1^2}{\sigma_2^2}\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\mu_1, \mu_2\)</span>未知</td>
+<td style="text-align: center;">方差比 <span class="arithmatex">\(\dfrac{\sigma_1^2}{\sigma_2^2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu_1, \mu_2\)</span> 未知</td>
 <td style="text-align: center;"><span class="arithmatex">\(G = \dfrac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(m-1,n-1)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
@@ -1472,17 +1472,17 @@ $$
 </table>
 <h2 id="_24">假设检验</h2>
 <ol>
-<li>根据问题提出原假设<span class="arithmatex">\(H_0\)</span>和备择假设<span class="arithmatex">\(H_1\)</span>；</li>
+<li>根据问题提出原假设 <span class="arithmatex">\(H_0\)</span> 和备择假设 <span class="arithmatex">\(H_1\)</span>；</li>
 <li>选择统计量，在原假设成立的条件下确定统计量的分布；</li>
-<li>根据<span class="arithmatex">\(\alpha\)</span>确定统计量对应的临界值；</li>
-<li>根据样本观测值计算统计量的观测值与临界值比较，选择接受或拒绝原假设<span class="arithmatex">\(H_0\)</span>；</li>
+<li>根据 <span class="arithmatex">\(\alpha\)</span> 确定统计量对应的临界值；</li>
+<li>根据样本观测值计算统计量的观测值与临界值比较，选择接受或拒绝原假设 <span class="arithmatex">\(H_0\)</span>；</li>
 </ol>
 <h3 id="_25">两类错误</h3>
 <ul>
-<li>弃真：当且仅当小概率事件<span class="arithmatex">\(A\)</span>发生时才拒绝<span class="arithmatex">\(H_0\)</span>，<span class="arithmatex">\(P(A|H_0)\leq \alpha\)</span></li>
-<li>取伪：当<span class="arithmatex">\(\alpha\)</span>确定后，可以通过增加样本容量来减小取伪概率</li>
+<li>弃真：当且仅当小概率事件 <span class="arithmatex">\(A\)</span> 发生时才拒绝 <span class="arithmatex">\(H_0\)</span>，<span class="arithmatex">\(P(A|H_0)\leq \alpha\)</span></li>
+<li>取伪：当 <span class="arithmatex">\(\alpha\)</span> 确定后，可以通过增加样本容量来减小取伪概率</li>
 </ul>
-<p><strong>显著性检验</strong>只对第一类错误的概率加以控制，而不考虑犯第二类错误的概率，称犯第一类错误的概率<span class="arithmatex">\(\alpha\)</span>为<strong>显著性水平</strong></p>
+<p><strong>显著性检验</strong> 只对第一类错误的概率加以控制，而不考虑犯第二类错误的概率，称犯第一类错误的概率 <span class="arithmatex">\(\alpha\)</span> 为 <strong>显著性水平</strong></p>
 <blockquote>
 <p>后果严重的作为原假设</p>
 </blockquote>
@@ -1494,47 +1494,47 @@ $$
 <blockquote>
 <p>贝塞尔校正</p>
 </blockquote>
-<p>设<span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span>是来自总体<span class="arithmatex">\(X\)</span>的样本，且<span class="arithmatex">\(E(X) = \mu\)</span>已知，<span class="arithmatex">\(D(X)=\sigma^2\)</span>未知，则<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2\)</span>是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 是来自总体 <span class="arithmatex">\(X\)</span> 的样本，且 <span class="arithmatex">\(E(X) = \mu\)</span> 已知，<span class="arithmatex">\(D(X)=\sigma^2\)</span> 未知，则 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2\)</span> 是 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计。</p>
 <blockquote>
-<p><span class="arithmatex">\(\forall i=1,2,,\cdots,n\)</span>，有<span class="arithmatex">\(E[(X_i-\mu)^2]=\sigma^2\)</span>，则
-$$
-E\left(\dfrac{1}{n}\sum_{i=1}^n(X_i-\mu)^2\right) = \dfrac{1}{n}E\left(\sum_{i=1}^n(X_i-\mu)^2\right)=\dfrac{1}{n}n\sigma^2
-$$</p>
+<p><span class="arithmatex">\(\forall i=1,2,,\cdots,n\)</span>，有 <span class="arithmatex">\(E[(X_i-\mu)^2]=\sigma^2\)</span>，则</p>
+<div class="arithmatex">\[
+E\left(\dfrac{1}{n}\sum_{i = 1}^n(X_i-\mu)^2\right) = \dfrac{1}{n}E\left(\sum_{i = 1}^n(X_i-\mu)^2\right)=\dfrac{1}{n}n\sigma^2
+\]</div>
 </blockquote>
-<p>设<span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span>是来自总体<span class="arithmatex">\(X\)</span>的样本，<span class="arithmatex">\(E(X) = \mu\)</span>未知，<span class="arithmatex">\(D(X)=\sigma^2\)</span>未知，则<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>不是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 是来自总体 <span class="arithmatex">\(X\)</span> 的样本，<span class="arithmatex">\(E(X) = \mu\)</span> 未知，<span class="arithmatex">\(D(X)=\sigma^2\)</span> 未知，则 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 不是 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计。</p>
 <blockquote>
 <div class="arithmatex">\[
 \begin{aligned}
-\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2 &amp;= \dfrac{1}{n}\sum_{i=1}^n\left((X_i-\mu) + (\mu - \overline{X})\right)^2\\
-&amp;= \dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2 + 2(\overline{X}-\mu)(\mu-\overline{X}) + (\mu-\overline{X})^2\\
-&amp;= \dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\mu)^2 -(\mu-\overline{X})^2\\
+\dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i-\overline{X})^2 &amp;= \dfrac{1}{n}\sum_{i = 1}^n\left((X_i-\mu) + (\mu - \overline{X})\right)^2\\
+&amp;= \dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i-\mu)^2 + 2(\overline{X}-\mu)(\mu-\overline{X}) + (\mu-\overline{X})^2\\
+&amp;= \dfrac{1}{n}\displaystyle\sum_{i = 1}^n(X_i-\mu)^2 -(\mu-\overline{X})^2\\
 &amp;\leq \sigma^2
 \end{aligned}
 \]</div>
-<p>当<span class="arithmatex">\(\overline{X}\not=\mu\)</span>时，<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>会造成对方差的低估，因此需要缩小分母。</p>
+<p>当 <span class="arithmatex">\(\overline{X}\not=\mu\)</span> 时，<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 会造成对方差的低估，因此需要缩小分母。</p>
 </blockquote>
 <hr />
 <p>已知</p>
 <div class="arithmatex">\[
 \begin{aligned}
-E(\overline{X}) &amp;= E(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n}\sum_{i=1}^nE(X_i) = \dfrac{1}{n}n\mu = \mu\\
-D(\overline{X}) &amp;= D(\dfrac{1}{n}\sum_{i=1}^nX_i) = \dfrac{1}{n^2}D(\sum_{i=1}^nX_i) = \dfrac{1}{n^2}n\sigma^2 = \dfrac{1}{n}\sigma^2\\
+E(\overline{X}) &amp;= E(\dfrac{1}{n}\sum_{i = 1}^nX_i) = \dfrac{1}{n}\sum_{i = 1}^nE(X_i) = \dfrac{1}{n}n\mu = \mu\\
+D(\overline{X}) &amp;= D(\dfrac{1}{n}\sum_{i = 1}^nX_i) = \dfrac{1}{n^2}D(\sum_{i = 1}^nX_i) = \dfrac{1}{n^2}n\sigma^2 = \dfrac{1}{n}\sigma^2\\
 E(\overline{X}^2) &amp;= E(\overline{X})^2 + D(\overline{X}) = \mu^2 + \dfrac{1}{n}\sigma^2\\
 \end{aligned}
 \]</div>
 <p>于是有</p>
 <div class="arithmatex">\[
 \begin{aligned}
-E\left(\sum_{i=1}^n(X_i-\overline{X})^2\right) 
-&amp;= E(\sum_{i=1}^nX_i^2-n\overline{X}^2)\\
-&amp;= \sum_{i=1}^nE(X_i^2) - nE(\overline{X}^2)\\
+E\left(\sum_{i = 1}^n(X_i-\overline{X})^2\right)
+&amp;= E(\sum_{i = 1}^nX_i^2-n\overline{X}^2)\\
+&amp;= \sum_{i = 1}^nE(X_i^2) - nE(\overline{X}^2)\\
 &amp;= n(\mu^2 + \sigma^2) - n(\mu^2 + \dfrac{\sigma^2}{n})\\
 &amp;= (n - 1)\sigma^2\\
 \end{aligned}
 \]</div>
-<p>最终得到<span class="arithmatex">\(\dfrac{1}{n-1}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>是<span class="arithmatex">\(\sigma^2\)</span>的无偏估计。</p>
+<p>最终得到 <span class="arithmatex">\(\dfrac{1}{n-1}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 是 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计。</p>
 <blockquote>
-<p>由于<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2=\dfrac{n}{n-1}\sigma^2\)</span>，且<span class="arithmatex">\(\displaystyle\lim_{n\to\infty}\dfrac{n-1}{n}\sigma^2=\sigma^2\)</span>，则称<span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span>为<span class="arithmatex">\(\sigma^2\)</span>的渐进无偏估计。</p>
+<p>由于 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2=\dfrac{n}{n-1}\sigma^2\)</span>，且 <span class="arithmatex">\(\displaystyle\lim_{n\to\infty}\dfrac{n-1}{n}\sigma^2=\sigma^2\)</span>，则称 <span class="arithmatex">\(\dfrac{1}{n}\displaystyle\sum_{i=1}^n(X_i-\overline{X})^2\)</span> 为 <span class="arithmatex">\(\sigma^2\)</span> 的渐进无偏估计。</p>
 </blockquote>
 <hr />
 

@@ -454,9 +454,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ecefenu" class="md-nav__link">
+  <a href="#ecef-enu" class="md-nav__link">
     <span class="md-ellipsis">
-      ECEF到ENU的旋转矩阵
+      ECEF 到 ENU 的旋转矩阵
     </span>
   </a>
   
@@ -993,9 +993,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ecefenu" class="md-nav__link">
+  <a href="#ecef-enu" class="md-nav__link">
     <span class="md-ellipsis">
-      ECEF到ENU的旋转矩阵
+      ECEF 到 ENU 的旋转矩阵
     </span>
   </a>
   
@@ -1023,36 +1023,36 @@
 
 <h1 id="_1">卫星通信</h1>
 <h2 id="_2">功率</h2>
-<p>1W＝30dBm，每增加10dBm，功率乘以10倍。</p>
+<p>1W＝30dBm，每增加 10dBm，功率乘以 10 倍。</p>
 <h2 id="_3">频段</h2>
 <p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/ct/freq_band.webp" /></p>
 <h2 id="_4">航天器运行轨道</h2>
 <ol>
 <li>低地（球）轨道近地（球）轨道（LEO：Low Earth Orbit）</li>
-<li>轨道高度：约400-2000公里；</li>
+<li>轨道高度：约 400-2000 公里；</li>
 <li>
 <p>应用：绝大多数对地观测卫星、测地卫星、空间站以及一些新的通信卫星系统。</p>
 </li>
 <li>
 <p>中地球轨道（MEO：Middle Earth Orbit）</p>
 </li>
-<li>轨道高度：2000-36000公里之间；</li>
+<li>轨道高度：2000-36000 公里之间；</li>
 <li>
-<p>应用：GPS、GLONASS等导航卫星系统。</p>
+<p>应用：GPS、GLONASS 等导航卫星系统。</p>
 </li>
 <li>
 <p>地球同步转移轨道（GTO：Geostationary Transfer Orbit）（椭圆轨道）</p>
 </li>
-<li>特点：近地点在1000公里以下、远地点为地球同步轨道高度（约36000公里）；</li>
+<li>特点：近地点在 1000 公里以下、远地点为地球同步轨道高度（约 36000 公里）；</li>
 <li>
 <p>应用：为霍曼转移轨道的运用之一，经加速后可达地球静止轨道（GEO）。常以地球同步转移轨道酬载能力作为火箭性能指标。</p>
 </li>
 <li>
 <p>地球同步轨道（GEO：Geostationary Orbit）</p>
 </li>
-<li>轨道高度：约36000 km；</li>
-<li>特点：卫星运行方向与地球自转方向相同、运行轨道为位于地球赤道平面上圆形轨道、运行周期与地球自转一周的时间相等（23时56分4秒），卫星在轨道上的绕行速度约为3.1公里秒。</li>
-<li>应用：布设3颗通讯卫星即可实现除两极外的全球通讯。</li>
+<li>轨道高度：约 36000 km；</li>
+<li>特点：卫星运行方向与地球自转方向相同、运行轨道为位于地球赤道平面上圆形轨道、运行周期与地球自转一周的时间相等（23 时 56 分 4 秒），卫星在轨道上的绕行速度约为 3.1 公里秒。</li>
+<li>应用：布设 3 颗通讯卫星即可实现除两极外的全球通讯。</li>
 </ol>
 <p>地球同步轨道分为以下三种：</p>
 <ul>
@@ -1065,54 +1065,54 @@
 <li>
 <p>倾斜地球同步轨道（IGSO：Inclined Geosynchronous Orbit）</p>
 <ul>
-<li>特点：倾角不为0的地球同步轨道，星下点轨迹是一个跨南北半球的“8”字。</li>
+<li>特点：倾角不为 0 的地球同步轨道，星下点轨迹是一个跨南北半球的“8”字。</li>
 </ul>
 </li>
 <li>
 <p>极地轨道同步轨道，又叫太阳同步轨道（SSO：Sun-synchronous Orbit）</p>
 <ul>
-<li>特点：卫星的轨道平面和太阳始终保持相对固定的取向，轨道倾角接近90度。适用于全球范围内进行观测和应用的气象卫星、导航卫星、地球资源卫星等。</li>
+<li>特点：卫星的轨道平面和太阳始终保持相对固定的取向，轨道倾角接近 90 度。适用于全球范围内进行观测和应用的气象卫星、导航卫星、地球资源卫星等。</li>
 <li>应用：倾斜轨道和极地轨道同步卫星从地球上看是移动的，但每天可以经过特定的地区，用于科研、气象或军事情报的搜集，以及两极地区和高纬度地区的通信。</li>
 </ul>
 </li>
 </ul>
 <h2 id="_5">定位</h2>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/ct/ecef_enu.png" width="60%" height="60%" /></p>
-<h3 id="ecefenu">ECEF到ENU的旋转矩阵</h3>
-<p>ECEF（地心地固坐标系）到ENU（东北天站心坐标系）的转换需基于<strong>站心点的经纬度</strong>（记为纬度$ B <span class="arithmatex">\(、经度\)</span> L $，单位为弧度），通过旋转变换实现。转换过程中需先将ECEF坐标平移至站心点，再通过旋转矩阵将地心坐标系转换为局部ENU坐标系。</p>
-<p>ECEF到ENU的旋转矩阵由<strong>两次基本旋转</strong>组合而成，旋转顺序为：</p>
+<h3 id="ecef-enu">ECEF 到 ENU 的旋转矩阵</h3>
+<p>ECEF（地心地固坐标系）到 ENU（东北天站心坐标系）的转换需基于 <strong>站心点的经纬度</strong>（记为纬度 $ B $、经度 $ L $，单位为弧度），通过旋转变换实现。转换过程中需先将 ECEF 坐标平移至站心点，再通过旋转矩阵将地心坐标系转换为局部 ENU 坐标系。</p>
+<p>ECEF 到 ENU 的旋转矩阵由 <strong>两次基本旋转</strong> 组合而成，旋转顺序为：</p>
 <ol>
-<li><strong>绕Z轴旋转</strong><span class="arithmatex">\(-(\dfrac{\pi}{2} + L)\)</span>（修正经度方向）；</li>
-<li><strong>绕X轴旋转<span class="arithmatex">\(-(\dfrac{\pi}{2} - B)\)</span></strong>（修正纬度方向）；</li>
+<li><strong>绕 Z 轴旋转</strong> <span class="arithmatex">\(-(\dfrac{\pi}{2} + L)\)</span>（修正经度方向）；</li>
+<li><strong>绕 X 轴旋转 <span class="arithmatex">\(-(\dfrac{\pi}{2} - B)\)</span></strong>（修正纬度方向）；</li>
 </ol>
-<p>根据正交矩阵性质及三角函数变换，推导得到最终旋转矩阵<span class="arithmatex">\(R\)</span>如下：
-$$
-R = \begin{bmatrix}<br />
--\sin L &amp; \cos L &amp; 0 \ 
--\sin B \cos L &amp; -\sin B \sin L &amp; \cos B \
-\cos B \cos L &amp; \cos B \sin L &amp; \sin B \
-\end{bmatrix} 
-$$
-其中：</p>
+<p>根据正交矩阵性质及三角函数变换，推导得到最终旋转矩阵 <span class="arithmatex">\(R\)</span> 如下：</p>
+<div class="arithmatex">\[
+R = \begin{bmatrix}  
+-\sin L &amp; \cos L &amp; 0 \\
+-\sin B \cos L &amp; -\sin B \sin L &amp; \cos B \\
+\cos B \cos L &amp; \cos B \sin L &amp; \sin B \\
+\end{bmatrix}
+\]</div>
+<p>其中：</p>
 <ul>
-<li>$ L <span class="arithmatex">\(为站心点经度（弧度），\)</span> B $为站心点纬度（弧度）；</li>
+<li>$ L $ 为站心点经度（弧度），$ B $ 为站心点纬度（弧度）；</li>
 <li>
-<p>矩阵列向量分别对应ENU坐标系的<strong>东、北、天</strong>方向在ECEF坐标系中的单位向量；</p>
+<p>矩阵列向量分别对应 ENU 坐标系的 <strong>东、北、天</strong> 方向在 ECEF 坐标系中的单位向量；</p>
 </li>
 <li>
-<p><strong>东向（E）</strong>：由经度$ L <span class="arithmatex">\(决定，对应矩阵第一行：\)</span>[- \sin L, \cos L, 0]$；</p>
+<p><strong>东向（E）</strong>：由经度 $ L $ 决定，对应矩阵第一行：<span class="arithmatex">\([- \sin L, \cos L, 0]\)</span>；</p>
 </li>
-<li><strong>北向（N）</strong>：由纬度$ B <span class="arithmatex">\(和经度\)</span> L <span class="arithmatex">\(共同决定，对应矩阵第二行：\)</span>[- \sin B \cos L, -\sin B \sin L, \cos B]$；</li>
-<li><strong>天向（U）</strong>：由纬度$ B <span class="arithmatex">\(决定，对应矩阵第三行：\)</span>[\cos B \cos L, \cos B \sin L, \sin B]$；</li>
+<li><strong>北向（N）</strong>：由纬度 $ B $ 和经度 $ L $ 共同决定，对应矩阵第二行：<span class="arithmatex">\([- \sin B \cos L, -\sin B \sin L, \cos B]\)</span>；</li>
+<li><strong>天向（U）</strong>：由纬度 $ B $ 决定，对应矩阵第三行：<span class="arithmatex">\([\cos B \cos L, \cos B \sin L, \sin B]\)</span>；</li>
 </ul>
-<p>设站心点ECEF坐标为<span class="arithmatex">\((X_p, Y_p, Z_p)\)</span>，目标点ECEF坐标为<span class="arithmatex">\((X, Y, Z)\)</span>，则ENU坐标<span class="arithmatex">\((e, n, u)\)</span>的计算步骤为：</p>
+<p>设站心点 ECEF 坐标为 <span class="arithmatex">\((X_p, Y_p, Z_p)\)</span>，目标点 ECEF 坐标为 <span class="arithmatex">\((X, Y, Z)\)</span>，则 ENU 坐标 <span class="arithmatex">\((e, n, u)\)</span> 的计算步骤为：</p>
 <ol>
-<li>计算ECEF坐标增量：<span class="arithmatex">\(\Delta X = X - X_p,\ \Delta Y = Y - Y_p,\ \Delta Z = Z - Z_p\)</span>；</li>
+<li>计算 ECEF 坐标增量：<span class="arithmatex">\(\Delta X = X - X_p,\ \Delta Y = Y - Y_p,\ \Delta Z = Z - Z_p\)</span>；</li>
 <li>应用旋转矩阵：</li>
 </ol>
 <div class="arithmatex">\[
-\begin{bmatrix} e \\ n \\ u \\ \end{bmatrix} 
-= 
+\begin{bmatrix} e \\ n \\ u \\ \end{bmatrix}
+=
 R \cdot \begin{bmatrix} \Delta X \\ \Delta Y \\ \Delta Z \\ \end{bmatrix}
 \]</div>
 

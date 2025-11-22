@@ -287,9 +287,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pspl" class="md-nav__link">
+  <a href="#ps-pl" class="md-nav__link">
     <span class="md-ellipsis">
-      PS与PL互联
+      PS 与 PL 互联
     </span>
   </a>
   
@@ -1143,9 +1143,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pspl" class="md-nav__link">
+  <a href="#ps-pl" class="md-nav__link">
     <span class="md-ellipsis">
-      PS与PL互联
+      PS 与 PL 互联
     </span>
   </a>
   
@@ -1381,20 +1381,20 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Project family: Zynq-7000
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Project part: xc7z020clg400-2
 </code></pre></div>
-<p>Xilinx Commercial, 7 Series, Zynq, Value Index=020, cl: Wire-bond Molded, Package Pin Count=400(0.8mm), Speed Grade-2</p>
+<p>Xilinx Commercial, 7 Series, Zynq, Value Index = 020, cl: Wire-bond Molded, Package Pin Count = 400(0.8mm), Speed Grade-2</p>
 </blockquote>
 <h2 id="_1">简介</h2>
-<p>ZYNQ系列包含了完整的ARM处理子系统（PS），每颗ZYNQ系列处理器都包含Cortex-A9处理器。</p>
+<p>ZYNQ 系列包含了完整的 ARM 处理子系统（PS），每颗 ZYNQ 系列处理器都包含 Cortex-A9 处理器。</p>
 <ul>
-<li>PS：ARM的SoC部分，AMBA互联，内部存储器，外部存储器接口和外设</li>
-<li>PL：FPGA部分</li>
+<li>PS：ARM 的 SoC 部分，AMBA 互联，内部存储器，外部存储器接口和外设</li>
+<li>PL：FPGA 部分</li>
 </ul>
-<h3 id="pspl">PS与PL互联</h3>
-<p>AXI(Advanced Extensible Interface)协议，主要描述了主从设备之间的数据传输，ZYNQ中的版本是AXI4.0</p>
+<h3 id="ps-pl">PS 与 PL 互联</h3>
+<p>AXI(Advanced Extensible Interface)协议，主要描述了主从设备之间的数据传输，ZYNQ 中的版本是 AXI4.0</p>
 <blockquote>
-<p>AXI是ARM公司提出的AMBA(Advanced Microcontrooler Bus Architecture)的一部分，是一种高带宽低延迟的片内总线。</p>
+<p>AXI 是 ARM 公司提出的 AMBA(Advanced Microcontrooler Bus Architecture)的一部分，是一种高带宽低延迟的片内总线。</p>
 </blockquote>
-<p>在ZYNQ中，支持AXI-Lite，AXI4和AXI-Stream三种总线，</p>
+<p>在 ZYNQ 中，支持 AXI-Lite，AXI4 和 AXI-Stream 三种总线，</p>
 <table>
 <thead>
 <tr>
@@ -1422,104 +1422,104 @@
 </tbody>
 </table>
 <ul>
-<li><strong>AXI-Lite</strong>：轻量级，适合小批量数据传输、简单控制场合。读写时一次32bit，不支持批量传输。用于访问低速外设和控制外设；</li>
-<li><strong>AXI4</strong>：支持批量传输（具有数据读写的burst功能，对一片地址进行一次性读写）；</li>
+<li><strong>AXI-Lite</strong>：轻量级，适合小批量数据传输、简单控制场合。读写时一次 32bit，不支持批量传输。用于访问低速外设和控制外设；</li>
+<li><strong>AXI4</strong>：支持批量传输（具有数据读写的 burst 功能，对一片地址进行一次性读写）；</li>
 </ul>
 <blockquote>
-<p>上述两种采用内存映射控制方式，ARM将用户自定义IP编入某一地址进行访问，读写时就像在读写自己片内的RAM。代价时资源占用过多，需要额外的读写地址线、控制线，写应答线等。</p>
+<p>上述两种采用内存映射控制方式，ARM 将用户自定义 IP 编入某一地址进行访问，读写时就像在读写自己片内的 RAM。代价时资源占用过多，需要额外的读写地址线、控制线，写应答线等。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/soc/axi-read_write.webp" alt="axi-read_write" width="90%" height="90%" /></p>
 </blockquote>
 <ul>
-<li><strong>AXI-Stream</strong>：连续流接口（像FIFO一样一直读一直写），不需要地址线，因此不能通过内存地址映射的方式控制，需要有个转换装置；AXI-Stream适合用于实时信号处理；</li>
+<li><strong>AXI-Stream</strong>：连续流接口（像 FIFO 一样一直读一直写），不需要地址线，因此不能通过内存地址映射的方式控制，需要有个转换装置；AXI-Stream 适合用于实时信号处理；</li>
 </ul>
 <hr />
-<p>ZYNQ中<strong>硬件实现</strong>了AXI总线协议，包括9个物理接口。其中有2个AXI-GP是主机接口（Master），可以主动访问PL逻辑，把PL映射到某个地址，读PL寄存器就像在读自己的存储器；其余7个为从机接口（Slave），被动接受来自PL的读写。</p>
+<p>ZYNQ 中 <strong>硬件实现</strong> 了 AXI 总线协议，包括 9 个物理接口。其中有 2 个 AXI-GP 是主机接口（Master），可以主动访问 PL 逻辑，把 PL 映射到某个地址，读 PL 寄存器就像在读自己的存储器；其余 7 个为从机接口（Slave），被动接受来自 PL 的读写。</p>
 <ul>
-<li><strong>AXI-GP</strong>：两个32位主设备接口和两个32位从设备接口；</li>
-<li><strong>AXI-HP</strong>：高性能高带宽的AXI3.0接口，用于PL访问PS的存储器（DDR和On-chip RAM），总共由四个；</li>
-<li><strong>AXI-ACP</strong>：用于管理DMA之类不带缓存的AXI外设，PS端时Slave接口；</li>
+<li><strong>AXI-GP</strong>：两个 32 位主设备接口和两个 32 位从设备接口；</li>
+<li><strong>AXI-HP</strong>：高性能高带宽的 AXI3.0 接口，用于 PL 访问 PS 的存储器（DDR 和 On-chip RAM），总共由四个；</li>
+<li><strong>AXI-ACP</strong>：用于管理 DMA 之类不带缓存的 AXI 外设，PS 端时 Slave 接口；</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/soc/axi-acp_hp_gp.webp" alt="axi-acp_hp_gp" width="75%" height="75%" /></p>
-<p>其中GP是32位的低性能接口，理论带宽约为600MB/s，HP和ACP接口为64位高性能接口，理论带宽为1200MB/s。</p>
-<p>位于PS的ARM由直接硬件支持的AXI接口，PL需要使用逻辑实现相应的AXI协议</p>
+<p>其中 GP 是 32 位的低性能接口，理论带宽约为 600MB/s，HP 和 ACP 接口为 64 位高性能接口，理论带宽为 1200MB/s。</p>
+<p>位于 PS 的 ARM 由直接硬件支持的 AXI 接口，PL 需要使用逻辑实现相应的 AXI 协议</p>
 <ul>
-<li><strong>AXI-DMA</strong>：从PS内存到PL高速传输通道的转换，AXI-HP↔AXI-Stream；</li>
-<li><strong>AXI-FIFO-MM25</strong>：从PS内存到PL通用传输通道的转换，AXI-GP↔AXI-Stream；</li>
-<li><strong>AXI-Datamover</strong>：从PS内存到PL高速传输高速通道的转换，AXI-HP↔AXI-Stream，完全由PL控制；</li>
-<li><strong>AXI-CDMA</strong>：PL将数据从一个位置搬移到另一个位置；</li>
+<li><strong>AXI-DMA</strong>：从 PS 内存到 PL 高速传输通道的转换，AXI-HP↔AXI-Stream；</li>
+<li><strong>AXI-FIFO-MM25</strong>：从 PS 内存到 PL 通用传输通道的转换，AXI-GP↔AXI-Stream；</li>
+<li><strong>AXI-Datamover</strong>：从 PS 内存到 PL 高速传输高速通道的转换，AXI-HP↔AXI-Stream，完全由 PL 控制；</li>
+<li><strong>AXI-CDMA</strong>：PL 将数据从一个位置搬移到另一个位置；</li>
 </ul>
 <h3 id="_2">中断</h3>
-<p>ZYNQ中断分为三部分，</p>
+<p>ZYNQ 中断分为三部分，</p>
 <ul>
-<li>SGI，软件生成的中断，16个端口；</li>
-<li>PPI，CPU私有外设中断，5个；</li>
-<li>SPI，共享外设中断，来自44个PS端IO外设以及16个PL端中断</li>
+<li>SGI，软件生成的中断，16 个端口；</li>
+<li>PPI，CPU 私有外设中断，5 个；</li>
+<li>SPI，共享外设中断，来自 44 个 PS 端 IO 外设以及 16 个 PL 端中断</li>
 </ul>
 <p>中断控制器（GIC, Generic Interrupt Controller）用于对中断进行使能、关闭、掩码、设置优先级等。</p>
 <h2 id="block-design">Block Design</h2>
 <p><img alt="zynq_block_design_plus" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/soc/zynq_block_design_plus.png" /></p>
 <h3 id="zynq-block-design">ZYNQ Block Design</h3>
-<p>ZYNQ硬核架构图，绿色部分是可配置模块。</p>
+<p>ZYNQ 硬核架构图，绿色部分是可配置模块。</p>
 <h3 id="ps-pl-configuration">PS-PL Configuration</h3>
-<p>PS与PL之间接口的配置主要聚焦于AXI接口，这些接口能够扩展PL端的AXI接口外设。因此，当PL需要与PS进行数据交互时，必须遵循AXI总线协议。Xilinx为我们提供了丰富的AXI接口IP核。</p>
-<h3 id="peripheral-io-pins"><a id="MIO">Peripheral I/O Pins</a></h3>
-<p>图形化配置界面（ZYNQ的PS端外设是复用的，相同的引脚标号可以配置成不一样的功能，但只能同时配制成一种外设）</p>
+<p>PS 与 PL 之间接口的配置主要聚焦于 AXI 接口，这些接口能够扩展 PL 端的 AXI 接口外设。因此，当 PL 需要与 PS 进行数据交互时，必须遵循 AXI 总线协议。Xilinx 为我们提供了丰富的 AXI 接口 IP 核。</p>
+<h3 id="peripheral-io-pins"><a id="MIO"> Peripheral I/O Pins </a></h3>
+<p>图形化配置界面（ZYNQ 的 PS 端外设是复用的，相同的引脚标号可以配置成不一样的功能，但只能同时配制成一种外设）</p>
 <ul>
-<li>PS端分为两个<code>Bank</code>，分别为原理图中的<code>Bank500,501</code>，分别配置为<code>LVCMOS3.3V</code>和<code>LVCMOS1.8V</code>；</li>
-<li>根据原理图，串口连接在PS的<code>MIO48,49</code>上，因此在选项中使能UART1(MIO48 MIO49)；</li>
-<li><code>Quad SPI Flash, QSPI</code>：作为ZYNQ的启动存储设备，ZYNQ通过读取QSPI中存储的启动文件加载ARM和FPGA，选择<code>Single SS 4bit IO</code></li>
-<li><code>Ethernet</code>：以太网接口，根据原理图，配置<code>MDIO</code>为<code>MIO52,53</code></li>
+<li>PS 端分为两个 <code>Bank</code>，分别为原理图中的 <code>Bank500,501</code>，分别配置为 <code>LVCMOS3.3V</code> 和 <code>LVCMOS1.8V</code>；</li>
+<li>根据原理图，串口连接在 PS 的 <code>MIO48,49</code> 上，因此在选项中使能 UART1(MIO48 MIO49)；</li>
+<li><code>Quad SPI Flash, QSPI</code>：作为 ZYNQ 的启动存储设备，ZYNQ 通过读取 QSPI 中存储的启动文件加载 ARM 和 FPGA，选择 <code>Single SS 4bit IO</code></li>
+<li><code>Ethernet</code>：以太网接口，根据原理图，配置 <code>MDIO</code> 为 <code>MIO52,53</code></li>
 </ul>
-<p><em>（同理，可根据原理图第4页配置）</em></p>
-<p><strong>[Run Block Automation]</strong>后将<code>M_AXI_GP0_ACLK</code>与<code>FCLK_CLK0</code>相连。</p>
+<p><em>（同理，可根据原理图第 4 页配置）</em></p>
+<p><strong>[Run Block Automation]</strong> 后将 <code>M_AXI_GP0_ACLK</code> 与 <code>FCLK_CLK0</code> 相连。</p>
 <h2 id="gpio">GPIO</h2>
 <blockquote>
 <p><strong>UG585-ZYNQ_7000_SoC</strong></p>
 </blockquote>
-<p>Xilinx ZYNQ提供了<strong>MIO</strong>、<strong>EMIO</strong>、<strong>AXI_GPIO</strong>三种类型的GPIO接口。</p>
+<p>Xilinx ZYNQ 提供了 <strong>MIO</strong>、<strong>EMIO</strong>、<strong>AXI_GPIO</strong> 三种类型的 GPIO 接口。</p>
 <ul>
-<li>MIO是属于PS端的固定IO口，使用时不需要消耗PL端的资源；</li>
-<li>EMIO是通过PL进行扩展的IO口，使用时需要分配PL端的引脚，消耗PL端资源；</li>
-<li>AXI_GPIO是Xilinx封装好的IP核，是PS端通过AXI GP总线控制PL端的IO口技术，使用时需要消耗PL端资源。</li>
+<li>MIO 是属于 PS 端的固定 IO 口，使用时不需要消耗 PL 端的资源；</li>
+<li>EMIO 是通过 PL 进行扩展的 IO 口，使用时需要分配 PL 端的引脚，消耗 PL 端资源；</li>
+<li>AXI_GPIO 是 Xilinx 封装好的 IP 核，是 PS 端通过 AXI GP 总线控制 PL 端的 IO 口技术，使用时需要消耗 PL 端资源。</li>
 </ul>
 <h3 id="mio">MIO</h3>
 <blockquote>
 <p><strong>UG585-ZYNQ_7000_SoC</strong>：Figure 14-1 <strong>GPIO Block Diagram</strong>(P410)</p>
 </blockquote>
-<p>ZYNQ7000系列芯片有54个MIO，它们分配在 GPIO 的 Bank0 和Bank1，隶属于PS部分，这些 IO 与 PS 直接相连使用时不需要添加引脚约束，<strong>对PL部分不可见</strong>。所以对 MIO 的操作可以看作是纯 PS 的操作。用SDK软件操作底层都是对于内存地址空间的操作。</p>
+<p>ZYNQ7000 系列芯片有 54 个 MIO，它们分配在 GPIO 的 Bank0 和 Bank1，隶属于 PS 部分，这些 IO 与 PS 直接相连使用时不需要添加引脚约束，<strong>对 PL 部分不可见</strong>。所以对 MIO 的操作可以看作是纯 PS 的操作。用 SDK 软件操作底层都是对于内存地址空间的操作。</p>
 <hr />
-<p>MIO或EMIO使用时需要调用API函数：</p>
+<p>MIO 或 EMIO 使用时需要调用 API 函数：</p>
 <ol>
-<li>根据设备ID返回结构体XGpioPs_Config的配置</li>
+<li>根据设备 ID 返回结构体 XGpioPs_Config 的配置</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">XGpioPs_Config</span><span class="w"> </span><span class="o">*</span><span class="nf">XGpioPs_LookupConfig</span><span class="p">(</span><span class="n">u16</span><span class="w"> </span><span class="n">DeviceId</span><span class="p">);</span>
 </code></pre></div>
 <ol>
-<li>初始化GPIO，主要完成对XGpioPs结构体的配置</li>
+<li>初始化 GPIO，主要完成对 XGpioPs 结构体的配置</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">s32</span><span class="w"> </span><span class="nf">XGpioPs_CfgInitialize</span><span class="p">(</span><span class="n">XGpioPs</span><span class="w"> </span><span class="o">*</span><span class="n">InstancePtr</span><span class="p">,</span><span class="w"> </span><span class="n">XGpioPs_Config</span><span class="w"> </span><span class="o">*</span><span class="n">ConfigPtr</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">EffectiveAddr</span><span class="p">);</span>
 </code></pre></div>
 <ol>
-<li>为指定的引脚配置输入输出方向（对方向寄存器<code>DirModeReg</code>使能）。<code>0</code>输入，<code>1</code>输出</li>
+<li>为指定的引脚配置输入输出方向（对方向寄存器 <code>DirModeReg</code> 使能）。<code>0</code> 输入，<code>1</code> 输出</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">XGpioPs_SetDirectionPin</span><span class="p">(</span><span class="n">XGpioPs</span><span class="w"> </span><span class="o">*</span><span class="n">InstancePtr</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">Pin</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">Direction</span><span class="p">);</span>
 </code></pre></div>
 <ol>
-<li>设置指定引脚输出使能（对<code>OpEnableReg</code>寄存器配置）。OpEnableReg与DirModeReg属于逻辑与的关系，只有两个都配置成功才能实现MIO的输入或者输出的配置。</li>
+<li>设置指定引脚输出使能（对 <code>OpEnableReg</code> 寄存器配置）。OpEnableReg 与 DirModeReg 属于逻辑与的关系，只有两个都配置成功才能实现 MIO 的输入或者输出的配置。</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">XGpioPs_SetOutputEnablePin</span><span class="p">(</span><span class="n">XGpioPs</span><span class="w"> </span><span class="o">*</span><span class="n">InstancePtr</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">Pin</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">OpEnable</span><span class="p">);</span>
 </code></pre></div>
 <ol>
-<li>从指定引脚读出数据。返回值是从DATA_RO寄存器内取出读到的数据</li>
+<li>从指定引脚读出数据。返回值是从 DATA_RO 寄存器内取出读到的数据</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">u32</span><span class="w"> </span><span class="nf">XGpioPs_ReadPin</span><span class="p">(</span><span class="n">XGpioPs</span><span class="w"> </span><span class="o">*</span><span class="n">InstancePtr</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">Pin</span><span class="p">);</span>
 </code></pre></div>
 <ol>
-<li>对指定引脚写入数据。对DATA寄存器、DATA_MSW寄存器、DATA_LSW寄存器进行配置，共同完成输出数据的写入。</li>
+<li>对指定引脚写入数据。对 DATA 寄存器、DATA_MSW 寄存器、DATA_LSW 寄存器进行配置，共同完成输出数据的写入。</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">XGpioPs_WritePin</span><span class="p">(</span><span class="n">XGpioPs</span><span class="w"> </span><span class="o">*</span><span class="n">InstancePtr</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">Pin</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">Data</span><span class="p">);</span>
 </code></pre></div>
-<p>例如，利用MIO使PS端LED灯闪烁：</p>
+<p>例如，利用 MIO 使 PS 端 LED 灯闪烁：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;xparameters.h&quot;</span><span class="c1">  // 宏定义查找</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;platform.h&quot;</span>
@@ -1569,48 +1569,48 @@
 </blockquote>
 <h3 id="emio">EMIO</h3>
 <blockquote>
-<p><strong>[Customize Block]→[MIO Configuation]</strong>选择<strong>EMIO</strong></p>
+<p><strong>[Customize Block] → [MIO Configuation]</strong> 选择 <strong>EMIO</strong></p>
 </blockquote>
-<p>扩展MIO，依然属于ZYNQ的PS部分，只是连接到了PL上，再从PL的引脚连到芯片外面实现数据输入输出。 <strong>无论是EMIO还是MIO都属于PS上的IO，直接由PS操作，PS操作MIO和EMIO的方法类似</strong>。</p>
-<p>MIO分布在BANK0，BANK1，而EMIO则分布在BANK2、BANK3，参考<strong>[<em>Figure 14‐1</em>: GPIO Block Diagram]</strong></p>
+<p>扩展 MIO，依然属于 ZYNQ 的 PS 部分，只是连接到了 PL 上，再从 PL 的引脚连到芯片外面实现数据输入输出。 <strong>无论是 EMIO 还是 MIO 都属于 PS 上的 IO，直接由 PS 操作，PS 操作 MIO 和 EMIO 的方法类似</strong>。</p>
+<p>MIO 分布在 BANK0，BANK1，而 EMIO 则分布在 BANK2、BANK3，参考 <strong>[<em>Figure 14‐1</em>: GPIO Block Diagram]</strong></p>
 <ol>
 <li>
-<p>MIO在ZYNQ上的管脚是固定的，而EMIO是通过PL部分扩展的，所以使用EMIO时候需要在约束文件中分配管脚，并且设计EMIO的程序时，需要生成PL部分的bit文件烧写到FPGA中；</p>
+<p>MIO 在 ZYNQ 上的管脚是固定的，而 EMIO 是通过 PL 部分扩展的，所以使用 EMIO 时候需要在约束文件中分配管脚，并且设计 EMIO 的程序时，需要生成 PL 部分的 bit 文件烧写到 FPGA 中；</p>
 </li>
 <li>
-<p>MIO共占54bit，<strong>占用IO号为0-53</strong>，配置方法见<a href="#MIO">Block Design/Peripheral I/O Pins</a>部分；EMIO占64bit，<strong>占用IO号为54-117</strong>；</p>
+<p>MIO 共占 54bit，<strong>占用 IO 号为 0-53</strong>，配置方法见 <a href="#MIO">Block Design/Peripheral I/O Pins</a> 部分；EMIO 占 64bit，<strong>占用 IO 号为 54-117</strong>；</p>
 </li>
 <li>
-<p><strong><u>MIO和EMIO都是直接挂在PS上的GPIO</u></strong>，由PS操作。调用头文件<code>xgpiops.h</code>即可；<strong><u>AXI_GPIO是通过AXI总线挂在PS上的GPIO上</u></strong>，使用AXI_GPIO时，需要调用头文件<code>xgpio.h</code>；</p>
+<p><strong><u>MIO和EMIO都是直接挂在PS上的GPIO</u></strong>，由 PS 操作。调用头文件 <code>xgpiops.h</code> 即可；<strong><u>AXI_GPIO是通过AXI总线挂在PS上的GPIO上</u></strong>，使用 AXI_GPIO 时，需要调用头文件 <code>xgpio.h</code>；</p>
 </li>
 </ol>
 <h3 id="axi-gpio">AXI GPIO</h3>
-<p>AXIGPIO由FPGA的PL逻辑核功能实现，相当于GPIO的IP核，通过AXI总线挂在PS上的GPIO上，耗费PL端的逻辑资源。</p>
+<p>AXIGPIO 由 FPGA 的 PL 逻辑核功能实现，相当于 GPIO 的 IP 核，通过 AXI 总线挂在 PS 上的 GPIO 上，耗费 PL 端的逻辑资源。</p>
 <h2 id="ip-catalog">IP Catalog</h2>
 <h3 id="clock-wizard">Clock Wizard</h3>
-<p>锁相环(PLL)，用于产生<span class="arithmatex">\(50Hz\)</span>的分频或倍频。</p>
+<p>锁相环(PLL)，用于产生 <span class="arithmatex">\(50Hz\)</span> 的分频或倍频。</p>
 <ul>
-<li><code>locked</code>信号：观察输入时钟是否锁定，如果输入时钟信号锁定，就会输出一个locked高电平信号。</li>
+<li><code>locked</code> 信号：观察输入时钟是否锁定，如果输入时钟信号锁定，就会输出一个 locked 高电平信号。</li>
 </ul>
-<p><code>locked</code>信号是在输入信号稳定之后再输出一个<code>locked</code>信号，刚开始locked信号是低电平，等到时钟信号稳定之后他就会拉高。</p>
+<p><code>locked</code> 信号是在输入信号稳定之后再输出一个 <code>locked</code> 信号，刚开始 locked 信号是低电平，等到时钟信号稳定之后他就会拉高。</p>
 <h3 id="block-memory-generator">Block Memory Generator</h3>
 <p>用于缓存数据。</p>
 <ul>
 <li>
-<p><code>Memory Type</code>常用的是<code>Simple Dual Port RAM</code>，两个端口（读写+只读）输入和输出信号独立；</p>
+<p><code>Memory Type</code> 常用的是 <code>Simple Dual Port RAM</code>，两个端口（读写+只读）输入和输出信号独立；</p>
 </li>
 <li>
 <p><code>Primitives Output Register</code>：（在输出数据加上寄存器，可以有效改善时序，但读出的数据会落后地址两个周期）多数情况下不使能它，保持数据落后地址一个周期；</p>
 </li>
-<li><code>Width</code>表示数据位宽，<code>Depth</code>表示存储数据的个数；</li>
+<li><code>Width</code> 表示数据位宽，<code>Depth</code> 表示存储数据的个数；</li>
 </ul>
 <h3 id="fifo-generator"><a href="https://euler0525.github.io/wiki/programming/verilog/">FIFO Generator</a></h3>
 <ul>
 <li>
-<p>FIFO是为了缓存数据，因此两边的时钟通常不同，所以选择<code>Independent Clocks Block RAM</code>；</p>
+<p>FIFO 是为了缓存数据，因此两边的时钟通常不同，所以选择 <code>Independent Clocks Block RAM</code>；</p>
 </li>
 <li>
-<p><code>FWFT</code>读模式：<code>rd_en</code>信号有效时，有效数据<code>D0</code>已经在数据线上准备好有效了，不会再延后一个周期（与<code>Standard FIFO</code>的区别）</p>
+<p><code>FWFT</code> 读模式：<code>rd_en</code> 信号有效时，有效数据 <code>D0</code> 已经在数据线上准备好有效了，不会再延后一个周期（与 <code>Standard FIFO</code> 的区别）</p>
 </li>
 </ul>
 <h3 id="dds-compiler">DDS Compiler</h3>
@@ -1623,11 +1623,11 @@
 </ul>
 <p><strong>System Requirements</strong></p>
 <ul>
-<li><strong>System Clock(MHz)</strong>：系统时钟频率<span class="arithmatex">\(f_{clk}\)</span></li>
-<li><strong>Number of Channels</strong>：通道数。单个IP核实现多个独立的频率和相位输出</li>
-<li><strong>Mode of Operation</strong><ul>
-<li><strong>Standard</strong>：见<a href="https://euler0525.github.io/blogs/posts/c8c59f13/">设计原理</a></li>
-<li><strong>Rasterized</strong>：生成固定的频率点（输出频率不是连续可变的，而是在一些固定的频率值跳变），间隔由相位累加器的模数<span class="arithmatex">\(M\)</span>决定</li>
+<li><strong>System Clock(MHz)</strong>：系统时钟频率 <span class="arithmatex">\(f_{clk}\)</span></li>
+<li><strong>Number of Channels</strong>：通道数。单个 IP 核实现多个独立的频率和相位输出</li>
+<li><strong>Mode of Operation</strong></li>
+<li><strong>Standard</strong>：见 <a href="https://euler0525.github.io/blogs/posts/c8c59f13/">设计原理</a><ul>
+<li><strong>Rasterized</strong>：生成固定的频率点（输出频率不是连续可变的，而是在一些固定的频率值跳变），间隔由相位累加器的模数 <span class="arithmatex">\(M\)</span> 决定</li>
 </ul>
 </li>
 </ul>
@@ -1640,14 +1640,14 @@
 <li><strong>Parameter Selection</strong>：</li>
 </ul>
 <p><strong>System Parameters</strong>：</p>
-<p>将IP核集成到更广泛系统中所需的参数，如IP核的时钟配置、接口类型、以及可能涉及到的系统级优化和功能使能</p>
+<p>将 IP 核集成到更广泛系统中所需的参数，如 IP 核的时钟配置、接口类型、以及可能涉及到的系统级优化和功能使能</p>
 <ul>
-<li><strong>Spurious Free Dynamic Range(SFDR)</strong>： 无杂散动态范围。信号最大幅度与最大杂散或噪声幅度之间的差异。SFDR越高信号的纯净度越高</li>
+<li><strong>Spurious Free Dynamic Range(SFDR)</strong>： 无杂散动态范围。信号最大幅度与最大杂散或噪声幅度之间的差异。SFDR 越高信号的纯净度越高</li>
 <li><strong>Frequency Resolution</strong>：频率分辨率，决定了输出频率的精度</li>
 <li><strong>Noise Shaping</strong>：在频率域内重新分配量化噪声，将其分配到不敏感的频率区域。</li>
 </ul>
 <p><strong>Hardware Parameters</strong>：</p>
-<p>涉及IP核内部硬件实现的细节直接影响IP核的性能和资源消耗</p>
+<p>涉及 IP 核内部硬件实现的细节直接影响 IP 核的性能和资源消耗</p>
 <ul>
 <li><strong>Phase Width</strong>：相位累加器的位宽，越宽频率分辨率越高</li>
 <li><strong>Output Width</strong>：输出波形位宽，决定了波形最大幅度和幅度分辨率</li>
@@ -1667,35 +1667,35 @@
 </ul>
 <p><strong>Output</strong></p>
 <ul>
-<li><strong>Output Selection</strong>：正弦、余弦或两者同时输出（<code>sin</code>在高位，<code>cos</code>在低位）</li>
-<li><strong>Polarity</strong>：将相位增加<span class="arithmatex">\(\pi\)</span></li>
+<li><strong>Output Selection</strong>：正弦、余弦或两者同时输出（<code>sin</code> 在高位，<code>cos</code> 在低位）</li>
+<li><strong>Polarity</strong>：将相位增加 <span class="arithmatex">\(\pi\)</span></li>
 </ul>
 <p><strong>Implementation Options</strong></p>
 <ul>
 <li><strong>Has Phase Out</strong>：输出相位信息</li>
 <li><strong>Memory Type</strong>：查找表存储方式</li>
-<li><strong>Optimization Goal</strong>：优化速度或面积；<strong>DSP48 Use</strong>：DSP48资源使用程度</li>
+<li><strong>Optimization Goal</strong>：优化速度或面积；<strong>DSP48 Use</strong>：DSP48 资源使用程度</li>
 </ul>
 <h3 id="fast-fourier-transform">Fast Fourier Transform</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube/ic/fft_configuration.webp" alt="fft_configuration" width="90%" height="90%" /></p>
 <p><strong>Configuration</strong></p>
 <ul>
-<li><strong>Number of Channels</strong>：多通道，实现多帧数据同时进行FFT运算</li>
-<li><strong>Transform Length</strong>：FFT长度</li>
+<li><strong>Number of Channels</strong>：多通道，实现多帧数据同时进行 FFT 运算</li>
+<li><strong>Transform Length</strong>：FFT 长度</li>
+<li><strong>Architecture Configuration</strong></li>
 <li>
-<p><strong>Architecture Configuration</strong></p>
+<p><strong>Target Clock Frequency(MHz)</strong></p>
 <ul>
-<li><strong>Target Clock Frequency(MHz)</strong></li>
 <li><strong>Target Data Throughput(MSPS)</strong></li>
 </ul>
 </li>
 <li>
 <p><strong>Architecture Choice</strong></p>
-<ul>
-<li><strong>Automatically Select</strong>：自动选择</li>
+</li>
+<li><strong>Automatically Select</strong>：自动选择<ul>
 <li><strong>Piplined, Streaming I/O</strong>：并行流水线结构（处理时间最短，资源消耗最大）</li>
-<li><strong>Radix-4, Burst I/O</strong>：基4</li>
-<li><strong>Radix-2, Burst I/O</strong>：基2</li>
+<li><strong>Radix-4, Burst I/O</strong>：基 4</li>
+<li><strong>Radix-2, Burst I/O</strong>：基 2</li>
 <li><strong>Radix-2 Lite, Burst I/O</strong>：</li>
 </ul>
 </li>
@@ -1708,9 +1708,11 @@
 </li>
 <li>
 <p><strong>Scaling Options</strong>：</p>
+</li>
+<li>
+<p><strong>Block Floating Point</strong>：FFT 内部采用浮点，并根据每一级的数据自动缩放（输入输出位宽一致）</p>
 <ul>
-<li><strong>Block Floating Point</strong>：FFT内部采用浮点，并根据每一级的数据自动缩放（输入输出位宽一致）</li>
-<li><strong>Scaled</strong>：<code>m_axis_data_tuser</code>中有<span class="arithmatex">\(5bit\)</span>表示每一级的缩放情况</li>
+<li><strong>Scaled</strong>：<code>m_axis_data_tuser</code> 中有 <span class="arithmatex">\(5bit\)</span> 表示每一级的缩放情况</li>
 <li>
 <p><strong>Unscaled</strong>：不用担心溢出</p>
 </li>
@@ -1721,22 +1723,28 @@
 </li>
 <li>
 <p><strong>Precision Options</strong></p>
+</li>
+<li>
+<p><strong>Input Data Width</strong>：</p>
 <ul>
-<li><strong>Input Data Width</strong>：</li>
 <li><strong>Phase Factor Width</strong>：</li>
 </ul>
 </li>
 <li>
 <p><strong>Control Signals</strong></p>
+</li>
+<li>
+<p><strong>ACLKEN</strong></p>
 <ul>
-<li><strong>ACLKEN</strong></li>
 <li><strong>ARESETn(active low)</strong></li>
 </ul>
 </li>
 <li>
 <p><strong>Output Ordering Options</strong></p>
+</li>
+<li>
+<p><strong>Output Ordering</strong>：<strong>Bit/Digit Reversed Order</strong>；<strong>Natural Order</strong></p>
 <ul>
-<li><strong>Output Ordering</strong>：<strong>Bit/Digit Reversed Order</strong>；<strong>Natural Order</strong></li>
 <li><strong>Cyclic Prefix Insertion</strong></li>
 </ul>
 </li>
@@ -1748,15 +1756,15 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube/ic/fft_detailed.webp" alt="fft_detailed" width="90%" height="90%" /></p>
 <p><strong>Detailed Implementation</strong></p>
 <ul>
-<li><strong>Memory Options</strong><ul>
-<li>Data：Block RAM；Distributed RAM</li>
+<li><strong>Memory Options</strong></li>
+<li>Data：Block RAM；Distributed RAM<ul>
 <li>Phase Factors：Block RAM；Distributed RAM</li>
 <li>Number of stages using Block RAM for Data and Phase Factors</li>
 <li>Reorder Buffer：Block RAM；Distributed RAM；Optimize Block RAM Count Using Hybrid Memories</li>
 </ul>
 </li>
-<li>Optimize Options<ul>
-<li>Complex Multipliers</li>
+<li>Optimize Options</li>
+<li>Complex Multipliers<ul>
 <li>Butterfly Arithmetic</li>
 </ul>
 </li>
@@ -1766,11 +1774,11 @@
 <p><span class="arithmatex">\(Clock\space Frequency\space /\space Input\space Sampling\space Frequency = usmp\_rate\)</span></p>
 <h3 id="ilaintegrated-logic-analyzer">ILA(Integrated Logic Analyzer)</h3>
 <blockquote>
-<p>常用的<strong>在线调试</strong>方法：</p>
+<p>常用的 <strong>在线调试</strong> 方法：</p>
 <ul>
 <li>ILA IP Catalog</li>
 <li>VIO IP Catalog</li>
-<li><code>(* MARK_DEBUG="true" *)</code>，<strong>[SYNTHESIS]</strong>综合后打开<strong>[Open Synthesized Design]</strong>，右上角选择<strong>[Debug]</strong>模式，被标记的信号会有🕷️标识。</li>
+<li><code>(* MARK_DEBUG="true" *)</code>，<strong>[SYNTHESIS]</strong> 综合后打开 <strong>[Open Synthesized Design]</strong>，右上角选择 <strong>[Debug]</strong> 模式，被标记的信号会有 🕷️ 标识。</li>
 </ul>
 </blockquote>
 <p><strong>General Options</strong></p>
@@ -1783,7 +1791,7 @@
 <p><strong>Probe_Ports</strong></p>
 <ul>
 <li><code>Probe Width</code>：根据代码中的定义设置位宽</li>
-<li><code>Probe Trigger or Data</code>：设置为<code>DATA AND TRIGGER</code></li>
+<li><code>Probe Trigger or Data</code>：设置为 <code>DATA AND TRIGGER</code></li>
 </ul>
 <p>例如：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">ila</span><span class="w"> </span><span class="n">your_instance_name</span><span class="w"> </span><span class="p">(</span>
@@ -1794,21 +1802,21 @@
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">);</span>
 </code></pre></div>
 <p><strong>调试界面</strong></p>
-<p>bit文件烧写后，会进入下图所示的ILA调试界面</p>
+<p>bit 文件烧写后，会进入下图所示的 ILA 调试界面</p>
 <p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/prog/ila_debug.webp" /></p>
-<p><strong>Waveform窗口</strong></p>
-<p>通过<strong>[+/-]</strong>选择需要观察的波形（波形能否显示与<strong>Probe_Ports</strong>的<code>Probe Trigger or Data</code>参数设置有关）</p>
-<p><strong>Status窗口</strong></p>
-<p>四个按钮分别为：<strong>循环采样</strong>、<strong>条件触发采样</strong>、<strong>无条件执行<code>ILA</code>采样</strong>、<strong>停止采样按钮</strong>
-<strong>Core status</strong>表示<code>ILA</code>的运行状态</p>
+<p><strong>Waveform 窗口</strong></p>
+<p>通过 <strong>[+/-]</strong> 选择需要观察的波形（波形能否显示与 <strong>Probe_Ports</strong> 的 <code>Probe Trigger or Data</code> 参数设置有关）</p>
+<p><strong>Status 窗口</strong></p>
+<p>四个按钮分别为：<strong>循环采样</strong>、<strong>条件触发采样</strong>、<strong>无条件执行 <code>ILA</code> 采样</strong>、<strong>停止采样按钮</strong>
+<strong>Core status</strong> 表示 <code>ILA</code> 的运行状态</p>
 <h2 id="_3">参考资料</h2>
 <ol>
 <li>Zynq 7000 SoC Technical Reference Manual UG585 (v1.14) June 30, 2023</li>
 <li>
-<p><a href="https://www.elecfans.com/emb/fpga/20200922481156.html">ZYNQ 的三种GPIO ：MIO、EMIO、AXI</a></p>
+<p><a href="https://www.elecfans.com/emb/fpga/20200922481156.html">ZYNQ 的三种 GPIO ：MIO、EMIO、AXI</a></p>
 </li>
 <li>
-<p><a href="https://blog.csdn.net/ningjinghai11/article/details/80440683">zynq中各种GPIO方式的区别：MIO，EMIO，AXI_GPIO 核</a></p>
+<p><a href="https://blog.csdn.net/ningjinghai11/article/details/80440683">zynq 中各种 GPIO 方式的区别：MIO，EMIO，AXI_GPIO 核</a></p>
 </li>
 </ol>
 

@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../../rtos/">
       
       
-        <link rel="next" href="../amd-xilinx/">
+        <link rel="next" href="../../xilinx/driver/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Driver - Euler0525@Wiki</title>
+        <title>Linux Kernel - Euler0525@Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#driver" class="md-skip">
+        <a href="#linux-kernel" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Euler0525@Wiki" class="md-header__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
+    <a href="../.." title="Euler0525@Wiki" class="md-header__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Driver
+              Linux Kernel
             
           </span>
         </div>
@@ -219,7 +219,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Euler0525@Wiki" class="md-nav__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
+    <a href="../.." title="Euler0525@Wiki" class="md-nav__button md-logo" aria-label="Euler0525@Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -237,7 +237,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -252,6 +252,163 @@
     
       
       
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CTF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FreeRTOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
     
@@ -270,7 +427,7 @@
           
   
   <span class="md-ellipsis">
-    Driver
+    Linux Kernel
   </span>
   
 
@@ -281,7 +438,7 @@
         
   
   <span class="md-ellipsis">
-    Driver
+    Linux Kernel
   </span>
   
 
@@ -303,18 +460,105 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#embedded" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Embedded
+      进入内核前
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vitis" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Vitis
+      初始化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      块设备初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制台初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      时间初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程调度初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓冲区初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬盘初始化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
     </span>
   </a>
   
@@ -327,23 +571,11 @@
     </li>
   
 
-    
+              
+            
+          </ul>
+        </nav>
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../amd-xilinx/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AMD Xilinx
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -354,8 +586,64 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AMD Xilinx
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            AMD Xilinx
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../zynq/" class="md-nav__link">
+      <a href="../../xilinx/driver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Driver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xilinx/zynq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -367,6 +655,35 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xilinx/aie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Engine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -375,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stm32/" class="md-nav__link">
+      <a href="../../stm32/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -395,67 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ctf/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CTF
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bug/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bug
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rtos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    FreeRTOS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../analog/" class="md-nav__link">
+      <a href="../../analog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -475,47 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../satellite/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Satellite
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../electro/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Electro
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/" class="md-nav__link">
+      <a href="../../maths/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -535,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../algorithms/" class="md-nav__link">
+      <a href="../../algorithms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,11 +772,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../apps/" class="md-nav__link">
+      <a href="../../ai/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Apps
+    AI
   </span>
   
 
@@ -575,11 +792,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../../satellite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tools
+    Satellite
   </span>
   
 
@@ -595,11 +812,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../electro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configuation
+    Electro
   </span>
   
 
@@ -650,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/asm/" class="md-nav__link">
+      <a href="../../programming/asm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -671,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/c/" class="md-nav__link">
+      <a href="../../programming/c/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -692,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/latex/" class="md-nav__link">
+      <a href="../../programming/latex/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -713,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/java/" class="md-nav__link">
+      <a href="../../programming/java/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -734,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/matlab/" class="md-nav__link">
+      <a href="../../programming/matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -790,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/python/" class="md-nav__link">
+      <a href="../../programming/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -811,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/pyqt/" class="md-nav__link">
+      <a href="../../programming/pyqt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -840,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/shell/" class="md-nav__link">
+      <a href="../../programming/shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -861,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programming/verilog/" class="md-nav__link">
+      <a href="../../programming/verilog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -889,27 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AI
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../links/" class="md-nav__link">
+      <a href="../../links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -929,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -969,18 +1166,105 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#embedded" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Embedded
+      进入内核前
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vitis" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Vitis
+      初始化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      块设备初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制台初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      时间初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程调度初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓冲区初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬盘初始化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
     </span>
   </a>
   
@@ -1001,20 +1285,63 @@
                   
 
 
-<h1 id="driver">Driver</h1>
-<h2 id="embedded">Embedded</h2>
+<h1 id="linux-kernel">Linux  Kernel</h1>
+<pre class="mermaid"><code>graph LR
+A(进入内核前) ---&gt; B(初始化) --内核态→用户态--&gt; C(新进程) ---&gt; D(Shell程序)</code></pre>
+<h2 id="_1">进入内核前</h2>
+<p>开机之后，</p>
 <ul>
-<li>在嵌入式系统和小型网络中自动获取和配置网络连接</li>
+<li>bootsect</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>udhcpc<span class="w"> </span>-i<span class="w"> </span>eth0
-</code></pre></div>
-<h2 id="vitis">Vitis</h2>
+<p>主板上的固件程序 BIOS 将硬盘启动区的代码移到内存 <code>0x7c00</code> 处，并跳转到这个位置去执行。</p>
+<p>从 <code>0x7c00</code> 移动到 <code>0x90000</code>，数据段寄存器 <code>DS</code> 和代码段寄存器 <code>CS</code> 设置为 <code>0x90000</code>，栈顶地址设置为 <code>0x9FF00</code>，栈指针寄存器 <code>SP</code> 设置为 <code>0xFF00</code>。</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/1-bootsect.webp" /></p>
+<p>将操作系统的代码完全从内存搬到硬盘中。</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/2-bootsect.webp" /></p>
 <ul>
-<li>读写 DDR</li>
+<li>setup</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>xsct%<span class="w"> </span>mrd<span class="w"> </span>-bin<span class="w"> </span>-file<span class="w"> </span><span class="o">[</span>filename.bin<span class="o">]</span><span class="w"> </span><span class="o">[</span>startaddr<span class="o">]</span><span class="w"> </span><span class="o">[</span>length<span class="o">]</span><span class="w">  </span><span class="c1"># 读</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>xsct%<span class="w"> </span>dow<span class="w"> </span>-data<span class="w"> </span><span class="o">[</span>file_name.<span class="o">]</span><span class="w"> </span><span class="o">[</span>address<span class="o">]</span><span class="w">                    </span><span class="c1"># 写</span>
+<p>系统将 system 模块的代码（除了 <code>bootsect</code> 和 <code>setup</code> 之外的程序，包括 <code>head.s</code> 和 <code>main.c</code> 等其它文件链接在一起）移动到内存的零地址处，同时再 <code>0x90000</code> 处放置一些临时信息（内存、硬盘、显卡等设备信息）。</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/4-setup.webp" /></p>
+<h2 id="_2">初始化</h2>
+<p>在进入 <code>main</code> 函数之前，已经完成了下面操作，</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/6-head.webp" /></p>
+<h3 id="_3">内存初始化</h3>
+<p>计算出边界值，将内存区域分为 <strong>内核区</strong>、<strong>缓冲区</strong> 和 <strong>主内存区</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>物理地址空间：
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>0x000000┌─────────────────┐
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        │    内核代码      │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        │   和数据区段     │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        ├─────────────────┤
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        │   缓冲区内存     │            
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        │  (磁盘缓存等)    │            ← buffer_memory_end
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ├─────────────────┤ ← main_memory_start
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        │    RAMDISK     │ (可选)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        │  (如果有定义)    │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        ├─────────────────┤
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        │    主内存区      │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        │ (用户进程等)     │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        └─────────────────┘ ← memory_end (最大16MB)
 </code></pre></div>
+<p>维护一个数组 <code>mem_map</code> 标记每一个 <code>4K</code> 的页是否空闲，标记其使用次数。1M 以下时内核区，无权管理；1M~2M 的区间时缓冲区，2M 是缓冲区末端，2M 以上是主内存区域，初始化时没有内存申请，标记为 0.</p>
+<h3 id="_4">中断初始化</h3>
+<p>设置中断描述符表中的一些中断，分为内核态(3)和用户态(0)。</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/7-trap_init.webp" /></p>
+<h3 id="_5">块设备初始化</h3>
+<p>对硬盘的读写操作封装在一个<code>request</code>结构中。</p>
+<h3 id="_6">控制台初始化</h3>
+<p>打开串口中断。</p>
+<p>获取显示模式，往显存写内容，显示在屏幕上。</p>
+<h3 id="_7">时间初始化</h3>
+<h3 id="_8">进程调度初始化</h3>
+<p>在全局描述符表中写入TSS和LDT，作为之后进程0的任务状态段和局部描述符信息；初始化task_struct数组，存放所有进程的信息；设置时钟中断和系统调用中断。</p>
+<h3 id="_9">缓冲区初始化</h3>
+<p>双向链表+哈希表，实现缓冲区管理。</p>
+<h3 id="_10">硬盘初始化</h3>
+<p>总的来说，对硬件设备的初始化，首先在某些IOP端口读写数据，开启它，然后向中断向量表添加一个中断，使CPU能够响应对这个硬件设备的动作，最后初始化一些数据结构来管理。</p>
+<h2 id="_11">参考资料</h2>
+<p><a href="https://github.com/Euler0525/Linux-0.11">Euler0525/Linux-0.11</a></p>
+<p><a href="https://book.douban.com/subject/36573361/">Linux 源码趣读</a></p>
 
 
 
@@ -1061,12 +1388,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

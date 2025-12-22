@@ -548,6 +548,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-machine-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Machine &amp; Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Machine & Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware与主机共享文件夹
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1550,6 +1574,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-machine-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Machine &amp; Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Machine & Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware与主机共享文件夹
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1771,6 +1819,27 @@
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/texlive/2024/bin/x86_64-linux:<span class="nv">$PATH</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MANPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/man:<span class="nv">$MANPATH</span>
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INFOPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/info:<span class="nv">$INFOPATH</span>
+</code></pre></div>
+<h2 id="virtual-machine-subsystem">Virtual Machine &amp; Subsystem</h2>
+<h3 id="vmware">VMware与主机共享文件夹</h3>
+<ol>
+<li>
+<p>右键虚拟机→[Settings]→[Options]→[Shared Folders]→[Always enabled]→[Add]</p>
+</li>
+<li>
+<p>填写主机文件夹路径与对应的虚拟机目录名称</p>
+</li>
+<li>
+<p>（开机自动）挂载并创建软链接</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>fuse.vmhgfs-fuse<span class="w"> </span>.host:/<span class="w"> </span>/mnt/hgfs<span class="w"> </span>-o<span class="w"> </span>allow_other
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/fstab
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1">################################################################################</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>.host:/<span class="w"> </span>/mnt/hgfs<span class="w"> </span>fuse.vmhgfs-fuse<span class="w"> </span>allow_other,defaults<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="c1">################################################################################</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>ln<span class="w"> </span>-s<span class="w"> </span>/mnt/hgfs<span class="w"> </span>~/hgfs
 </code></pre></div>
 
 

@@ -910,6 +910,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#socket-programming" class="md-nav__link">
     <span class="md-ellipsis">
       Socket Programming
@@ -1105,6 +1114,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#socket-programming" class="md-nav__link">
     <span class="md-ellipsis">
       Socket Programming
@@ -1162,6 +1180,126 @@
 
 
 <h1 id="python">Python</h1>
+<h2 id="jupyter">Jupyter</h2>
+<p>使用 <code>%lsmagic</code> 可以 <strong>列出所有可用的魔法命令</strong>。使用 <code>%magic</code> 可以查看详细的帮助文档。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类别</th>
+<th style="text-align: left;">魔法命令</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">使用方法与示例</th>
+<th style="text-align: left;">使用效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>系统与文件操作</strong></td>
+<td style="text-align: left;"><code>%run</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%run ./scripts/data_preprocess.py</code></td>
+<td style="text-align: left;"><strong>运行外部 Python 脚本</strong>，其定义的函数、变量等会载入当前 Notebook 环境，便于模块化开发。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%ls</code> / <code>%dir</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%ls ../data/</code> 或 <code>%dir ../data/</code></td>
+<td style="text-align: left;"><strong>列出指定目录</strong> 下的文件和文件夹（<code>%ls</code> 为 Unix 风格，<code>%dir</code> 为 Windows 风格）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%pwd</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%pwd</code></td>
+<td style="text-align: left;"><strong>打印当前工作目录</strong> 的绝对路径。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>代码执行与调试</strong></td>
+<td style="text-align: left;"><code>%time</code> / <code>%timeit</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%time sum(range(1000000))</code><br><code>%timeit sum(range(1000000))</code></td>
+<td style="text-align: left;"><strong>测量代码执行时间</strong>。<code>%time</code> 测单次，<code>%timeit</code> 自动多次测量取平均，更准确，适合微小代码片段。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%%time</code> / <code>%%timeit</code></td>
+<td style="text-align: left;">单元格魔法</td>
+<td style="text-align: left;">在单元格首行写 <code>%%time</code> 或 <code>%%timeit</code></td>
+<td style="text-align: left;"><strong>测量整个单元格代码</strong> 的执行时间。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%debug</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;">在代码报错后，于新单元格输入 <code>%debug</code></td>
+<td style="text-align: left;"><strong>启动交互式调试器（pdb）</strong>，进入发生异常的环境，可逐行检查变量，是事后调试的神器。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%%writefile</code></td>
+<td style="text-align: left;">单元格魔法</td>
+<td style="text-align: left;"><code>%%writefile hello.py</code><br><code>print("Hello World")</code></td>
+<td style="text-align: left;"><strong>将单元格内容写入指定文件</strong>，常用于快速创建脚本或保存代码片段。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>环境与包管理</strong></td>
+<td style="text-align: left;"><code>%env</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%env</code> 或 <code>%env PATH</code></td>
+<td style="text-align: left;"><strong>不带参数时列出所有环境变量</strong>；带参数（如 <code>PATH</code>）则获取或设置（<code>%env VAR=value</code>）特定环境变量。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%pip</code> / <code>%conda</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%pip install numpy</code> 或 <code>%conda install numpy</code></td>
+<td style="text-align: left;"><strong>在 Notebook 内部直接安装 Python 包</strong>，无需退出切换到命令行，非常方便。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>可视化与展示</strong></td>
+<td style="text-align: left;"><code>%matplotlib inline</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%matplotlib inline</code></td>
+<td style="text-align: left;"><strong>设置 Matplotlib 图表在单元格内直接显示</strong>，而非弹出窗口，是数据可视化的标配命令。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%config</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%config InlineBackend.figure_format = 'svg'</code></td>
+<td style="text-align: left;"><strong>动态配置后端行为</strong>，例如将内嵌图表格式从 PNG 改为更清晰的 SVG。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>其他实用工具</strong></td>
+<td style="text-align: left;"><code>%history</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%history -n 10-20</code></td>
+<td style="text-align: left;"><strong>打印历史命令</strong>。可用参数限定范围（如最近 10-20 条代码），方便回顾或导出代码。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%who</code> / <code>%whos</code></td>
+<td style="text-align: left;">行魔法</td>
+<td style="text-align: left;"><code>%who</code> 或 <code>%whos</code></td>
+<td style="text-align: left;"><strong>列出当前交互命名空间中所有变量</strong>。<code>%who</code> 只列名称，<code>%whos</code> 额外显示类型、值等详细信息。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%%html</code> / <code>%%javascript</code></td>
+<td style="text-align: left;">单元格魔法</td>
+<td style="text-align: left;"><code>%%html</code><br><code>&lt;h1 style='color:blue'&gt;标题&lt;/h1&gt;</code></td>
+<td style="text-align: left;"><strong>将单元格内容直接解析为 HTML 或 JavaScript 代码并执行</strong>，用于嵌入富媒体或交互组件。</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>%%latex</code></td>
+<td style="text-align: left;">单元格魔法</td>
+<td style="text-align: left;"><code>%%latex</code><br><code>$E = mc^2$</code></td>
+<td style="text-align: left;"><strong>将单元格内容渲染为 LaTeX 公式</strong>，用于编写数学表达式或报告。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="socket-programming">Socket Programming</h2>
 <ul>
 <li><code>server</code></li>

@@ -363,6 +363,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#vitis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vitis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vivado" class="md-nav__link">
     <span class="md-ellipsis">
       Vivado
@@ -1068,6 +1077,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#vitis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vitis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vivado" class="md-nav__link">
     <span class="md-ellipsis">
       Vivado
@@ -1092,22 +1110,32 @@
 
 
 <h1 id="bug">Bug</h1>
-<blockquote>
-<p>嵌入式开发：资源限制、实时性、硬件抽象、中断驱动、功耗优化、容错性、并发和同步、<strong>串口调试</strong></p>
-</blockquote>
+<h2 id="vitis">Vitis</h2>
+<ul>
+<li>Ubuntu安装Vitis的过程可能缺少的库</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libtinfo5
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libncurses5
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ncurses-compat-libs
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libncurses5-dev<span class="w"> </span>libncursesw5-dev
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libc6-i386<span class="w"> </span>libstdc++6<span class="w"> </span>lib32stdc++6<span class="w"> </span>libc6-dev
+</code></pre></div>
 <h2 id="vivado">Vivado</h2>
 <p>PS 端烧写程序完成后无报错，但是 Vivado 显示 <code>(DONE Status = 0)</code>，有可能是电源供电不足，限流过低。</p>
 <hr />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[</span><span class="nv">Synth</span><span class="w"> </span><span class="mi">8</span><span class="o">-</span><span class="mi">6895</span><span class="k">]</span><span class="w"> </span><span class="nv">The</span><span class="w"> </span>reference<span class="w"> </span>checkpoint<span class="w"> </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>.srcs<span class="o">/</span>utils_1<span class="o">/</span>imports<span class="o">/</span>synth_1<span class="o">/</span>system_wrapper.dcp<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>suitable<span class="w"> </span>for<span class="w"> </span>use<span class="w"> </span>with<span class="w"> </span>incremental<span class="w"> </span>synthesis<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design.<span class="w"> </span>Please<span class="w"> </span>regenerate<span class="w"> </span>the<span class="w"> </span>checkpoint<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design<span class="w"> </span>with<span class="w"> </span><span class="o">-</span>incremental_synth<span class="w"> </span>switch<span class="w"> </span><span class="ow">in</span><span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>Vivado<span class="w"> </span>session<span class="w"> </span>that<span class="w"> </span>synth_design<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>run.<span class="w"> </span>Synthesis<span class="w"> </span>will<span class="w"> </span>continue<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>flow
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[</span><span class="nv">Synth</span><span class="w"> </span><span class="mi">8</span><span class="o">-</span><span class="mi">6895</span><span class="k">]</span><span class="w"> </span><span class="nv">The</span><span class="w"> </span>reference<span class="w"> </span>checkpoint<span class="w"> </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>.srcs<span class="o">/</span>utils_1<span class="o">/</span>imports<span class="o">/</span>synth_1<span class="o">/</span>system_wrapper.dcp<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>suitable<span class="w"> </span>for<span class="w"> </span>use<span class="w"> </span>with<span class="w"> </span>incremental<span class="w"> </span>synthesis<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design.<span class="w"> </span>Please<span class="w"> </span>regenerate<span class="w"> </span>the<span class="w"> </span>checkpoint<span class="w"> </span>for<span class="w"> </span>this<span class="w"> </span>design<span class="w"> </span>with<span class="w"> </span><span class="o">-</span>incremental_synth<span class="w"> </span>switch<span class="w"> </span><span class="ow">in</span><span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>Vivado<span class="w"> </span>session<span class="w"> </span>that<span class="w"> </span>synth_design<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>run.<span class="w"> </span>Synthesis<span class="w"> </span>will<span class="w"> </span>continue<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>flow
 </code></pre></div>
 <p>Tools→Settings→Synthesis→Incremental synthesis→Disable（轻易不要使用）</p>
 <hr />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[</span><span class="nv">filemgmt</span><span class="w"> </span><span class="mi">56</span><span class="o">-</span><span class="mi">176</span><span class="k">]</span><span class="w"> </span><span class="nv">Module</span><span class="w"> </span>references<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>supported<span class="w"> </span><span class="ow">in</span><span class="w"> </span>manual<span class="w"> </span>compile<span class="w"> </span>order<span class="w"> </span>mode<span class="w"> </span>and<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>ignored.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[</span><span class="nv">filemgmt</span><span class="w"> </span><span class="mi">56</span><span class="o">-</span><span class="mi">176</span><span class="k">]</span><span class="w"> </span><span class="nv">Module</span><span class="w"> </span>references<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>supported<span class="w"> </span><span class="ow">in</span><span class="w"> </span>manual<span class="w"> </span>compile<span class="w"> </span>order<span class="w"> </span>mode<span class="w"> </span>and<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>ignored.
 </code></pre></div>
 <p>这个问题在综合 MMCM 时出现，右键 [Hierachy Update] → [Automatic Update and Compile Order]</p>
 <hr />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[</span><span class="nv">filemgmt</span><span class="w"> </span><span class="mi">20</span><span class="o">-</span><span class="mi">1731</span><span class="k">]</span><span class="w"> </span><span class="nv">Too</span><span class="w"> </span>many<span class="w"> </span>checkpoints<span class="w"> </span>files<span class="w"> </span>associated<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>sub-design<span class="w"> </span><span class="err">&#39;&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[</span><span class="nv">filemgmt</span><span class="w"> </span><span class="mi">20</span><span class="o">-</span><span class="mi">1731</span><span class="k">]</span><span class="w"> </span><span class="nv">Too</span><span class="w"> </span>many<span class="w"> </span>checkpoints<span class="w"> </span>files<span class="w"> </span>associated<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>sub-design<span class="w"> </span><span class="err">&#39;&#39;</span>
 </code></pre></div>
 <p>右键 IP 核，[Reset Output Product]，[Generate Output Product]</p>
 

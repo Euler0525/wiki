@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../rtos/">
+        <link rel="prev" href="../zynq/">
       
       
-        <link rel="next" href="../../xilinx/driver/">
+        <link rel="next" href="../aie/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Linux Kernel - Euler0525@Wiki</title>
+        <title>Versal - Euler0525@Wiki</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linux-kernel" class="md-skip">
+        <a href="#versal" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux Kernel
+              Versal
             
           </span>
         </div>
@@ -374,19 +374,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -400,7 +398,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -411,30 +409,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Linux Kernel
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../linux/kernel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -443,131 +421,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      进入内核前
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      初始化
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="初始化">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      内存初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      中断初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      块设备初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      控制台初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      时间初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      进程调度初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      缓冲区初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      硬盘初始化
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      参考资料
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -584,17 +437,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -608,7 +463,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             AMD Xilinx
@@ -622,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../xilinx/driver/" class="md-nav__link">
+      <a href="../driver/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -643,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../xilinx/zynq/" class="md-nav__link">
+      <a href="../zynq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,10 +516,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../xilinx/versal/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -673,6 +537,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -685,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../xilinx/aie/" class="md-nav__link">
+      <a href="../aie/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1180,119 +1045,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      进入内核前
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      初始化
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="初始化">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      内存初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      中断初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      块设备初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      控制台初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      时间初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      进程调度初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      缓冲区初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      硬盘初始化
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      参考资料
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1306,63 +1058,30 @@
                   
 
 
-<h1 id="linux-kernel">Linux  Kernel</h1>
-<pre class="mermaid"><code>graph LR
-A(进入内核前) ---&gt; B(初始化) --内核态→用户态--&gt; C(新进程) ---&gt; D(Shell程序)</code></pre>
-<h2 id="_1">进入内核前</h2>
-<p>开机之后，</p>
-<ul>
-<li>bootsect</li>
-</ul>
-<p>主板上的固件程序 BIOS 将硬盘启动区的代码移到内存 <code>0x7c00</code> 处，并跳转到这个位置去执行。</p>
-<p>从 <code>0x7c00</code> 移动到 <code>0x90000</code>，数据段寄存器 <code>DS</code> 和代码段寄存器 <code>CS</code> 设置为 <code>0x90000</code>，栈顶地址设置为 <code>0x9FF00</code>，栈指针寄存器 <code>SP</code> 设置为 <code>0xFF00</code>。</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/1-bootsect.webp" /></p>
-<p>将操作系统的代码完全从内存搬到硬盘中。</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/2-bootsect.webp" /></p>
-<ul>
-<li>setup</li>
-</ul>
-<p>系统将 system 模块的代码（除了 <code>bootsect</code> 和 <code>setup</code> 之外的程序，包括 <code>head.s</code> 和 <code>main.c</code> 等其它文件链接在一起）移动到内存的零地址处，同时再 <code>0x90000</code> 处放置一些临时信息（内存、硬盘、显卡等设备信息）。</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/4-setup.webp" /></p>
-<h2 id="_2">初始化</h2>
-<p>在进入 <code>main</code> 函数之前，已经完成了下面操作，</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/6-head.webp" /></p>
-<h3 id="_3">内存初始化</h3>
-<p>计算出边界值，将内存区域分为 <strong>内核区</strong>、<strong>缓冲区</strong> 和 <strong>主内存区</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>物理地址空间：
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>0x000000┌─────────────────┐
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        │    内核代码      │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        │   和数据区段     │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        ├─────────────────┤
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        │   缓冲区内存     │            
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        │  (磁盘缓存等)    │            ← buffer_memory_end
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ├─────────────────┤ ← main_memory_start
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        │    RAMDISK     │ (可选)
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        │  (如果有定义)    │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        ├─────────────────┤
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        │    主内存区      │
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        │ (用户进程等)     │
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        └─────────────────┘ ← memory_end (最大16MB)
-</code></pre></div>
-<p>维护一个数组 <code>mem_map</code> 标记每一个 <code>4K</code> 的页是否空闲，标记其使用次数。1M 以下时内核区，无权管理；1M~2M 的区间时缓冲区，2M 是缓冲区末端，2M 以上是主内存区域，初始化时没有内存申请，标记为 0.</p>
-<h3 id="_4">中断初始化</h3>
-<p>设置中断描述符表中的一些中断，分为内核态(3)和用户态(0)。</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/linux/7-trap_init.webp" /></p>
-<h3 id="_5">块设备初始化</h3>
-<p>对硬盘的读写操作封装在一个<code>request</code>结构中。</p>
-<h3 id="_6">控制台初始化</h3>
-<p>打开串口中断。</p>
-<p>获取显示模式，往显存写内容，显示在屏幕上。</p>
-<h3 id="_7">时间初始化</h3>
-<h3 id="_8">进程调度初始化</h3>
-<p>在全局描述符表中写入TSS和LDT，作为之后进程0的任务状态段和局部描述符信息；初始化task_struct数组，存放所有进程的信息；设置时钟中断和系统调用中断。</p>
-<h3 id="_9">缓冲区初始化</h3>
-<p>双向链表+哈希表，实现缓冲区管理。</p>
-<h3 id="_10">硬盘初始化</h3>
-<p>总的来说，对硬件设备的初始化，首先在某些IOP端口读写数据，开启它，然后向中断向量表添加一个中断，使CPU能够响应对这个硬件设备的动作，最后初始化一些数据结构来管理。</p>
-<h2 id="_11">参考资料</h2>
-<p><a href="https://github.com/Euler0525/Linux-0.11">Euler0525/Linux-0.11</a></p>
-<p><a href="https://book.douban.com/subject/36573361/">Linux 源码趣读</a></p>
+<h1 id="versal">Versal</h1>
+<p><img src="https://docs.amd.com/api/khub/maps/ElEajoVwCQOr60VTfEPo~w/resources/VyUbSgLpPqVms9HBjzP4sw-ElEajoVwCQOr60VTfEPo~w/content?v=340a82f90cacb039&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> Versal SoC 系统框图 </small> </center>
+
+<p><img src="https://docs.amd.com/api/khub/maps/dwmjhDJGICdJqD4swyVzcQ/resources/mWy1VsOHBmL7_dTVRknFTQ-dwmjhDJGICdJqD4swyVzcQ/content?v=18aa099ab68bbdc8&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> PMC 架构图 </small> </center>
+
+<p><img src="https://docs.amd.com/api/khub/maps/dwmjhDJGICdJqD4swyVzcQ/resources/rAKNOVvixcZ7q4v2kQ5J1A-dwmjhDJGICdJqD4swyVzcQ/content?v=a1d7cae5ff0c534a&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> 系统互联架构 </small> </center>
+
+<p><img src="https://docs.amd.com/api/khub/maps/dwmjhDJGICdJqD4swyVzcQ/resources/9rXFIAG0Ed7dKWHZyuIz5g-dwmjhDJGICdJqD4swyVzcQ/content?v=88ef84d06e2e085e&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> PS 互联架构 </small> </center>
+
+<p><img src="https://docs.amd.com/api/khub/maps/dwmjhDJGICdJqD4swyVzcQ/resources/dSyO9ujFhUrLfNy2hjAbeA-dwmjhDJGICdJqD4swyVzcQ/content?v=5efa57dd4b781ae9&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> APU 架构 </small> </center>
+
+<p><img src="https://docs.amd.com/api/khub/maps/dwmjhDJGICdJqD4swyVzcQ/resources/wgndAdTDBAhYNJmbwibZjg-dwmjhDJGICdJqD4swyVzcQ/content?v=61ee15905a3e8594&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> RPU 架构 </small> </center>
+
+<p><img src="https://docs.amd.com/api/khub/maps/dwmjhDJGICdJqD4swyVzcQ/resources/4urSQv~f13m5uMkT5_YqqQ-dwmjhDJGICdJqD4swyVzcQ/content?v=6ba6136c4cddb09f&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> PL 架构 </small> </center>
+
+<p><img src="https://docs.amd.com/api/khub/maps/dwmjhDJGICdJqD4swyVzcQ/resources/3p98TzwFZ9rGXoCtKFMx~g-dwmjhDJGICdJqD4swyVzcQ/content?v=be7e27bb4fb42d8f&Ft-Calling-App=ft/turnkey-portal" width="80%" /></p>
+<center> <small> I/O 互联框图</small> </center>
 
 
 

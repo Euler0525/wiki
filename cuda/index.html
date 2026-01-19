@@ -1157,6 +1157,10 @@
 <p><img alt="CUDA 存储单元架构" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/cpu_gpu.webp" /></p>
 <center> <small> CUDA 存储单元架构 </small> </center>
 
+<ul>
+<li>Global memory：Grid 范围可见。不同 Block 之间通过全局内存交换数据是常见方式（但需要正确的同步手段，通常借助 Kernel 边界或原子/协作组等）；</li>
+<li>Shared memory：Block 范围可见。只有同一 Block 的线程能读写同一块 Shared memory；不同 Block 彼此看不到对方的共享内存；</li>
+</ul>
 <p><img alt="CUDA 函数与变量访问权限" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/cpu_gpu_func_var.webp" /></p>
 <center> <small> CUDA 函数与变量访问权限 </small> </center>
 

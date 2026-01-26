@@ -446,6 +446,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#aur" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1883,6 +1894,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#aur" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2206,89 +2228,94 @@
 </li>
 </ul>
 <h2 id="linux">Linux</h2>
+<h3 id="time">Time</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>timedatectl
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>timedatectl<span class="w"> </span>set-timezone<span class="w"> </span>Asia/Shanghai
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>ntpdate<span class="w"> </span>ntp.aliyun.com
+</code></pre></div>
 <h3 id="aur">AUR</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pacman<span class="w"> </span>-Q<span class="w"> </span>base-devel
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>base-devel
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">cd</span><span class="w"> </span>/tmp
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/yay.git
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">cd</span><span class="w"> </span>yay
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>makepkg<span class="w"> </span>-si
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>yay<span class="w"> </span>--version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pacman<span class="w"> </span>-Q<span class="w"> </span>base-devel
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>base-devel
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">cd</span><span class="w"> </span>/tmp
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/yay.git
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">cd</span><span class="w"> </span>yay
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>makepkg<span class="w"> </span>-si
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>yay<span class="w"> </span>--version
 </code></pre></div>
 <h3 id="ssh">SSH</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>open-ssh
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/ssh/sshd_config<span class="w">  </span><span class="c1"># Port 22</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">22</span>/tcp
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>sudo<span class="w"> </span>ps<span class="w"> </span>-e<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>open-ssh
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/ssh/sshd_config<span class="w">  </span><span class="c1"># Port 22</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">22</span>/tcp
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>sudo<span class="w"> </span>ps<span class="w"> </span>-e<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssh
 </code></pre></div>
 <h3 id="zshpowerlevel10k">zsh&amp;Powerlevel10k</h3>
 <h4 id="oh-my-zsh">oh-my-zsh</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>zsh
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>chsh<span class="w"> </span>-s<span class="w"> </span>/bin/zsh<span class="w">  </span><span class="c1"># 修改默认终端为zsh</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://gitee.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k<span class="w">  </span><span class="c1"># 安装Powerlevel10k</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>vim<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># 修改ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>zsh
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>chsh<span class="w"> </span>-s<span class="w"> </span>/bin/zsh<span class="w">  </span><span class="c1"># 修改默认终端为zsh</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://gitee.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k<span class="w">  </span><span class="c1"># 安装Powerlevel10k</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>vim<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># 修改ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</span>
 </code></pre></div>
 <h4 id="plug-ins">Plug-ins</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># zsh-autosuggestions</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># zsh-syntax-highlighting</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>vim<span class="w"> </span>~/.zshrc
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># plugins=(git zsh-autosuggestions zsh-syntax-highlighting)</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># zsh-autosuggestions</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># zsh-syntax-highlighting</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>vim<span class="w"> </span>~/.zshrc
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># plugins=(git zsh-autosuggestions zsh-syntax-highlighting)</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
 </code></pre></div>
 <h3 id="conda"><a href="https://repo.anaconda.com/archive/">Conda</a></h3>
 <h4 id="installation">Installation</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>~/Download
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>wget<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>bash<span class="w"> </span>Anaconda3-2024.02-1-Linux-x86_64.sh
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>defaults<span class="w"> </span>conda<span class="w">  </span><span class="c1"># 更新（第一次安装不需要）</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w">  </span><span class="c1"># 若为.zshrc需要添加 export PATH=/home/username/anaconda3/bin:$PATH</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 取消自动激活</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># Source</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>vim.condarc
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>channels:
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span>-<span class="w"> </span>defaults
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>show_channel_urls:<span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>channel_alias:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>default_channels:
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>custom_channels:
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">  </span>conda-forge:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">  </span>msys2:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">  </span>bioconda:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">  </span>menpo:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">  </span>pytorch:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">  </span>simpleitk:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>auto_activate_base:<span class="w"> </span><span class="nb">true</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>~/Download
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>wget<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>bash<span class="w"> </span>Anaconda3-2024.02-1-Linux-x86_64.sh
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>defaults<span class="w"> </span>conda<span class="w">  </span><span class="c1"># 更新（第一次安装不需要）</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w">  </span><span class="c1"># 若为.zshrc需要添加 export PATH=/home/username/anaconda3/bin:$PATH</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 取消自动激活</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1"># Source</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>vim.condarc
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>channels:
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span>-<span class="w"> </span>defaults
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>show_channel_urls:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>channel_alias:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>default_channels:
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>custom_channels:
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">  </span>conda-forge:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">  </span>msys2:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">  </span>bioconda:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">  </span>menpo:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">  </span>pytorch:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">  </span>simpleitk:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>auto_activate_base:<span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
 <h4 id="env">env</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w">  </span><span class="c1"># 创建虚拟环境</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python3<span class="w">  </span><span class="c1"># 激活虚拟环境</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span>--all<span class="w">  </span><span class="c1"># 删除虚拟环境</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>conda<span class="w"> </span>env<span class="w"> </span>list<span class="w">  </span><span class="c1"># 查看虚拟环境</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w">  </span><span class="c1"># 创建虚拟环境</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python3<span class="w">  </span><span class="c1"># 激活虚拟环境</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>python3<span class="w"> </span>--all<span class="w">  </span><span class="c1"># 删除虚拟环境</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>conda<span class="w"> </span>env<span class="w"> </span>list<span class="w">  </span><span class="c1"># 查看虚拟环境</span>
 </code></pre></div>
 <h3 id="git">Git</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>git<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>git<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
 </code></pre></div>
 <h4 id="gitgithub">Git&amp;GitHub</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># user.name &amp; user.email</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">           </span><span class="c1"># git config user.name  查看用户名</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1"># git config user.email 查看邮箱</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># user.name &amp; user.email</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">           </span><span class="c1"># git config user.name  查看用户名</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1"># git config user.email 查看邮箱</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;&quot;</span>
 </code></pre></div>
 <ul>
 <li>在 GitHub 中添加公钥</li>
@@ -2297,63 +2324,63 @@
 <p>进入 GitHub-setting-SSH and GPG keys-New SSH key；</p>
 <p>将刚刚复制的内容粘贴到 key 中，（Title 任意）；</p>
 <p>执行 <code>ssh -T git@github.com</code>，输入 <code>yes</code>，显示如下成功；</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Hi ...! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Hi ...! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </code></pre></div>
 <h3 id="wsl">WSL</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># 迁移</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span> <span class="n">D</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-import</span> <span class="n">Ubuntu</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span> <span class="p">-</span><span class="n">-version</span> <span class="n">2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c"># 迁移</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span> <span class="n">D</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-import</span> <span class="n">Ubuntu</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span> <span class="n">C</span><span class="p">:\</span><span class="n">Ubuntu</span><span class="p">\</span><span class="n">Ubuntu</span><span class="p">.</span><span class="n">tar</span> <span class="p">-</span><span class="n">-version</span> <span class="n">2</span>
 </code></pre></div>
 <h3 id="docker">Docker</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>docker<span class="w"> </span>--mirror<span class="w"> </span>Aliyun
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w">  </span><span class="c1"># 将当前用户加入Docker用户组</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>sudo<span class="w"> </span>service<span class="w"> </span>docker<span class="w"> </span>start<span class="w">    </span><span class="c1"># 启动docker服务</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>docker<span class="w"> </span>--mirror<span class="w"> </span>Aliyun
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w">  </span><span class="c1"># 将当前用户加入Docker用户组</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>sudo<span class="w"> </span>service<span class="w"> </span>docker<span class="w"> </span>start<span class="w">    </span><span class="c1"># 启动docker服务</span>
 </code></pre></div>
 <h3 id="nginx">Nginx</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>-y
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># 启动</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1"># 开放端口</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="c1"># 打开防火墙</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">80</span>/tcp
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">443</span>/tcp
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>status
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>-y
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1"># 启动</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c1"># 开放端口</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="c1"># 打开防火墙</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">80</span>/tcp
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">443</span>/tcp
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>status
 </code></pre></div>
 <h3 id="fcitx5">fcitx5</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>yay<span class="w"> </span>-S<span class="w"> </span>fcitx5<span class="w"> </span>fcitx5-configtool<span class="w"> </span>fcitx5-chinese-addons<span class="w"> </span>fcitx5-qt<span class="w"> </span>fcitx5-gtk<span class="w"> </span>fcitx5-rime
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>yay<span class="w"> </span>-S<span class="w"> </span>rime-ice-git
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.local/share/fcitx5/rime/
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>vim<span class="w"> </span>default.custom.yaml
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c1">################################################################################</span>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>patch:
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span>__include:<span class="w"> </span>rime_ice_suggestion:/
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span>__patch:
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span>key_binder/bindings/+:
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">      </span>-<span class="w"> </span><span class="o">{</span><span class="w"> </span>when:<span class="w"> </span>paging,<span class="w"> </span>accept:<span class="w"> </span>comma,<span class="w"> </span>send:<span class="w"> </span>Page_Up<span class="w"> </span><span class="o">}</span>
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">      </span>-<span class="w"> </span><span class="o">{</span><span class="w"> </span>when:<span class="w"> </span>has_menu,<span class="w"> </span>accept:<span class="w"> </span>period,<span class="w"> </span>send:<span class="w"> </span>Page_Down<span class="w"> </span><span class="o">}</span>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">################################################################################</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>yay<span class="w"> </span>-S<span class="w"> </span>fcitx5<span class="w"> </span>fcitx5-configtool<span class="w"> </span>fcitx5-chinese-addons<span class="w"> </span>fcitx5-qt<span class="w"> </span>fcitx5-gtk<span class="w"> </span>fcitx5-rime
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>yay<span class="w"> </span>-S<span class="w"> </span>rime-ice-git
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.local/share/fcitx5/rime/
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>vim<span class="w"> </span>default.custom.yaml
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1">################################################################################</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>patch:
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span>__include:<span class="w"> </span>rime_ice_suggestion:/
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">  </span>__patch:
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span>key_binder/bindings/+:
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">      </span>-<span class="w"> </span><span class="o">{</span><span class="w"> </span>when:<span class="w"> </span>paging,<span class="w"> </span>accept:<span class="w"> </span>comma,<span class="w"> </span>send:<span class="w"> </span>Page_Up<span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">      </span>-<span class="w"> </span><span class="o">{</span><span class="w"> </span>when:<span class="w"> </span>has_menu,<span class="w"> </span>accept:<span class="w"> </span>period,<span class="w"> </span>send:<span class="w"> </span>Page_Down<span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c1">################################################################################</span>
 </code></pre></div>
 <p>配置完成后在 fcitx5 配置界面添加 Rime 输入法</p>
 <h3 id="texlive">TeXLive</h3>
 <ul>
 <li>开源镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/">清华大学开源软件镜像站</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>❯<span class="w"> </span>mkdir<span class="w"> </span>~/Program/TeXLive
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>❯<span class="w"> </span>mount<span class="w"> </span>.iso<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Program/TeXLive
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>❯<span class="w"> </span>./install-tl
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>❯<span class="w"> </span>umount<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>~/Program/TeXLive
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>❯<span class="w"> </span>vim<span class="w"> </span>~/.zshrc<span class="w">  </span><span class="c1"># ↓</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>❯<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zshrc
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>❯<span class="w"> </span>tex<span class="w"> </span>-v<span class="w">  </span><span class="c1"># 验证安装成功</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>❯<span class="w"> </span>mkdir<span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>❯<span class="w"> </span>mount<span class="w"> </span>.iso<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>❯<span class="w"> </span>./install-tl
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>❯<span class="w"> </span>umount<span class="w"> </span>~/Program/TeXLive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>~/Program/TeXLive
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>❯<span class="w"> </span>vim<span class="w"> </span>~/.zshrc<span class="w">  </span><span class="c1"># ↓</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>❯<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zshrc
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>❯<span class="w"> </span>tex<span class="w"> </span>-v<span class="w">  </span><span class="c1"># 验证安装成功</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Add TeX Live to the PATH, MANPATH, INFOPATH</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/texlive/2024/bin/x86_64-linux:<span class="nv">$PATH</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MANPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/man:<span class="nv">$MANPATH</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INFOPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/info:<span class="nv">$INFOPATH</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Add TeX Live to the PATH, MANPATH, INFOPATH</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/texlive/2024/bin/x86_64-linux:<span class="nv">$PATH</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MANPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/man:<span class="nv">$MANPATH</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INFOPATH</span><span class="o">=</span>/usr/local/texlive/2024/texmf-dist/doc/info:<span class="nv">$INFOPATH</span>
 </code></pre></div>
 <h2 id="virtual-machine-subsystem">Virtual Machine &amp; Subsystem</h2>
 <h3 id="vmware">VMware 与主机共享文件夹</h3>
@@ -2368,24 +2395,24 @@
 <p>（开机自动）挂载并创建软链接</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>fuse.vmhgfs-fuse<span class="w"> </span>.host:/<span class="w"> </span>/mnt/hgfs<span class="w"> </span>-o<span class="w"> </span>allow_other
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/fstab
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1">################################################################################</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>.host:/<span class="w"> </span>/mnt/hgfs<span class="w"> </span>fuse.vmhgfs-fuse<span class="w"> </span>allow_other,defaults<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="c1">################################################################################</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>ln<span class="w"> </span>-s<span class="w"> </span>/mnt/hgfs<span class="w"> </span>~/hgfs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>fuse.vmhgfs-fuse<span class="w"> </span>.host:/<span class="w"> </span>/mnt/hgfs<span class="w"> </span>-o<span class="w"> </span>allow_other
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/fstab
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1">################################################################################</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>.host:/<span class="w"> </span>/mnt/hgfs<span class="w"> </span>fuse.vmhgfs-fuse<span class="w"> </span>allow_other,defaults<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1">################################################################################</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>ln<span class="w"> </span>-s<span class="w"> </span>/mnt/hgfs<span class="w"> </span>~/hgfs
 </code></pre></div>
 <h2 id="others">Others</h2>
 <h3 id="claude-code">Claude Code</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">// add ↓ in ~/.claude.json (Skip the login process)</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p">{</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;hasCompletedOnboarding&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">// add ↓ in ~/.claude.json (Skip the login process)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p">{</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">&quot;hasCompletedOnboarding&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>claude
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>/plugin<span class="w"> </span>marketplace<span class="w"> </span>add<span class="w"> </span>obra/superpowers-marketplace
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>/plugin<span class="w"> </span>install<span class="w"> </span>superpowers@superpowers-marketplace
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>claude
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>/plugin<span class="w"> </span>marketplace<span class="w"> </span>add<span class="w"> </span>obra/superpowers-marketplace
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>/plugin<span class="w"> </span>install<span class="w"> </span>superpowers@superpowers-marketplace
 </code></pre></div>
 
 

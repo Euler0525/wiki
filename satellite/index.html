@@ -904,7 +904,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        功率
+        频段
       
     </span>
   </a>
@@ -915,17 +915,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        频段
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         航天器运行轨道
       
     </span>
@@ -934,7 +923,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         定位
@@ -1469,7 +1458,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        功率
+        频段
       
     </span>
   </a>
@@ -1480,17 +1469,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        频段
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         航天器运行轨道
       
     </span>
@@ -1499,7 +1477,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         定位
@@ -1544,14 +1522,10 @@
 
 
 <h1 id="_1">卫星通信</h1>
-<h2 id="_2">功率</h2>
-<div class="arithmatex">\[
-P_{dBm} = 10 * log10(P_{W}) + 30
-\]</div>
 <p>1W＝30dBm，每增加 10dBm，功率乘以 10 倍。</p>
-<h2 id="_3">频段</h2>
+<h2 id="_2">频段</h2>
 <p><img alt="" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/ct/freq_band.webp" /></p>
-<h2 id="_4">航天器运行轨道</h2>
+<h2 id="_3">航天器运行轨道</h2>
 <ol>
 <li>低地（球）轨道近地（球）轨道（LEO：Low Earth Orbit）</li>
 <li>轨道高度：约 400-2000 公里；</li>
@@ -1601,7 +1575,7 @@ P_{dBm} = 10 * log10(P_{W}) + 30
 </ul>
 </li>
 </ul>
-<h2 id="_5">定位</h2>
+<h2 id="_4">定位</h2>
 <p><img src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/ct/ecef_enu.png" width="60%" height="60%" /></p>
 <h3 id="ecef-enu">ECEF 到 ENU 的旋转矩阵</h3>
 <p>ECEF（地心地固坐标系）到 ENU（东北天站心坐标系）的转换需基于 <strong>站心点的经纬度</strong>（记为纬度 $ B $、经度 $ L $，单位为弧度），通过旋转变换实现。转换过程中需先将 ECEF 坐标平移至站心点，再通过旋转矩阵将地心坐标系转换为局部 ENU 坐标系。</p>

@@ -1682,10 +1682,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Note (Bootstrap Callout)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">note</span><span class="o">:</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="c1"># Note tag style values:</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">#  - simple    bs-callout old alert style. Default.</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="c1">#  - modern    bs-callout new (v2-v3) alert style.</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="c1">#  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="c1">#  - disabled  disable all CSS styles import of note tag.</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">#      - simple    bs-callout old alert style. Default.</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="c1">#      - modern    bs-callout new (v2-v3) alert style.</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="c1">#      - flat      flat callout style with background, like on Mozilla or StackOverflow.</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="c1">#      - disabled  disable all CSS styles import of note tag.</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="na">style</span><span class="o">:</span><span class="w"> </span><span class="s">flat</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="na">icons</span><span class="o">:</span><span class="w"> </span><span class="s">true</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="na">border_radius</span><span class="o">:</span><span class="w"> </span><span class="s">3</span>
@@ -1699,12 +1699,18 @@
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>{% endnote %}
 </code></pre></div>
 <ul>
-<li><code>[class]</code> 表示当前类型</li>
+<li><code>[class]</code> 表示当前类型<ul>
 <li><code>default</code>, <code>primary</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code></li>
-<li><code>[no-icon]</code>：是否显示 icon，可以替代配置中默认设置 <code>icon</code></li>
+</ul>
+</li>
+<li><code>[no-icon]</code>：是否显示 icon，可以替代配置中默认设置 <code>icon</code><ul>
 <li><code>true, false</code></li>
-<li><code>[style]</code> 显示的风格，可以替代配置中默认设置 <code>style</code></li>
+</ul>
+</li>
+<li><code>[style]</code> 显示的风格，可以替代配置中默认设置 <code>style</code><ul>
 <li><code>simple, modern, flat</code></li>
+</ul>
+</li>
 </ul>
 <p>示例</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{% note flat %}
@@ -1741,12 +1747,18 @@
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>{% endnote %}
 </code></pre></div>
 <ul>
-<li><code>[color]</code>: Note 标签显示的颜色</li>
+<li><code>[color]</code>: Note 标签显示的颜色<ul>
 <li><code>default / blue / pink / red / purple / orange / green</code></li>
-<li><code>[icon]</code>: 可配置自定义 <code>icon</code> (也可以配置 <code>no-icon</code> )</li>
+</ul>
+</li>
+<li><code>[icon]</code>: 可配置自定义 <code>icon</code> (也可以配置 <code>no-icon</code> )<ul>
 <li>只支持 <a href="https://fontawesome.com.cn/v5">FontAwesome 图标</a></li>
-<li><code>[style]</code>: 风格</li>
+</ul>
+</li>
+<li><code>[style]</code>: 风格<ul>
 <li><code>simple, modern, flat</code></li>
+</ul>
+</li>
 </ul>
 <p>示例</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{% note &#39;fab fa-cc-visa&#39; simple %}
@@ -1778,18 +1790,28 @@
 <li><code>[url]</code>: 【必须】链接</li>
 <li><code>[text]</code>: 【必须】按钮文字</li>
 <li><code>[icon]</code>: 图标</li>
-<li><code>[color]</code>:</li>
+<li><code>[color]</code>:<ul>
 <li>按钮背景顔色（默认 <code>style</code> 时）</li>
 <li>按钮字体和边框颜色（<code>outline</code> 时）</li>
 <li><code>default/blue/pink/red/purple/orange/green</code></li>
-<li><code>[style]</code>: 按钮样式 默认实心</li>
+</ul>
+</li>
+<li><code>[style]</code>: 按钮样式 默认实心<ul>
 <li><code>outline/留空</code></li>
-<li><code>[layout]</code>: 按钮布局 默认为 <code>line</code></li>
+</ul>
+</li>
+<li><code>[layout]</code>: 按钮布局 默认为 <code>line</code><ul>
 <li><code>block/留空line</code></li>
-<li><code>[position]</code>: 按钮位置 前提是设置了 <code>layout</code> 为 <code>block</code> 默认为左边</li>
+</ul>
+</li>
+<li><code>[position]</code>: 按钮位置 前提是设置了 <code>layout</code> 为 <code>block</code> 默认为左边<ul>
 <li><code>center/right/留空left</code></li>
-<li><code>[size]</code>: 按钮大小</li>
+</ul>
+</li>
+<li><code>[size]</code>: 按钮大小<ul>
 <li><code>larger/留空</code></li>
+</ul>
+</li>
 </ul>
 <p>示例</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly %}

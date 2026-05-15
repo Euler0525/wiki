@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../rust/">
+        <link rel="prev" href="../pyqt/">
       
       
-        <link rel="next" href="../verilog/">
+        <link rel="next" href="../shell/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Shell - Euler0525@Wiki</title>
+        <title>Rust - Euler0525@Wiki</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#shell" class="md-skip">
+        <a href="#rust" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Shell
+              Rust
             
           </span>
         </div>
@@ -1275,34 +1275,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../rust/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Rust
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1322,7 +1294,7 @@
   <span class="md-ellipsis">
     
   
-    Shell
+    Rust
   
 
     
@@ -1340,7 +1312,7 @@
   <span class="md-ellipsis">
     
   
-    Shell
+    Rust
   
 
     
@@ -1366,21 +1338,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linux
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
+        参考资料
       
     </span>
   </a>
@@ -1391,6 +1352,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1568,21 +1557,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linux
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
+        参考资料
       
     </span>
   </a>
@@ -1606,23 +1584,13 @@
 
 
 
-<h1 id="shell">Shell</h1>
-<h2 id="linux">Linux</h2>
-<h2 id="windows">Windows</h2>
-<p>校验文件</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">certutil</span> <span class="n">-hashfile</span> <span class="no">[filename]</span> <span class="n">SHA256</span>
-</code></pre></div>
-<p>批量校验文件</p>
-<ul>
-<li>cmd</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>for %f in (*) do @certutil -hashfile &quot;%f&quot; SHA256 | findstr /v &quot;CertUtil&quot;
-</code></pre></div>
-<ul>
-<li>PowerShell</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Get-ChildItem</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="n">certutil</span> <span class="n">-hashfile</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span> <span class="n">SHA256</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-Pattern</span> <span class="s2">&quot;SHA256&quot;</span> <span class="n">-Context</span> <span class="n">0</span><span class="p">,</span><span class="n">1</span> <span class="p">}</span>
-</code></pre></div>
+<h1 id="rust">Rust</h1>
+<h2 id="_1">参考资料</h2>
+<p><a href="https://rust-lang.org/zh-CN/">Rust 程序设计语言</a></p>
+<p><a href="https://internals.rust-lang.org/">内部论坛</a></p>
+<p><a href="https://users.rust-lang.org/">用户论坛</a></p>
+<p><a href="https://blog.rust-lang.org/">官方博客</a></p>
+<p><a href="https://rustwiki.org/">Rust 文档网</a></p>
 
 
 

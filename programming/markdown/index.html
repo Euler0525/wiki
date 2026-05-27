@@ -1478,6 +1478,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#typora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typora
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hexo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1674,6 +1685,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#typora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typora
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hexo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1791,51 +1813,57 @@
 
 
 <h1 id="markdown">Markdown</h1>
+<h2 id="typora">Typora</h2>
+<ul>
+<li>导出 PDF 文件时，指定位置分页</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;page-break-after: always;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 <h2 id="hexo">Hexo</h2>
 <h3 id="tabs">Tabs 组件</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{% [tabs Unique name], [index] %}
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;!-- tab [Tab caption] [@icon] --&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Any content (support inline tags too).
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&lt;!-- endtab --&gt;
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>{% endtabs %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{% [tabs Unique name], [index] %}
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;!-- tab [Tab caption] [@icon] --&gt;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Any content (support inline tags too).
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;!-- endtab --&gt;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>{% endtabs %}
 </code></pre></div>
 <p>示例</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{% tabs test, 1 %}
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;!-- tab --&gt;
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>This is Tab 1.
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;!-- endtab --&gt;
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&lt;!-- tab --&gt;
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>This is Tab 2.
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>&lt;!-- endtab --&gt;
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>&lt;!-- tab --&gt;
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>This is Tab 3.
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>&lt;!-- endtab --&gt;
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>{% endtabs %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{% tabs test, 1 %}
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&lt;!-- tab --&gt;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>This is Tab 1.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&lt;!-- endtab --&gt;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>&lt;!-- tab --&gt;
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>This is Tab 2.
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>&lt;!-- endtab --&gt;
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>&lt;!-- tab --&gt;
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>This is Tab 3.
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>&lt;!-- endtab --&gt;
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>{% endtabs %}
 </code></pre></div>
 <h3 id="note">Note 引导标注</h3>
 <h4 id="_1">内置标识</h4>
 <blockquote>
 <p>首先修改主题配置文件，启用 <code>icon</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Note (Bootstrap Callout)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">note</span><span class="o">:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="c1"># Note tag style values:</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">#      - simple    bs-callout old alert style. Default.</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="c1">#      - modern    bs-callout new (v2-v3) alert style.</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="c1">#      - flat      flat callout style with background, like on Mozilla or StackOverflow.</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="c1">#      - disabled  disable all CSS styles import of note tag.</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="na">style</span><span class="o">:</span><span class="w"> </span><span class="s">flat</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="na">icons</span><span class="o">:</span><span class="w"> </span><span class="s">true</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="na">border_radius</span><span class="o">:</span><span class="w"> </span><span class="s">3</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="c1"># Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="c1"># Offset also applied to label tag variables. This option can work with disabled note tag.</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="na">light_bg_offset</span><span class="o">:</span><span class="w"> </span><span class="s">0</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Note (Bootstrap Callout)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">note</span><span class="o">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="c1"># Note tag style values:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="c1">#      - simple    bs-callout old alert style. Default.</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="c1">#      - modern    bs-callout new (v2-v3) alert style.</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="c1">#      - flat      flat callout style with background, like on Mozilla or StackOverflow.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="c1">#      - disabled  disable all CSS styles import of note tag.</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="na">style</span><span class="o">:</span><span class="w"> </span><span class="s">flat</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="na">icons</span><span class="o">:</span><span class="w"> </span><span class="s">true</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="na">border_radius</span><span class="o">:</span><span class="w"> </span><span class="s">3</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="c1"># Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="c1"># Offset also applied to label tag variables. This option can work with disabled note tag.</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="na">light_bg_offset</span><span class="o">:</span><span class="w"> </span><span class="s">0</span>
 </code></pre></div>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{% note [class] [icon] [style] %}
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Any content (support inline tags too.io).
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>{% endnote %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{% note [class] [icon] [style] %}
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Any content (support inline tags too.io).
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>{% endnote %}
 </code></pre></div>
 <ul>
 <li><code>[class]</code> 表示当前类型<ul>
@@ -1852,38 +1880,38 @@
 </li>
 </ul>
 <p>示例</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{% note flat %}
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>默认 提示块标签
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>{% endnote %}
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>{% note default flat %}
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>default 提示块标签
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>{% endnote %}
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>{% note primary flat %}
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>primary 提示块标签
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>{% endnote %}
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>{% note success flat %}
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>success 提示块标签
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>{% endnote %}
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>{% note info flat %}
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>info 提示块标签
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>{% endnote %}
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>{% note warning flat %}
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>warning 提示块标签
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>{% endnote %}
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>{% note danger flat %}
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>danger 提示块标签
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>{% endnote %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{% note flat %}
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>默认 提示块标签
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>{% endnote %}
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>{% note default flat %}
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>default 提示块标签
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>{% endnote %}
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>{% note primary flat %}
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>primary 提示块标签
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>{% endnote %}
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>{% note success flat %}
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>success 提示块标签
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>{% endnote %}
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>{% note info flat %}
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>info 提示块标签
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>{% endnote %}
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>{% note warning flat %}
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>warning 提示块标签
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>{% endnote %}
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>{% note danger flat %}
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>danger 提示块标签
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>{% endnote %}
 </code></pre></div>
 <h4 id="_2">自定义标识</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{% note [color] [icon] [style] %}
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Any content (support inline tags too.io).
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>{% endnote %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{% note [color] [icon] [style] %}
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Any content (support inline tags too.io).
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>{% endnote %}
 </code></pre></div>
 <ul>
 <li><code>[color]</code>: Note 标签显示的颜色<ul>
@@ -1900,30 +1928,30 @@
 </li>
 </ul>
 <p>示例</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{% note &#39;fab fa-cc-visa&#39; simple %}
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>你是刷 Visa 还是 UnionPay
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>{% endnote %}
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>{% note blue &#39;fas fa-bullhorn&#39; simple %}
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>2021年快到了....
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>{% endnote %}
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>{% note pink &#39;fas fa-car-crash&#39; simple %}
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>小心开车 安全至上
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>{% endnote %}
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>{% note red &#39;fas fa-fan&#39; simple%}
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>这是三片呢？还是四片？
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>{% endnote %}
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>{% note orange &#39;fas fa-battery-half&#39; simple %}
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>你是刷 Visa 还是 UnionPay
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>{% endnote %}
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>{% note purple &#39;far fa-hand-scissors&#39; simple %}
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>剪刀石头布
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>{% endnote %}
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>{% note green &#39;fab fa-internet-explorer&#39; simple %}
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>前端最讨厌的浏览器
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>{% endnote %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{% note &#39;fab fa-cc-visa&#39; simple %}
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>你是刷 Visa 还是 UnionPay
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>{% endnote %}
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>{% note blue &#39;fas fa-bullhorn&#39; simple %}
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>2021年快到了....
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>{% endnote %}
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>{% note pink &#39;fas fa-car-crash&#39; simple %}
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>小心开车 安全至上
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>{% endnote %}
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>{% note red &#39;fas fa-fan&#39; simple%}
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>这是三片呢？还是四片？
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>{% endnote %}
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>{% note orange &#39;fas fa-battery-half&#39; simple %}
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>你是刷 Visa 还是 UnionPay
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>{% endnote %}
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>{% note purple &#39;far fa-hand-scissors&#39; simple %}
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>剪刀石头布
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>{% endnote %}
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>{% note green &#39;fab fa-internet-explorer&#39; simple %}
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>前端最讨厌的浏览器
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>{% endnote %}
 </code></pre></div>
 <h3 id="_3">按钮</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{% btn [url],[text],[icon],[color] [style] [layout] [position] [size] %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{% btn [url],[text],[icon],[color] [style] [layout] [position] [size] %}
 </code></pre></div>
 <ul>
 <li><code>[url]</code>: 【必须】链接</li>
@@ -1953,44 +1981,44 @@
 </li>
 </ul>
 <p>示例</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly %}
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right %}
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,,outline %}
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline %}
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,larger %}
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,block %}
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,block center larger %}
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,block right outline larger %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly %}
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right %}
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,,outline %}
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline %}
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,larger %}
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,block %}
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,block center larger %}
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,block right outline larger %}
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn-center&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline larger %}
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline blue larger %}
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline pink larger %}
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline red larger %}
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline purple larger %}
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline orange larger %}
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline green larger %}
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn-center&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline larger %}
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline blue larger %}
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline pink larger %}
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline red larger %}
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline purple larger %}
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline orange larger %}
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>{% btn &#39;https://butterfly.js.org/&#39;,Butterfly,far fa-hand-point-right,outline green larger %}
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
 <h3 id="_4">时间轴</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{% timeline [title],[color] %}
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>&lt;!-- timeline [title] --&gt;
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>xxxxx
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>&lt;!-- endtimeline --&gt;
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>&lt;!-- timeline [title] --&gt;
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>xxxxx
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>&lt;!-- endtimeline --&gt;
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>{% endtimeline %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{% timeline [title],[color] %}
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>&lt;!-- timeline [title] --&gt;
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>xxxxx
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>&lt;!-- endtimeline --&gt;
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&lt;!-- timeline [title] --&gt;
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>xxxxx
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>&lt;!-- endtimeline --&gt;
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>{% endtimeline %}
 </code></pre></div>
 <ul>
 <li><code>[color]</code>：<code>default / blue / pink / red / purple / orange / green</code></li>
 </ul>
 <p>示例</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{% timeline 2026,pink %}
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>&lt;!-- timeline 02-27 --&gt;
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>测试页面
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>&lt;!-- endtimeline --&gt;
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>{% endtimeline %}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{% timeline 2026,pink %}
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>&lt;!-- timeline 02-27 --&gt;
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>测试页面
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>&lt;!-- endtimeline --&gt;
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>{% endtimeline %}
 </code></pre></div>
 <h2 id="_5">参考资料</h2>
 <p><a href="https://www.catsky.org/2024/04/16/hexo%E5%8D%9A%E5%AE%A2Butterfly%E4%B8%BB%E9%A2%98%E4%B9%8B%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/">hexo 博客 Butterfly 主题之标签外挂</a></p>

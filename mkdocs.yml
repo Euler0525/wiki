@@ -5,6 +5,7 @@ nav:
   - Configuation: config.md
   - Apps: apps.md
   - Tools: tools.md
+  - Driver: driver.md
   - Bug: bug.md
   - CTF: ctf.md
   - FreeRTOS: rtos.md
@@ -13,7 +14,6 @@ nav:
     - Linux Kernel: linux/kernel.md
   - NVIDIA CUDA: cuda.md
   - AMD Xilinx:
-    - Driver: xilinx/driver.md
     - ZYNQ: xilinx/zynq.md
     - Versal: xilinx/versal.md
     - AI Engine: xilinx/aie.md

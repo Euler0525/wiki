@@ -428,3 +428,6 @@ bit 文件烧写后，会进入下图所示的 ILA 调试界面
 
 2. [zynq 中各种 GPIO 方式的区别：MIO，EMIO，AXI_GPIO 核](https://blog.csdn.net/ningjinghai11/article/details/80440683)
 
+## 附录
+
+[ZYNQ 系列 PL 资源对比](https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM/PL-Resources-by-Device-Type)

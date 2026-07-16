@@ -5,6 +5,7 @@ nav:
   - Configuation: config.md
   - Apps: apps.md
   - Tools: tools.md
+  - Driver: driver.md
   - Bug: bug.md
   - CTF: ctf.md
   - FreeRTOS: rtos.md
@@ -13,7 +14,6 @@ nav:
     - Linux Kernel: linux/kernel.md
   - NVIDIA CUDA: cuda.md
   - AMD Xilinx:
-    - Driver: xilinx/driver.md
     - ZYNQ: xilinx/zynq.md
     - Versal: xilinx/versal.md
     - AI Engine: xilinx/aie.md
@@ -23,7 +23,9 @@ nav:
     - Tutorials: adi/tutorials.md
   - Maths: maths.md
   - Algorithms: algorithms.md
-  - AI: ai.md
+  - AI:
+    - AI Basic: ai/basic.md
+    - AI Infra: ai/infra.md
   - Satellite: satellite.md
   - Electro: electro.md
   - Programming:
@@ -67,7 +69,7 @@ theme:
         name: Switch to light mode
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
+      scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode

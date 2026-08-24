@@ -2018,6 +2018,54 @@
 <li>Global memory：Grid 范围可见。不同 Block 之间通过全局内存交换数据是常见方式（但需要正确的同步手段，通常借助 Kernel 边界或原子/协作组等）；</li>
 <li>Shared memory：Block 范围可见。只有同一 Block 的线程能读写同一块 Shared memory；不同 Block 彼此看不到对方的共享内存；</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">内存</th>
+<th style="text-align: center;">Scope</th>
+<th>生命周期</th>
+<th>物理位置/特点</th>
+<th>典型用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Register</td>
+<td style="text-align: center;">Thread</td>
+<td>当前线程执行期间</td>
+<td>SM，最快</td>
+<td>局部变量、累加器</td>
+</tr>
+<tr>
+<td style="text-align: center;">Local</td>
+<td style="text-align: center;">Thread</td>
+<td>当前 Kernel/线程</td>
+<td>实际通常在 Device Memory</td>
+<td>Register spill、大数组</td>
+</tr>
+<tr>
+<td style="text-align: center;">Shared</td>
+<td style="text-align: center;">Block</td>
+<td>Block 生命周期</td>
+<td>SM</td>
+<td>Block 内数据共享</td>
+</tr>
+<tr>
+<td style="text-align: center;">Global</td>
+<td style="text-align: center;">所有线程</td>
+<td>allocation/application</td>
+<td>Device DRAM</td>
+<td>Tensor、输入输出</td>
+</tr>
+<tr>
+<td style="text-align: center;">Constant</td>
+<td style="text-align: center;">Grid/所有线程读取</td>
+<td>Context/Application</td>
+<td>Device + Constant Cache</td>
+<td>小型只读常量</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="CUDA 函数与变量访问权限" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/cpu_gpu_func_var.webp" /></p>
 <center> <small> CUDA 函数与变量访问权限 </small> </center>
 

@@ -601,6 +601,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#programming-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1717,6 +1728,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#programming-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1937,6 +1959,111 @@
 <p><img alt="CUDA 函数与变量访问权限" src="https://cdn.jsdelivr.net/gh/Euler0525/tube@master/it/cpu_gpu_func_var.webp" /></p>
 <center> <small> CUDA 函数与变量访问权限 </small> </center>
 
+<h2 id="history">History</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">时间</th>
+<th style="text-align: center;">架构</th>
+<th style="text-align: center;">代表产品</th>
+<th>技术变化</th>
+<th style="text-align: center;">主要方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2006</td>
+<td style="text-align: center;"><strong>Tesla / G80</strong></td>
+<td style="text-align: center;">GeForce 8800 GTX、早期 Tesla</td>
+<td><strong>统一着色器架构</strong>，GPU 从固定图形流水线走向通用并行处理，为 CUDA/GPGPU 奠定基础</td>
+<td style="text-align: center;">图形 → 通用计算</td>
+</tr>
+<tr>
+<td style="text-align: center;">2010</td>
+<td style="text-align: center;"><strong>Fermi</strong></td>
+<td style="text-align: center;">GTX 480/580、Tesla C2050/M2050</td>
+<td>L1/L2 Cache、ECC、大幅增强 FP64、并发 Kernel，更像“通用并行处理器”</td>
+<td style="text-align: center;">HPC</td>
+</tr>
+<tr>
+<td style="text-align: center;">2012</td>
+<td style="text-align: center;"><strong>Kepler</strong></td>
+<td style="text-align: center;">GTX 680、Titan、Tesla K20/K40/K80</td>
+<td><strong>SMX、性能/瓦大幅提升、Hyper-Q、Dynamic Parallelism、GPU Boost</strong></td>
+<td style="text-align: center;">HPC + 游戏</td>
+</tr>
+<tr>
+<td style="text-align: center;">2014</td>
+<td style="text-align: center;"><strong>Maxwell</strong></td>
+<td style="text-align: center;">GTX 750 Ti、GTX 980、Tesla M40/M60</td>
+<td><strong>极度强调能效</strong>，重新设计 SMM，提高每瓦性能</td>
+<td style="text-align: center;">游戏、推理、VDI</td>
+</tr>
+<tr>
+<td style="text-align: center;">2016</td>
+<td style="text-align: center;"><strong>Pascal</strong></td>
+<td style="text-align: center;">GTX 1080、Titan Xp、Tesla P100/P40/P4</td>
+<td>16nm FinFET、<strong>NVLink、HBM2、FP16、Unified Memory 改进</strong></td>
+<td style="text-align: center;">AI 开始爆发</td>
+</tr>
+<tr>
+<td style="text-align: center;">2017</td>
+<td style="text-align: center;"><strong>Volta</strong></td>
+<td style="text-align: center;">Tesla V100、Titan V</td>
+<td><strong>第一代 Tensor Core</strong>，AI 训练发生质变</td>
+<td style="text-align: center;">AI 训练 + HPC</td>
+</tr>
+<tr>
+<td style="text-align: center;">2018</td>
+<td style="text-align: center;"><strong>Turing</strong></td>
+<td style="text-align: center;">RTX 2080 Ti、Tesla T4、Quadro RTX</td>
+<td><strong>第一代 RT Core + 第二代 Tensor Core；INT8/INT4</strong></td>
+<td style="text-align: center;">光追 + AI 推理</td>
+</tr>
+<tr>
+<td style="text-align: center;">2020</td>
+<td style="text-align: center;"><strong>Ampere</strong></td>
+<td style="text-align: center;">RTX 3090、A100/A30/A40</td>
+<td><strong>第三代 Tensor Core、TF32、BF16、结构化稀疏、MIG；第二代 RT Core</strong></td>
+<td style="text-align: center;">AI 训练/推理 + 游戏</td>
+</tr>
+<tr>
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;"><strong>Hopper</strong></td>
+<td style="text-align: center;">H100、H200、GH200</td>
+<td><strong>Transformer Engine、FP8、第四代 Tensor Core、TMA、DPX、NVLink 4</strong></td>
+<td style="text-align: center;">LLM/HPC</td>
+</tr>
+<tr>
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;"><strong>Ada Lovelace</strong></td>
+<td style="text-align: center;">RTX 4090、RTX 6000 Ada、L4/L40/L40S</td>
+<td><strong>第三代 RT Core、第四代 Tensor Core、SER、DLSS 3、AV1</strong></td>
+<td style="text-align: center;">游戏/图形/推理</td>
+</tr>
+<tr>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;"><strong>Blackwell</strong></td>
+<td style="text-align: center;">B100/B200、GB200、RTX 50 系列</td>
+<td><strong>第五代 Tensor Core、FP4/NVFP4、第二代 Transformer Engine、NVLink 5；第四代 RT Core</strong></td>
+<td style="text-align: center;">生成式 AI / AI Factory</td>
+</tr>
+<tr>
+<td style="text-align: center;">2025</td>
+<td style="text-align: center;"><strong>Blackwell Ultra</strong></td>
+<td style="text-align: center;">B300、GB300 NVL72</td>
+<td>Blackwell 强化版：<strong>288GB HBM3E、更强 NVFP4、Attention/推理优化</strong></td>
+<td style="text-align: center;">Reasoning AI</td>
+</tr>
+<tr>
+<td style="text-align: center;">2026</td>
+<td style="text-align: center;"><strong>Rubin</strong></td>
+<td style="text-align: center;">Rubin GPU、Vera Rubin NVL72、DGX Rubin NVL8</td>
+<td><strong>HBM4、NVLink 6、第三代 Transformer Engine、更强长上下文/Agent 推理</strong></td>
+<td style="text-align: center;">Agentic AI / AI Factory</td>
+</tr>
+</tbody>
+</table>
 <h2 id="programming-guide">Programming Guide</h2>
 <h3 id="error-checking">Error Checking</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#define CUDA_CHECK(expr_to_check) do {            \</span>

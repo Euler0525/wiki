@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../../algorithms/">
+      
+      
+        <link rel="next" href="../infra/">
       
       
         
@@ -19,7 +23,7 @@
     
     
       
-        <title>Artificial Intelligence - Euler0525@Wiki</title>
+        <title>AI Basic - Euler0525@Wiki</title>
       
     
     
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Artificial Intelligence
+              AI Basic
             
           </span>
         </div>
@@ -917,18 +921,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" checked>
         
           
           <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
@@ -949,7 +955,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_16">
             <span class="md-nav__icon md-icon"></span>
             
@@ -964,10 +970,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../basic.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Basic
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -983,6 +1016,348 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ai-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ollama-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama &amp; Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Learning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iris" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine Learning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exp1-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exp1-Linear Regression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exp2-logistic-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exp2-Logistic Regression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exp3-neural-networkfp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exp3-Neural Network(fp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exp4-neural-networkbp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exp4-Neural Network(bp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exp5-bias-vs-variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exp5-Bias VS Variance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exp6-svm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exp6-SVM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exp7-k-means-and-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exp7-K-means And PCA
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-learning-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistical Learning Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistical Learning Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01-Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-perceptron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02-Perceptron
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03-KNN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-naive-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04-Naive Bayes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05-Decision Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-logistic-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06-Logistic Regression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-svm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07-SVM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-boost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08-Boost
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-learning-methods_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistical Learning Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -995,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../infra.md" class="md-nav__link">
+      <a href="../infra/" class="md-nav__link">
         
   
   
